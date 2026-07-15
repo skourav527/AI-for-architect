@@ -1,0 +1,334 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "namespaces_fdpeventhub_dev_ns_name": {
+            "defaultValue": "fdpeventhub-dev-ns",
+            "type": "String"
+        },
+        "virtualNetworks_vnet_nonprod_fdp_ssr3154_externalid": {
+            "defaultValue": "/subscriptions/6107e5e7-b836-4417-b362-59c67cfaf0c1/resourceGroups/rg-3154-nonprod-cx/providers/Microsoft.Network/virtualNetworks/vnet-nonprod-fdp-ssr3154",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.EventHub/namespaces",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[parameters('namespaces_fdpeventhub_dev_ns_name')]",
+            "location": "westeurope",
+            "tags": {
+                "environment": "Dev",
+                "created_by": "Shivkumar kourav",
+                "created_on": "Feb 2026"
+            },
+            "sku": {
+                "name": "Premium",
+                "tier": "Premium",
+                "capacity": 1
+            },
+            "properties": {
+                "geoDataReplication": {
+                    "maxReplicationLagDurationInSeconds": 0,
+                    "locations": [
+                        {
+                            "locationName": "westeurope",
+                            "roleType": "Primary"
+                        }
+                    ]
+                },
+                "minimumTlsVersion": "1.2",
+                "publicNetworkAccess": "Enabled",
+                "disableLocalAuth": false,
+                "zoneRedundant": true,
+                "kafkaEnabled": true
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/authorizationrules",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/ListenAccessKey')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Listen"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/authorizationrules",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/RootManageSharedAccessKey')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Listen",
+                    "Manage",
+                    "Send"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/authorizationrules",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/SendSharedAccessKey')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Listen",
+                    "Send"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-dev-adminref-orghierarchy')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "messageTimestampDescription": {
+                    "timestampType": "LogAppend"
+                },
+                "retentionDescription": {
+                    "cleanupPolicy": "Compact",
+                    "retentionTimeInHours": -1,
+                    "tombstoneRetentionTimeInHours": 168
+                },
+                "messageRetentionInDays": 7,
+                "partitionCount": 1,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-dev-jobs-projects')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "messageTimestampDescription": {
+                    "timestampType": "LogAppend"
+                },
+                "retentionDescription": {
+                    "cleanupPolicy": "Compact",
+                    "retentionTimeInHours": -1,
+                    "tombstoneRetentionTimeInHours": 168
+                },
+                "messageRetentionInDays": 7,
+                "partitionCount": 1,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-dev-masterdata-materials')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "messageTimestampDescription": {
+                    "timestampType": "LogAppend"
+                },
+                "retentionDescription": {
+                    "cleanupPolicy": "Compact",
+                    "retentionTimeInHours": -1,
+                    "tombstoneRetentionTimeInHours": 168
+                },
+                "messageRetentionInDays": 7,
+                "partitionCount": 1,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-nonprod-dev')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "messageTimestampDescription": {
+                    "timestampType": "LogAppend"
+                },
+                "retentionDescription": {
+                    "cleanupPolicy": "Compact",
+                    "retentionTimeInHours": -1,
+                    "tombstoneRetentionTimeInHours": 168
+                },
+                "messageRetentionInDays": 7,
+                "partitionCount": 1,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-qa')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "messageTimestampDescription": {
+                    "timestampType": "LogAppend"
+                },
+                "retentionDescription": {
+                    "cleanupPolicy": "Compact",
+                    "retentionTimeInHours": -1,
+                    "tombstoneRetentionTimeInHours": 168
+                },
+                "messageRetentionInDays": 7,
+                "partitionCount": 1,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/networkrulesets",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/default')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "publicNetworkAccess": "Enabled",
+                "defaultAction": "Deny",
+                "virtualNetworkRules": [
+                    {
+                        "subnet": {
+                            "id": "[concat(parameters('virtualNetworks_vnet_nonprod_fdp_ssr3154_externalid'), '/subnets/subnet01-fdp-ssr3154-nonprod')]"
+                        },
+                        "ignoreMissingVnetServiceEndpoint": false
+                    },
+                    {
+                        "subnet": {
+                            "id": "[concat(parameters('virtualNetworks_vnet_nonprod_fdp_ssr3154_externalid'), '/subnets/subnet02-ear-aa-3154-nonprod')]"
+                        },
+                        "ignoreMissingVnetServiceEndpoint": false
+                    },
+                    {
+                        "subnet": {
+                            "id": "[concat(parameters('virtualNetworks_vnet_nonprod_fdp_ssr3154_externalid'), '/subnets/subnet03-ear-aa-3154-nonprod')]"
+                        },
+                        "ignoreMissingVnetServiceEndpoint": false
+                    }
+                ],
+                "ipRules": [
+                    {
+                        "ipMask": "192.23.103.52",
+                        "action": "Allow"
+                    },
+                    {
+                        "ipMask": "49.248.6.187",
+                        "action": "Allow"
+                    },
+                    {
+                        "ipMask": "192.23.103.53",
+                        "action": "Allow"
+                    }
+                ],
+                "trustedServiceAccessEnabled": true
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/authorizationrules",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-nonprod-dev/fdpeventhub-dev-policy')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', parameters('namespaces_fdpeventhub_dev_ns_name'), 'fdpeventhub-nonprod-dev')]",
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Listen",
+                    "Send"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-dev-adminref-orghierarchy/$Default')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', parameters('namespaces_fdpeventhub_dev_ns_name'), 'fdpeventhub-dev-adminref-orghierarchy')]",
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-dev-jobs-projects/$Default')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', parameters('namespaces_fdpeventhub_dev_ns_name'), 'fdpeventhub-dev-jobs-projects')]",
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-dev-masterdata-materials/$Default')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', parameters('namespaces_fdpeventhub_dev_ns_name'), 'fdpeventhub-dev-masterdata-materials')]",
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-nonprod-dev/$Default')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', parameters('namespaces_fdpeventhub_dev_ns_name'), 'fdpeventhub-nonprod-dev')]",
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-qa/$Default')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', parameters('namespaces_fdpeventhub_dev_ns_name'), 'fdpeventhub-qa')]",
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2024-05-01-preview",
+            "name": "[concat(parameters('namespaces_fdpeventhub_dev_ns_name'), '/fdpeventhub-dev-adminref-orghierarchy/debug')]",
+            "location": "westeurope",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', parameters('namespaces_fdpeventhub_dev_ns_name'), 'fdpeventhub-dev-adminref-orghierarchy')]",
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('namespaces_fdpeventhub_dev_ns_name'))]"
+            ],
+            "properties": {}
+        }
+    ]
+}

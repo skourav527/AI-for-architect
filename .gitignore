@@ -1,0 +1,171 @@
+# ===================================
+# SENSITIVE FILES (NEVER COMMIT!)
+# ===================================
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.template
+!.env.example
+*.env
+
+# API keys and credentials
+**/appsettings.json
+**/secrets.json
+**/*secret*.json
+**/*config*.json
+!**/template.json
+!**/config.example.json
+
+# Certificates and keys
+certificates/
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+*.cer
+*.der
+*.csr
+
+# Personal/Company specific
+**/SLB/
+**/slb/
+**/*private*
+**/*confidential*
+*password*
+*credential*
+
+# ===================================
+# PYTHON
+# ===================================
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# ===================================
+# VIRTUAL ENVIRONMENTS
+# ===================================
+venv/
+env/
+ENV/
+.venv
+.conda/
+conda-env/
+pipenv/
+.python-version
+
+# UV package manager
+.uv/
+uv.lock
+
+# ===================================
+# IDE & EDITORS
+# ===================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ===================================
+# JUPYTER NOTEBOOK
+# ===================================
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+.jupyter/
+*.nbconvert.ipynb
+
+# ===================================
+# DATABASES
+# ===================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+example_usage.db
+token_usage.db
+
+# ===================================
+# LOGS & TEMPORARY FILES
+# ===================================
+*.log
+logs/
+temp.txt
+tmp/
+*.tmp
+*.temp
+*.cache
+
+# ===================================
+# TESTING
+# ===================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ===================================
+# OPERATING SYSTEM
+# ===================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ===================================
+# WORKSPACE FILES
+# ===================================
+*.code-workspace
+!example.code-workspace
+
+# ===================================
+# MISC
+# ===================================
+*.bak
+*.swp
+*~.nib
+local_settings.py
+instance/
+.webassets-cache

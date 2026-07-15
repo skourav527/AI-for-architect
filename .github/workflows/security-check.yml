@@ -1,0 +1,144 @@
+name: Security Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  secret-scan:
+    name: Scan for Secrets
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Fetch all history for all branches
+    
+    - name: Check for API keys in code
+      run: |
+        echo "Scanning for potential secrets..."
+        
+        # Check for OpenAI keys
+        if git grep -i "sk-proj-" -- '*.py' '*.json' '*.md' '*.txt' ':!.env.template'; then
+          echo "❌ ERROR: Found potential OpenAI API key!"
+          exit 1
+        fi
+        
+        # Check for Anthropic keys
+        if git grep -i "sk-ant-api" -- '*.py' '*.json' '*.md' '*.txt' ':!.env.template'; then
+          echo "❌ ERROR: Found potential Anthropic API key!"
+          exit 1
+        fi
+        
+        # Check for generic API key patterns
+        if git grep -E "api_key\s*=\s*['\"]sk-" -- '*.py' ':!.env.template'; then
+          echo "❌ ERROR: Found hardcoded API key!"
+          exit 1
+        fi
+        
+        echo "✅ No secrets detected in code"
+    
+    - name: Verify .env is not committed
+      run: |
+        if git ls-files | grep -E "^\.env$|\.env$" | grep -v ".env.template"; then
+          echo "❌ ERROR: .env file found in repository!"
+          exit 1
+        fi
+        echo "✅ No .env files found"
+    
+    - name: Verify certificates are not committed
+      run: |
+        if git ls-files | grep -E "certificates/.*\.pem$|certificates/.*\.key$"; then
+          echo "❌ ERROR: Certificate files found in repository!"
+          exit 1
+        fi
+        echo "✅ No certificate files found"
+    
+    - name: Check for database files
+      run: |
+        if git ls-files | grep -E "\.db$|\.sqlite$|\.sqlite3$" | grep -v "example"; then
+          echo "⚠️  WARNING: Database files found in repository"
+          # Don't fail, just warn
+        fi
+        echo "✅ Database file check complete"
+    
+    - name: Verify .gitignore exists
+      run: |
+        if [ ! -f .gitignore ]; then
+          echo "❌ ERROR: .gitignore file not found!"
+          exit 1
+        fi
+        echo "✅ .gitignore file exists"
+    
+    - name: Security scan summary
+      if: success()
+      run: |
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "✅ All security checks passed!"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+  code-quality:
+    name: Code Quality Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 safety
+    
+    - name: Lint with flake8
+      continue-on-error: true
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=venv,env,.venv,.conda
+        # Exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude=venv,env,.venv,.conda
+    
+    - name: Check for vulnerable dependencies
+      continue-on-error: true
+      run: |
+        # Find all requirements.txt files and check them
+        find . -name "requirements.txt" -not -path "*/venv/*" -not -path "*/.venv/*" | while read req; do
+          echo "Checking $req"
+          safety check -r "$req" || true
+        done
+
+  markdown-lint:
+    name: Markdown Documentation Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Check README exists
+      run: |
+        if [ ! -f README.md ]; then
+          echo "❌ ERROR: README.md not found!"
+          exit 1
+        fi
+        echo "✅ README.md exists"
+    
+    - name: Check for broken markdown links
+      continue-on-error: true
+      run: |
+        # Check for obvious broken links in markdown files
+        find . -name "*.md" -not -path "*/node_modules/*" -not -path "*/.venv/*" | while read file; do
+          echo "Checking $file"
+          # Simple check for absolute file paths that might be incorrect
+          if grep -E "\[.*\]\(/[A-Z]:" "$file"; then
+            echo "⚠️  Found Windows absolute path in $file"
+          fi
+        done

@@ -1,0 +1,115 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2RENDQXRDZ0F3SUJBZ0lRUTlCcmpvRmtmWmNkL3ppcXpsQkZOekFOQmdrcWhraUc5dzBCQVFzRkFEQU4KTVFzd0NRWURWUVFERXdKallUQWdGdzB5TVRBMk1qa3hNVE14TURCYUdBOHlNRFV4TURZeU9URXhOREV3TUZvdwpEVEVMTUFrR0ExVUVBeE1DWTJFd2dnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUUM3CnJyOWorZHBJdnpTNnVWbGg0TUJXVlI4bGtvaU9aQ0JXN2pRYVEvR0pzL3RtL01abFBva0ZqZWR1RXpxSmxVWlcKR0k4Nk03OTVNMjgzWWZpUTBXamsveURsd1pyWklncGVVeW82NmZidk5lVTA2eW5KbG1ET2owdlRna3JldjZFRQptSHBTdDY4dVloVDRQZ2NSNExJWFpzdmYyRHdERndkSHcwaVliemNuYkMwUkREd1ArWTRsL2pHRkQ4YmJvSTJKCmcxNmVKU3Vrbitld3A0RzNlSEJydzhHbk01aU5xU3RIY1ZhZ25OMnJDTUd6OHcvL0JDSVFlWDE5emRtU3QrcGEKbUJEL01JTmJQNXgrNXVVQmgrSGZwbzBZeEpaeDd6bWZoKys2c0VTVnQxUWxycXkrdjI2c0pDMTJXWi9YRVBNNQowaTd6ZzBtL0NvbHNZZWZ0NFBpSkVqTmVkVUxtbytpQmhwTUhaZDd4YmJXK3N0cHc2bE50MkgwbHlobTdrQzcvCkxSei8zVFVsOG5IM1RXL2FocG9CUnlmWi9lOEgvRjV1bHowTGlCZ1ZPWXRXWHZTMVJDbkVJWmlrN2lqcmtnYU0KT2ZMQW5XZGsxMUthV2Y2UXlmTG9YeTU3NVBjWWM3SUdRaTl3TmpwNUE3MUtUUExFNko3UEs2SFNnVStYckZwaQpCbndhRXFiMEs2YWpkRG1XRmlOcndybTl6SHVNNmJqWThvQkRZaDliSmtMVmVNd094QVRmNjdpNWwzRDJuTkRWCmhET3c1RFlha0FQMW5LelhRcUhyckJpcFFueGlhQmxPZlhwVlZ3MkxIR3FpZk1tUHFHU041R3ViV0FqVFJPUGUKeERobzRZT1dxWkNHRDl2M1o4V2YwcWJnajBhb25WdkdzS1h6Y1RHMUN3SURBUUFCbzBJd1FEQU9CZ05WSFE4QgpBZjhFQkFNQ0FxUXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVVkdVEwM0NVK3hzTVBPeDVnCk9qb1g3amc5T1Qwd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dJQkFBWXZMSjlMeWRjN1JpRUxzSW9qMmJKUWtrSUYKbTV0Mlc3QTZoWmFSK1JtTmNmUVFjRHhUU0t0UnpvK1AwRlhRbHhWbW1HWGo4c25hNFFWbHBXMzNVSG5sWHpaYgpGSW0wNVJxamtnMTAvZFloV3IyQmdlMlllMFUxQWpQR0xVTXB3Mm1NYU0wMktmcXB2S2RRR3ZnVDV4THdDdXBTCnA0ZzVVbnhkWXJBd1RYZUhKd2RQNXNBZGsrUTV2MGh1QlFqdTY4aFpYaW9JQ0g2NzdXZ3lZTjB3ellEVXZhTXcKYTBBanNCQmRIWG5KaFAyelMvRG5XVjljaC9BTURZOTJsSnBPREF2NnN1QkRvOEp5ekJXenNLaEVYRjZxQ0x5Vgo3MkJWNE9iQnZIYnBHZnB6dEhFbmp6UmF1ZmF4blJScm9MMVBZaFJSYmJSQ0FYaUZ6WlJYS2NaOEdORm9UWTlwCnNpdWkwbHVjODdtQk5Xd1NYNzR0SVlIdTBjdjZCNUlFakNib0JDeHI3eENlaHBxSHZlRVc4aWxnNjc2ZmNZelUKYStLNVRXUXFNTGxQMkpSckxOa0M0Sk1kU0xqd1RKUFdteTBrcWt2bUhrbXphay8yR3lMaG9rZU5BaGR6QjhSTwpPNkhJVjR1Z25ERWNVanl4bTBxYUlEeTNnZjFhWDJzWjFXQjN6RU5maUVZYVA1UnlTam1xbyszWFpSOE42cXB2CkFkSGhsQ3NyUnZJckdCd0JSLy82azl6c042blZqUGlUWG0rVWlqcFVTS0JNRTQ1d2g5MWgzS2c1MmxPNnkwbzMKOXpDK1VrQ2VEQXl5eFA4bXdHeFJUbmkvUTQ0M2dZQ1FyNVVSRHljR0Jub0VOMVJMTXFkbnQwTk9rUTZhOG1oTgp2NzJ6VFFHM2NqMDNMMXBVCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://azr20016devcluster-nonprod-90500d92.privatelink.westeurope.azmk8s.io:443
+  name: azr20016devcluster
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2RENDQXRDZ0F3SUJBZ0lRRGxKajRIV0h4YVNublQ5L2JGTW80REFOQmdrcWhraUc5dzBCQVFzRkFEQU4KTVFzd0NRWURWUVFERXdKallUQWdGdzB5TkRBNU1qTXdOekl6TWpSYUdBOHlNRFUwTURreU16QTNNek15TkZvdwpEVEVMTUFrR0ExVUVBeE1DWTJFd2dnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUUM4ClJWZDhJVWJSUXN1NElEdmtGWFlKN0FrRWtETzlCUkg2blkvUkh0UTdTU1FpZ2pmeEF6bUV2L2lpT1JkbEpFdFEKY0V4aEZBVDdXNlZYaDVZQmVaN3RZdW0zM3p3TmM3U1hVVngvOWFac2txMGdUNjdralJZMm10dGZWZ0hDaGR6KwovNC93VGtpb3Y3djd0d0VXck1MSS9NbGd6MVBUcThxbzhTbnRxS0ZTL0hNWGNZWWxPY1lkWmZqQWo0YlkxNlg3CmlybmRLb2JjYjFiRWNnWUVMUlk2YmZqcGYrQ2M5QTA1citoTUd0WFpRRlN1dFpHQ0N5MWc2OUJxMnVKWEljcVYKQk5IRlpqZXBvOWt4cXBLd1pPcWNnd1loK1U5T1BFcXRaVW5yRGFJcXgzTGJDQUxESjIyQVl2RTd6YmhyYWpnYgpGNDR0V3pNcTZMMDg5NDBYOGNId2J4SDZTR3c1Q1BCL3Q2RW9reTRyYW9QZTkzSEVNK1dob0xsSVNDM1haaXp2ClpuUklLbVRndFpkZGsxRnNjMzBycTgxWkhOWTBWcnZtTkVDdGhGc0NQV0U2bDgvb0FHQWg0bXBIbi9uSWJNc0YKVC9MKzZTZ3FOQnZkelUxTFdUOERQS3FPbWlZVjVEbklwMWJkeUJmUk0wT25XV0lKUElHNUMzOEw1NEdEdjZtaQpNdHRwTllGa1FiOGxWS0dWTmN5TTBIdlFubnhUdFNYdDB0cGt2bmxyMnhaV2R3OUxxSWtYZ1RVQTVKTXB5aWJvCmtXM1BXVUh5cXo3V1ZhckxrR1VmZS85bnlBU0N3M1BwMnNyRmI4T0h1UHBHZHRJdU1JUGdoM0V1Y282amxYdnUKcUVLUWVRU0Vod1VKWkZDbVk0d1JETkMrd1dTNkFMZUhqRnZVRlRvWjd3SURBUUFCbzBJd1FEQU9CZ05WSFE4QgpBZjhFQkFNQ0FxUXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVU4QkV4UkZLSzcxMllWWFNMCkJUWXRFOWdIQ0JRd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dJQkFBOElpanh4dGZZcUVWTENXSUM1cjlyVmlIWkIKTDg3eDVtMFg2RHEzbG5wbXQ4b2d6U2VtcE9tdlo4SXR1T284a2lITDFhSU94MC9nQ2hLanZjbERNVWpJRHBROApWTW0xYVNhNlI3c3JzeklmVXQ0NlBWWi94cnIrRjRWdDZGVVpuNVhPR05NdTZWTlJkYXdJV0JRYnRGQ2ozYWJsCk4rbHFWdWZmUmJHQW5nbmNWZ2FvMVZDZkFmQmVhdUFaL1RoV3JMVFNQUGdpT1pHc2RRbytJWmJXUmVnaUhGWTgKZ3lmU2w1azhMT3VTV2ZwbmZjT3dST1dFakQ4YTlnZUxxeVJ2RG1aUGJKdE5CalB2eG44aTlUSEVxN3E1M0lnRQpPd3hORFJXOUNMWHJ3eC9GcnNLMHQ5YU4rRVlUaXo0d1BTUzhTMm1uOUFreGd5M3FVUkN0UjR2M2gwSmk0MEpBCjNEMzVUOEFJMVZleS9PQWx2bCtPQllINHFTUTlienVaY3NRTi81eDlCbytXQURBZm5MTURPRm15RTZOckE1Q1oKNHozc0dXaENhNWw5MUxIRmpGYVgrY2M3a1lKY0NybWFLWkpONVBqNDhmZUJsTnVWNTUwcnl2Vnh0VFpkOWc0RQpGakhZU2dXOE0zOWRWL0w3WHhMMk56amduTVhzT0tpdWFyU1FMcHl6bEU4TG9IUXdSc1l2dDZHeGtqNWw2WE1PCjgxV3hzVGVaOTNjSEM4cXpPbHREWFZRNjN3SzZPeDBpR2tFamQ1dytRVVpGSkhXZ0xzQ2tFa0F2R2xzT2F5cFcKazhVcmVleTNnZHRzdG5ucWk3bEVycnB5OHFpTEtRNzVzR0psMkFwSDltMkhlQ28rTE11RlEwZEpTYTF5SExVUQorNkRFNllxR1ZUck5tSk1KCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://azr20016devsecondaryclusterne-nonprod-3b9j8x6a.privatelink.northeurope.azmk8s.io:443
+  name: azr20016devsecondaryclusterne
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2VENDQXRHZ0F3SUJBZ0lSQU1vMGlWTGFjZURoMTJrUU1GNC9XeHN3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdJQmNOTWpFd05qQTVNVEl3T1RRNFdoZ1BNakExTVRBMk1Ea3hNakU1TkRoYQpNQTB4Q3pBSkJnTlZCQU1UQW1OaE1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBCnROak9STEhOOFVtQ0wvRjBGdEpzOVhlcEQrUk5TUHBuU0srSTNscDV2WDc4Y25lMGppc1J5ZXlvRjFkdHRyWEIKb1N0YTdrUGRnV2FsYjNNVWNYUitWYmlTeHhDazZqRDdVbE1pUXliVEl6LzZIUU1vR0dJYmgxWXhTUVNoMkMzZgppUU91MmNUM2ZuS3hleU5FU0JheWVsbnZONFBScTA0SWtQYjBuak9wSldqUlNpZHY5UEVLQWsrY0duNlJYdHJ3CjVzWW01UFJFM0t6RlU0MlorSXZ2aHFEN0dKTWN6aXdDZlN0d0dWSTIwTnBNYlFTa0dxNE9GRE9SODlJUHY1T1AKeXlQNWtHZUNFVDhoSDNpS3pZMDZRMjVoQVM4YTEvbGdTS2wzVWF3ZU13Z3dZek1WL2lLWDFCenZvL096UExYaApwYmttb0lDK0VJbEdNTTFhZUxXRnBoZWEzNERsWFpFQWo3V3JlTDFTOXRhNm16MnBZeWZ2emhOWFdZcWtCckNYCnJNN2ZENGtOYkNBSkl5aGFRTEtpZ01TRUFuelJHQkgxQnI1clZ2SEdvTU9ZM1l6N0x3QzBsS1NiQURldGh2eHQKdzdmL3N2NlVwbUE3ckR4WnJobm5EcFpoZ0ZxdlN2RjF0a1h0M2IzdXhHcVQ3bWNtSVJTaEgvSi83bEdiZEt0dQphS1NFVTRES3htYUliN2Vuc2ZXQ2cxbzBqb1lXOXM4WjJpcnk3TTcvTFFSSXdYVGZwNzZwVkp1NVhjd1VuS2c3CnE5SkZJY1NEUWkzQXNvcHU4Z2VMbVBobkdwUy9MTm1PaktpYnEwblI0UWFuRkVmd1gyNHZzTU9wd1V2ajJxV2gKS0Jod3VCa0k1UmFVV3RKVU5KMHMrWXBVd1hUU0JQcXJMVXRmSVd4Tnp4MENBd0VBQWFOQ01FQXdEZ1lEVlIwUApBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGUDhkQkN6RWVSVXFqRU9sCnhMZDdFbitnczJxRU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQ0FRQkc3N1RVZHZ2N0lFemFabnRNYkhTTmF3V1MKWXdUN2loZFlXREtOWkw1V1VUTjlYYVhQcUwyS1kreml6eTVibzE3eThQQWFGandkUmx3anVQRVlRS0YzQWQzcgpyRkxJN0U1S0ZyVWg2Y1pMNEVMbUZiU1A0QWp1MytPbFdBWWo2THlPK0w3QnVDSjdaVW9UK3FNa2dtYWEwYVN1CnpSVEgrTGkyOFh2L1crdHhKM25RcElpNzZ4VzVXNXV1UFZaeld5SkVra09DQVZiZlFPQkNRdGd2TG01NGhVSkoKV2JMU0FNYTZVeDhhQ1h5SDlQOXVLKzRZZjFaaDN5NjhyVGR1SHFJNTB3YUpEU2hPRmVSZEx4Nlc3c0ZCRnplagpxUGxtQW02akhZOWRuYXppaERteGwxN3BBSitVQ1FXdThNemM5Z21QbVEwbVlTOXhtVnJrVG1uRGw5ZGhCZldhCmRVTnZPbUNZa0c0eTlLaVdvTEk2eGlUczBWeVA1d0hMVmQ4RlMzMWpFQlp1MzlWV0FtTFlRS3lrcmNFREZKVmQKMFlCMkNhV3lreUxLZkROeloxR3ZMbUJzTWFxR3RYd2VVUWlUQ09uSlRGODd0N0ZtN2RqUHQwQlJTb242QzNqdApzaEpzZkpUd1BTMXQ1b0IxSTFxT0JBdzJkT010YXZKTkF0NmI2SWdkTHFVenNmTmhCMG42a3E0L3Z4NGJ2SENICldJeWlxcEt1YW1kcEtEM3FTTVpQWEQwRUVGNDNtbUtMSWc2MUgrQXVDakNOeVl1TVJwbTczM1ZDU2Rpb2pQSDAKOUF1THdTWWpmUEtleGxDV0hublc0NEdRZ2gyekhSME5lekRHQ0ZWQU1TU3pJS3E0R1FsWjZQVzNPWVZxRmI1bwpvRytma3lSVzhBMXh1MWZ6eGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://azr20016prdcluster-prod-cb8930b3.privatelink.westeurope.azmk8s.io:443
+  name: azr20016prdcluster
+contexts:
+- context:
+    cluster: azr20016devcluster
+    namespace: fdp-3154-dev-01
+    user: clusterUser_rg-20016-dev-aks-nonprod_azr20016devcluster
+  name: azr20016devcluster-Dev
+- context:
+    cluster: azr20016devcluster
+    namespace: fdp-3154-qa-01
+    user: clusterUser_rg-20016-dev-aks-nonprod_azr20016devcluster
+  name: azr20016devcluster-QA
+- context:
+    cluster: azr20016devcluster
+    namespace: fdp-3154-training-01
+    user: clusterUser_rg-20016-dev-aks-nonprod_azr20016devcluster
+  name: azr20016devcluster-Training
+- context:
+    cluster: azr20016devcluster
+    namespace: fdp-3154-staging-01
+    user: clusterUser_rg-20016-dev-aks-nonprod_azr20016devcluster
+  name: azr20016devcluster-STG
+- context:
+    cluster: azr20016devcluster
+    namespace: fdpmcp-29541-qa-01
+    user: clusterUser_rg-20016-dev-aks-nonprod_azr20016devcluster
+  name: azr20016devcluster-MCP-QA
+- context:
+    cluster: azr20016devsecondaryclusterne
+    user: clusterUser_rg-20016-dev-aks-sec-clst-ne_azr20016devsecondaryclusterne
+  name: azr20016devsecondaryclusterne
+- context:
+    cluster: azr20016prdcluster
+    user: clusterUser_rg-20016-prd-aks-prod_azr20016prdcluster
+  name: azr20016prdcluster-Prod
+current-context: azr20016prdcluster
+kind: Config
+users:
+- name: clusterUser_rg-20016-dev-aks-nonprod_azr20016devcluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - get-token
+      - --login
+      - azurecli
+      - --server-id
+      - 6dae42f8-4368-4678-94ff-3960e28e3630
+      command: kubelogin
+      env: null
+      installHint: '
+
+        kubelogin is not installed which is required to connect to AAD enabled cluster.
+
+
+        To learn more, please go to https://azure.github.io/kubelogin/
+
+        '
+      provideClusterInfo: false
+- name: clusterUser_rg-20016-dev-aks-sec-clst-ne_azr20016devsecondaryclusterne
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - get-token
+      - --login
+      - azurecli
+      - --server-id
+      - 6dae42f8-4368-4678-94ff-3960e28e3630
+      command: kubelogin
+      env: null
+      installHint: '
+
+        kubelogin is not installed which is required to connect to AAD enabled cluster.
+
+
+        To learn more, please go to https://azure.github.io/kubelogin/
+
+        '
+      interactiveMode: IfAvailable
+      provideClusterInfo: false
+- name: clusterUser_rg-20016-prd-aks-prod_azr20016prdcluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - get-token
+      - --login
+      - azurecli
+      - --server-id
+      - 6dae42f8-4368-4678-94ff-3960e28e3630
+      command: kubelogin
+      env: null
+      installHint: '
+
+        kubelogin is not installed which is required to connect to AAD enabled cluster.
+
+
+        To learn more, please go to https://azure.github.io/kubelogin/
+
+        '
+      provideClusterInfo: false

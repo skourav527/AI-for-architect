@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/YOUR-USERNAME/ai-llm-learning-journey/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 📚 Documentation
+    url: https://github.com/YOUR-USERNAME/ai-llm-learning-journey#readme
+    about: Read the project documentation
+  - name: 🔒 Security Issues
+    url: https://github.com/YOUR-USERNAME/ai-llm-learning-journey/security/advisories/new
+    about: Report security vulnerabilities privately
