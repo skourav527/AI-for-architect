@@ -206,9 +206,13 @@ def _request_with_retry(
     _raise_for_status_code(response.status_code)
 
 
+REQUEST_COUNTS = {"total": 0, "failed": 0}
+
+
 def _safe_api_call(method: str, path: str, *, params: Optional[dict[str, Any]] = None) -> dict[str, Any]:
     correlation_id = str(uuid.uuid4())
     log = _log(correlation_id)
+    REQUEST_COUNTS["total"] += 1
 
     log.info("api_call_start", extra={"method": method, "path": path, "params": params or {}})
 
@@ -221,6 +225,7 @@ def _safe_api_call(method: str, path: str, *, params: Optional[dict[str, Any]] =
             "data": payload,
         }
     except RetryError as exc:
+        REQUEST_COUNTS["failed"] += 1
         log.error("api_retry_exhausted", extra={"error": str(exc)})
         raise _jsonrpc_error(
             ErrorCode.EXTERNAL_API_ERROR,
@@ -228,10 +233,12 @@ def _safe_api_call(method: str, path: str, *, params: Optional[dict[str, Any]] =
             correlation_id,
         ) from exc
     except (APITimeoutError, APIRateLimitError, APIAuthorizationError, APINotFoundError, APIClientError, APIServerError, APIConnectorError) as exc:
+        REQUEST_COUNTS["failed"] += 1
         level, event, error_code, message = _map_known_error(exc, correlation_id)
         log.log(level, event, extra={"error": str(exc)})
         raise _jsonrpc_error(error_code, message, correlation_id) from exc
     except Exception as exc:  # pragma: no cover
+        REQUEST_COUNTS["failed"] += 1
         log.exception("unexpected_server_error")
         raise _jsonrpc_error(
             ErrorCode.INTERNAL_ERROR,
@@ -290,6 +297,12 @@ def health_check() -> dict[str, Any]:
         "transport": "streamable-http",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
     }
+
+
+@mcp.resource("metrics://stats", mime_type="application/json")
+def metrics() -> dict[str, Any]:
+    """Basic in-process counters; wire into Prometheus for real deployments."""
+    return {"requests_total": REQUEST_COUNTS["total"], "requests_failed": REQUEST_COUNTS["failed"]}
 
 
 if __name__ == "__main__":
