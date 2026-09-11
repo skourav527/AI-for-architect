@@ -75,15 +75,15 @@ Carry-forward:
 
 ## Program Dashboard
 
-- [ ] Phase 1 Complete (Weeks 1-5)
+- [Done ] Phase 1 Complete (Weeks 1-5) - by 10 Sept 2026 
 - [ ] Phase 2 Complete (Weeks 6-10)
 - [ ] Phase 3 Complete (Weeks 11-15)
 - [ ] Phase 4 Complete (Weeks 16-20)
 - [ ] Phase 5 Complete (Weeks 21-24)
 
 ### Certification Dashboard
-- [ ] Anthropic: Introduction to MCP
-- [ ] Anthropic: MCP Advanced Topics
+- [x] Anthropic: Introduction to MCP (earned 2026-07-12)
+- [x] Anthropic: MCP Advanced Topics (earned 2026-07-14)
 - [ ] Anthropic: Building with the Claude API
 - [ ] Anthropic: Introduction to Agent Skills
 - [ ] Anthropic: Claude Code in Action
@@ -93,6 +93,7 @@ Carry-forward:
 - [ ] Azure AI Engineer Exam Passed
 
 ### Portfolio Dashboard
+- [Done] AI-for-architect - created this repo to share knowldge with all - public repo 
 - [ ] Repo 1: MCP Servers
 - [ ] Repo 2: Multi-Agent System
 - [ ] Repo 3: AI Architecture Patterns
@@ -104,7 +105,7 @@ Carry-forward:
 
 ## Rewards and Motivation Tracker
 
-- [ ] Milestone M1 (Week 5): Family dinner outing or movie night
+- [Done ] Milestone M1 (Week 5): Family dinner outing or movie night - Movie night 
 - [ ] Milestone M2 (Week 10): Spa session or wellness break
 - [ ] Milestone M3 (Week 15): New shoes or personal gadget
 - [ ] Milestone M4 (Week 20): Weekend local trip or family celebration
@@ -307,8 +308,8 @@ Practical Goal:
 - [ ] Close any pending tasks
 
 Certificate Goal:
-- [ ] Complete Anthropic MCP Intro
-- [ ] Complete Anthropic MCP Advanced
+- [x] Complete Anthropic MCP Intro (2026-07-12)
+- [x] Complete Anthropic MCP Advanced (2026-07-14)
 
 Project Goal:
 - [ ] Phase 1 checklist complete

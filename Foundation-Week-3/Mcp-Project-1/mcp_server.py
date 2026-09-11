@@ -14,7 +14,6 @@ docs = {
     "spec.txt": "These specifications define the technical requirements for the equipment.",
 }
 
-# TODO: Write a tool to read a doc
 @mcp.tool(
     name = "read_doc_contents",
     description = "Reads the contents of a document given its ID.",
@@ -26,8 +25,6 @@ def read_doc_contents(
     if doc_id not in docs:
         return ValueError(f"Document with ID '{doc_id}' not found.")
     return docs[doc_id]
-
-# TODO: Write a tool to edit a doc
 
 @mcp.tool(
     name = "edit_doc_contents",
@@ -44,8 +41,6 @@ def edit_document(
     return f"Document '{doc_id}' updated successfully."
 
 
-# TODO: Write a resource to return all doc id's
-
 @mcp.resource(
     "docs://documents",
     mime_type="application/json",
@@ -55,7 +50,6 @@ def edit_document(
 def list_docs() -> list[str]:
     return list(docs.keys())
 
-# TODO: Write a resource to return the contents of a particular doc
 @mcp.resource(
     "docs://document/{doc_id}",
     mime_type="text/plain",
@@ -66,7 +60,6 @@ def get_doc_contents(doc_id:str) -> str:
         return ValueError(f"Document with ID '{doc_id}' not found.")
     return docs[doc_id]
 
-# TODO: Write a prompt to rewrite a doc in markdown format
 @mcp.prompt(
     name="format",
     description="Rewrites a document in markdown format.",
@@ -81,8 +74,23 @@ def format_doc(
     use the 'edit_document' tool to make any edits to the document.
     """
     return [base.UserMessage(content=prompt)]
-    
-# TODO: Write a prompt to summarize a doc
+
+
+@mcp.prompt(
+    name="summarize",
+    description="Summarizes a document into a short executive summary.",
+)
+def summarize_doc(
+    doc_id: str = Field(description="The ID of the document to summarize."),
+) -> list[base.Message]:
+    prompt = f"""
+    Your goal is to produce a concise executive summary of a document.
+    The id of the document is <document_id> {doc_id} </document_id>
+    Use the 'read_doc_contents' tool to read the document first.
+    Return 3-5 bullet points covering the purpose, key facts and any risks or open items.
+    Do not edit the document.
+    """
+    return [base.UserMessage(content=prompt)]
 
 
 if __name__ == "__main__":
