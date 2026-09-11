@@ -141,9 +141,12 @@ Prompts:
 ## 7) Advanced MCP Features
 
 ### Sampling
-- use when controlled model generation is part of workflow
-- define boundaries and intent clearly
-- track where sampled output is used
+- **What is it?** Server asks Client to run an LLM call mid-tool execution (`Server -> Client -> LLM -> Server`).
+- **Why it matters:**
+  - **No API Keys in Server:** Server reuses Client's LLM connection/credentials safely.
+  - **User & Client Control:** Client can inspect, audit, or request user consent before LLM runs.
+  - **Model Flexible:** Server doesn't hardcode models; Client selects model and settings.
+  - **Smart Tools:** Server tools can use LLM reasoning internally without embedding heavy AI libraries.
 
 ### Notifications
 - server/client one-way event updates (no direct response expected)

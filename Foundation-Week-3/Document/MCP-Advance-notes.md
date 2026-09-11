@@ -169,17 +169,24 @@ Practical hardening checklist:
 ## 6) Sampling, Notifications, and Roots (Practical Examples)
 
 ### Sampling
-Definition:
-- Server asks client to generate text with the client's LLM connection.
+**What is it?**
+- In normal MCP flow, the Client asks the Server to run a tool (`Client -> Server`).
+- **Sampling flips this direction:** During tool execution, the **Server asks the Client** to run a sub-prompt through an LLM and return the result (`Server -> Client -> LLM -> Client -> Server`).
 
-When to use:
-- Public server should not hold model API keys.
+**Why the Server asking the Client for an LLM call matters (4 Key Reasons):**
+1. **No API Key Leakage (Security):** The MCP server does not need to store, manage, or pay for its own LLM API keys. It safely uses the Client's existing LLM connection.
+2. **User Consent & Safety Control:** The Client stays in charge. It can review, audit, rate-limit, or ask the human user for approval before running any LLM call requested by a server.
+3. **Model Independence:** The server logic is decoupled from specific LLM providers (e.g. OpenAI vs Anthropic vs local models). The Client chooses which model handles the request.
+4. **Agentic Server Tools:** Allows an MCP tool to perform smart inner operations (like summarizing data, classifying input, or generating text) without needing heavy AI SDKs or credentials inside the server itself.
 
-Flow:
-- Server creates message request -> client sampling callback -> client calls LLM -> client returns text.
+**Flow:**
+- `User -> Client -> calls Server Tool`
+- `Server Tool needs AI reasoning -> Server sends Sampling Request to Client`
+- `Client calls LLM -> Client returns LLM output to Server`
+- `Server finishes tool processing -> Server returns final output to Client`
 
-Practical example:
-- In your `sampling` practice: server asks client to summarize input text; client returns model-generated summary.
+**Practical example:**
+- In your `sampling` practice (`Foundation-Week-3/Mcp-Project-1/sampling/`): The server's `summarize()` tool receives text, calls `ctx.session.create_message()` to request a summary from the Client's LLM, and returns the generated text.
 
 ### Notifications (Logging + Progress)
 Definition:
