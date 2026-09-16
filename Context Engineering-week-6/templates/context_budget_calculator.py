@@ -65,9 +65,9 @@ if __name__ == "__main__":
     budget = ContextBudget(
         total_budget=200,
         output_reserve=40,
-        system_prompt="You are a helpful code review assistant.",
+        system_prompt="You are a helpful code review assistant. You are a helpful code review assistant. your name is micheal and you are doing very well and i am not sure why you are here and what you are doing and why you are doing and all of that and all You are a helpful code review assistant. your name is micheal and you are doing very well and i am not sure why you are here and what you are doing and why you are doing and all of that and all your name is micheal and you are doing very well and i am not sure why you are here and what you are doing and why you are doing and all of that and all, You are a helpful code review assistant. your name is micheal and you are doing very well and i am not sure why you are here and what you are doing and why you are doing and all of that and all. You are a helpful code review assistant. your name is micheal and you are doing very well and i am not sure why you are here and what you are doing and why you are doing and all of that and all",
         few_shot_examples=["Q: ... A: ..."],
-        retrieved_chunks=["Doc chunk about the coding style guide."],
+        retrieved_chunks=["Doc chunk about the coding style guide. abd i am not getting anywhere and how to do that "],
         history=[f"Turn {i}: some earlier conversation text goes here" for i in range(10)],
     )
     assembled_prompt, usage = budget.assemble()
