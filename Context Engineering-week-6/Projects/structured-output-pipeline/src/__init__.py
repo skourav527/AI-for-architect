@@ -1,0 +1,1 @@
+"""Customer structured-output pipeline."""

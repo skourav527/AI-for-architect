@@ -33,9 +33,9 @@
 - **Topics:** `prompt-engineering`, `system-prompts`, `structured-outputs`
 
 **5. 🧠 Intelligent Context Assembly**
-- Dynamic token budget management
-- Context window optimization strategies
-- **Topics:** `context-management`, `token-optimization`, `memory-management`
+- Dynamic token budget management, context lifecycle, compaction
+- Context vs memory vs state — the separation reliable agents depend on
+- **Topics:** `context-engineering`, `token-optimization`, `agent-state`
 
 **6. 🔍 Agentic RAG Systems**
 - Self-corrective retrieval, adaptive query refinement
@@ -47,76 +47,99 @@
 - ChromaDB, FAISS, Pinecone integration examples
 - **Topics:** `vector-search`, `embeddings`, `semantic-search`
 
-### **Orchestration & Reliability** (Weeks 11-15)
+### **Agent Runtime Engineering** (Weeks 11-15)
 
-**8. 🔀 LangGraph Workflow Orchestration**
-- State machines for AI workflows
-- Human-in-the-loop, persistence, conditional routing
-- **Topics:** `langgraph`, `workflow-orchestration`, `ai-pipelines`
+**8. 🔁 Agent Runtime Architecture**
+- The execution engine that turns a model into a reliable, stateful worker
+- Context · state · planning · tool orchestration · subagents · HITL · recovery
+- Architecture-first; LangGraph / OpenAI Agents SDK / managed runtimes as reference implementations
+- **Topics:** `agent-runtime`, `agent-execution`, `stateful-agents`
 
-**9. 🛡️ LLM Guardrails & Safety**
-- Input validation, prompt injection detection
-- Output filtering (PII, toxicity), OWASP LLM Top 10
-- **Topics:** `llm-security`, `guardrails`, `prompt-injection-prevention`
+**9. 💾 Checkpointing, Resume & Failure Recovery**
+- Typed durable state, checkpoint-per-step, idempotent resume
+- Long-running agent execution, partial failure, graceful degradation
+- **Topics:** `durable-execution`, `checkpointing`, `fault-tolerance`
 
-**10. 🔄 Self-Healing AI Systems**
-- Self-critique loops, output validation & refinement
-- Fallback models & graceful degradation
-- **Topics:** `self-healing`, `ai-reliability`, `fault-tolerance`
+**10. 🛡️ Runtime Security & Guardrails**
+- Agent identity, capability-based tool permissions, least privilege, sandbox isolation
+- Prompt injection containment, tool poisoning, confused deputy, OWASP LLM Top 10
+- **Topics:** `llm-security`, `agent-security`, `sandboxing`
 
-**11. 💰 AI Cost Optimization Framework**
-- Model routing (cheap → expensive), token budgets
-- Request caching, response streaming optimization
-- **Topics:** `cost-optimization`, `token-budgeting`, `ai-economics`
+**11. 🔎 Agent Observability (OpenTelemetry-first)**
+- OTel GenAI semantic conventions → agent, tool and model spans
+- Vendor-neutral tracing; backends (LangSmith/Phoenix) as interchangeable implementations
+- **Topics:** `opentelemetry`, `ai-observability`, `agent-tracing`
 
-### **Agentic AI** (Weeks 16-20)
+### **Agents & Agent Fleet** (Weeks 16-20)
 
-**12. 🤖 ReAct & Tool-Using Agents**
-- Reasoning + Acting loop, tool selection & execution
-- Memory persistence across sessions
+**12. 🤖 Agents as Runtime Configurations**
+- ReAct and Plan-Execute running on ONE runtime — identity, capabilities, budgets
+- Scoped tool permissions enforced by the runtime, not the prompt
 - **Topics:** `react-pattern`, `ai-agents`, `tool-use`
 
-**13. 🎭 Multi-Agent Orchestration**
-- Coordinator-worker patterns, agent handoffs
-- Shared memory & governance (audit trails)
-- **Topics:** `multi-agent-systems`, `agent-coordination`, `distributed-ai`
+**13. 🎭 Multi-Agent Orchestration & Agent Fleet**
+- Coordinator-worker patterns, delegation, handoff contracts
+- Shared vs isolated state, agent registry, discovery, versioning
+- **Topics:** `multi-agent-systems`, `agent-fleet`, `agent-coordination`
 
 **14. 🧪 Plan-and-Execute AI Agents**
 - Task decomposition, step-by-step execution
 - Dynamic replanning based on outcomes
 - **Topics:** `plan-execute`, `task-decomposition`, `autonomous-agents`
 
-**15. 🔗 MCP-Powered Agent Toolchain**
-- Agents using MCP servers as tools
-- Enterprise integrations (Azure DevOps, Jira, GitHub)
-- **Topics:** `mcp-agents`, `enterprise-ai`, `tool-agents`
+**15. 🔗 MCP & A2A — Tools vs Agents**
+- Agents using MCP servers as tools; A2A for agent-to-agent interop
+- Enterprise integrations (Azure DevOps, Jira, GitHub) + cross-agent trust
+- **Topics:** `mcp-agents`, `a2a`, `enterprise-ai`
 
-### **Production & Architecture** (Weeks 21-24)
+### **Control Plane & Platform Architecture** (Weeks 21-24)
 
-**16. 🏗️ AI System Architecture Patterns**
-- Reference architectures for RAG, agentic, batch AI
-- Multi-tenant AI design, scalability patterns
-- **Topics:** `ai-architecture`, `system-design`, `enterprise-ai`
+**16. 🏛️ Enterprise AI Control Plane**
+- Identity · policy-as-code · agent registry · governance · evaluation · observability · cost
+- Control plane vs runtime; data plane separation; policy enforcement points
+- **Topics:** `ai-control-plane`, `ai-governance`, `platform-architecture`
 
-**17. 📈 LLMOps & AI Observability**
-- Logging, tracing, evaluation pipelines
-- Cost tracking, quality metrics, A/B testing
-- **Topics:** `llmops`, `ai-observability`, `mlops`
+**17. 📈 Evaluation, Quality Gates & LLMOps**
+- Golden sets, LLM-as-judge, **agent trajectory evaluation**
+- Quality gates that block promotion; CI/CD for agents
+- **Topics:** `llmops`, `ai-evaluation`, `quality-gates`
 
-**18. 🔐 Enterprise AI Security & Governance**
-- Data isolation, access control, compliance
-- Audit logging, model governance, responsible AI
-- **Topics:** `ai-security`, `ai-governance`, `responsible-ai`
+**18. 💰 AI Cost Management & FinOps**
+- Token + tool cost attribution to agent → tenant → business owner
+- Budgets, quotas, rate limits, model routing
+- **Topics:** `ai-finops`, `cost-attribution`, `token-budgeting`
 
-**19. ⚙️ AI Platform Engineering**
-- Model gateways (LiteLLM), inference routing
-- Kubernetes for AI workloads, vector DB scaling
-- **Topics:** `ai-platform`, `platform-engineering`, `ai-infrastructure`
+**19. 🔐 Governance, Risk, Audit & Multi-Tenancy**
+- Risk classification → required controls, audit trails, provenance, compliance
+- Tenant isolation across data, state, budget, policy and traces
+- **Topics:** `ai-governance`, `responsible-ai`, `multi-tenancy`
 
-**20. 🎯 Production AI Application (Capstone)**
-- End-to-end system: MCP + RAG + Agents + Guardrails
-- Your work automation tool (ADO assistant, code reviewer, etc.)
-- **Topics:** `production-ai`, `enterprise-application`, `ai-automation`
+**20. 🎯 Enterprise Governed Agent Platform (Capstone)**
+- End-to-end: Control Plane → Agent Runtime → Models / Tools / Agents via MCP
+- 20-section architecture document + 12 ADRs
+- **Topics:** `governed-agent-fleet`, `enterprise-ai-platform`, `production-ai`
+
+---
+
+## 🧭 Architecture Progression
+
+```
+LLM → Context → RAG → Tools/MCP → Agent → Agent Runtime
+    → Multi-Agent System → Enterprise AI Control Plane
+    → Governed Agent Fleet → Enterprise AI Platform
+```
+
+| Phase | Weeks | Capability |
+|-------|-------|-----------|
+| Foundations | 1-5 | Models · Tools · MCP |
+| Context + RAG | 6-10 | Context lifecycle · retrieval as a capability |
+| **Agent Runtime** | 11-15 | Execution · recovery · security · observability |
+| Agents & Fleet | 16-20 | Identity · delegation · registry |
+| **Control Plane** | 21-22 | Policy · governance · evaluation · cost |
+| Governed Platform | 23-24 | The capstone |
+
+Full roadmap: [Learning-Plan/AI_LEARNING_PATHWAY_2026_FINAL.md](Learning-Plan/AI_LEARNING_PATHWAY_2026_FINAL.md)
+Progress tracker: [Learning-Plan/AI_24W_MASTER_TRACKER.md](Learning-Plan/AI_24W_MASTER_TRACKER.md)
 
 ---
 
