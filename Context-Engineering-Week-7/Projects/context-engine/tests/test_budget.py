@@ -17,6 +17,10 @@ def test_keeps_everything_when_under_budget() -> None:
     assert len(kept) == 2
     assert report.detail["dropped_sections"] == []
     assert report.detail["over_budget"] is False
+    print(kept)
+    print(report)
+    print(report.detail["dropped_sections"])
+    print(report.detail["over_budget"])
 
 
 def test_evicts_lowest_priority_evictable_section_first() -> None:
@@ -36,6 +40,10 @@ def test_evicts_lowest_priority_evictable_section_first() -> None:
     assert "memory" in report.detail["dropped_sections"]  # lowest priority dropped first
     assert all(s.name != "memory" for s in kept)
     assert any(s.name == "system" for s in kept)  # non-evictable always survives
+    print(kept)
+    print(report)
+    print(report.detail["dropped_sections"])
+    print(report.detail["over_budget"]) 
 
 
 def test_reports_over_budget_when_core_alone_exceeds() -> None:
@@ -54,6 +62,10 @@ def test_reports_over_budget_when_core_alone_exceeds() -> None:
     assert kept == sections  # non-evictable, cannot be dropped
     assert report.detail["over_budget"] is True
     assert report.detail["dropped_sections"] == []
+    print(kept)
+    print(report)
+    print(report.detail["dropped_sections"])
+    print(report.detail["over_budget"])
 
 
 def test_uses_precomputed_token_count_when_provided() -> None:
@@ -65,3 +77,7 @@ def test_uses_precomputed_token_count_when_provided() -> None:
 
     assert kept == []
     assert report.detail["dropped_sections"] == ["memory"]
+    print(kept)
+    print(report)
+    print(report.detail["dropped_sections"])
+    print(report.detail["over_budget"])

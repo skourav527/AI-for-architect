@@ -7,6 +7,7 @@ of EngineState — it is injected into ContextEngine, not stored in State.
 The embedding function is swappable: a dependency-free bag-of-words vector by
 default, a real embedding model (OpenAI/sentence-transformers) in production.
 The `run` contract does not change either way."""
+
 from __future__ import annotations
 
 import math

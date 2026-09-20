@@ -1,123 +1,124 @@
-# 🚀 AI & LLM Engineering Learning Journey
+# AI Platform and Agentic Systems Architect Learning Journey
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-> **A comprehensive, hands-on learning repository for mastering AI Engineering, LLM integration, and Model Context Protocol (MCP) development.**
+> A hands-on 24-week journey from LLM foundations and MCP to agent runtimes, governed agent fleets, and enterprise AI platform architecture.
 
-## � Top 20 AI Topics Covered
+## Current Progress
 
-### **Foundation & Core Skills** (Weeks 1-5)
+**Current position: Week 6 - Context Engineering and Prompt Mastery**
 
-**1. ⚡ Async Streaming LLM Clients**
+- **Weeks 1-5:** Foundation phase complete as of September 10, 2026.
+- **Certificates earned:** Anthropic Introduction to MCP and MCP Advanced Topics.
+- **Week 6:** Theory and notes in progress, including context lifecycle and context/memory/state separation.
+- **Next build:** Week 7 `ContextEngine`, using four reusable runtime primitives.
+
+The repository reflects the learning state, not a claim that every planned topic is already complete. Future weeks are shown below as the intended build sequence.
+
+## Program Coverage
+
+### Phase 1: Foundations (Weeks 1-5)
+
+**Weeks 1-2: Async LLM clients and provider integration**
 - Real-time token streaming from OpenAI & Anthropic
 - Production-grade error handling & retry logic
 - **Topics:** `streaming-api`, `async-python`, `real-time-ai`
 
-**2. 🔌 Model Context Protocol (MCP) Servers**
+**Weeks 3-4: Model Context Protocol and production MCP servers**
 - Build custom MCP servers from scratch
 - Connect AI to APIs, databases, file systems
 - **Topics:** `mcp-protocol`, `anthropic-mcp`, `tool-integration`
 
-**3. 🎯 Multi-Provider LLM Gateway**
-- Abstract OpenAI, Anthropic, Cohere behind unified interface
-- Auto-failover & cost optimization
-- **Topics:** `llm-gateway`, `multi-provider`, `ai-abstraction`
+**Week 5: Flex review and MCP certifications**
+- Review Weeks 1-4 and close any remaining foundation tasks
+- Complete the Anthropic MCP certifications
+- **Topics:** `mcp-certification`, `review`, `capstone-direction`
 
-### **Context & Prompt Engineering** (Weeks 6-10)
+### Phase 2: Context Engineering and RAG (Weeks 6-10)
 
-**4. 📝 Production Prompt Engineering Patterns**
+**Week 6: Context engineering and prompt mastery**
 - System prompt templates, few-shot patterns, chain-of-thought
 - Structured output enforcement with retry
 - **Topics:** `prompt-engineering`, `system-prompts`, `structured-outputs`
 
-**5. 🧠 Intelligent Context Assembly**
+**Week 7: Context primitives and `ContextEngine`**
 - Dynamic token budget management, context lifecycle, compaction
 - Context vs memory vs state — the separation reliable agents depend on
 - **Topics:** `context-engineering`, `token-optimization`, `agent-state`
 
-**6. 🔍 Agentic RAG Systems**
+**Weeks 8-9: Advanced RAG and retrieval as a capability**
 - Self-corrective retrieval, adaptive query refinement
 - Hybrid search (BM25 + vector) + reranking
 - **Topics:** `agentic-rag`, `self-corrective-ai`, `retrieval-augmented-generation`
 
-**7. 📊 Vector Search & Embeddings Pipeline**
-- Semantic chunking, embedding strategies, hybrid search
-- ChromaDB, FAISS, Pinecone integration examples
-- **Topics:** `vector-search`, `embeddings`, `semantic-search`
+**Week 10: Flex review, Phase 2 integration, and ADR-01 draft**
+- Integrate `ContextEngine`, the RAG capability, and MCP
+- Review Phase 2 and draft ADR-01
+- **Topics:** `integration`, `architecture-decisions`, `retrieval-capabilities`
 
-### **Agent Runtime Engineering** (Weeks 11-15)
+### Phase 3: Agent Runtime Engineering (Weeks 11-15)
 
-**8. 🔁 Agent Runtime Architecture**
+**Week 11: Agent Runtime architecture**
 - The execution engine that turns a model into a reliable, stateful worker
 - Context · state · planning · tool orchestration · subagents · HITL · recovery
 - Architecture-first; LangGraph / OpenAI Agents SDK / managed runtimes as reference implementations
 - **Topics:** `agent-runtime`, `agent-execution`, `stateful-agents`
 
-**9. 💾 Checkpointing, Resume & Failure Recovery**
+**Week 12: Minimal Agent Runtime build**
 - Typed durable state, checkpoint-per-step, idempotent resume
 - Long-running agent execution, partial failure, graceful degradation
 - **Topics:** `durable-execution`, `checkpointing`, `fault-tolerance`
 
-**10. 🛡️ Runtime Security & Guardrails**
+**Weeks 13-14: Reliable, secure, observable runtime hardening**
 - Agent identity, capability-based tool permissions, least privilege, sandbox isolation
 - Prompt injection containment, tool poisoning, confused deputy, OWASP LLM Top 10
 - **Topics:** `llm-security`, `agent-security`, `sandboxing`
 
-**11. 🔎 Agent Observability (OpenTelemetry-first)**
-- OTel GenAI semantic conventions → agent, tool and model spans
-- Vendor-neutral tracing; backends (LangSmith/Phoenix) as interchangeable implementations
-- **Topics:** `opentelemetry`, `ai-observability`, `agent-tracing`
+**Week 15: Flex review, certifications, and human approval ADR**
+- Review the runtime phase and complete planned certifications
+- Document human approval architecture and integrate the runtime components
+- **Topics:** `runtime-review`, `human-approval`, `certification`
 
-### **Agents & Agent Fleet** (Weeks 16-20)
+### Phase 4: Agents and Agent Fleet (Weeks 16-20)
 
-**12. 🤖 Agents as Runtime Configurations**
+**Weeks 16-17: Agents as runtime configurations**
 - ReAct and Plan-Execute running on ONE runtime — identity, capabilities, budgets
 - Scoped tool permissions enforced by the runtime, not the prompt
 - **Topics:** `react-pattern`, `ai-agents`, `tool-use`
 
-**13. 🎭 Multi-Agent Orchestration & Agent Fleet**
+**Weeks 18-19: Multi-agent coordination, A2A concepts, and agent registry**
 - Coordinator-worker patterns, delegation, handoff contracts
 - Shared vs isolated state, agent registry, discovery, versioning
 - **Topics:** `multi-agent-systems`, `agent-fleet`, `agent-coordination`
 
-**14. 🧪 Plan-and-Execute AI Agents**
-- Task decomposition, step-by-step execution
-- Dynamic replanning based on outcomes
-- **Topics:** `plan-execute`, `task-decomposition`, `autonomous-agents`
+**Week 20: Flex review, portfolio, and Claude Code certification**
+- Complete the Claude Code certification and review the fleet phase
+- Prepare the runtime, agent, and registry work for the portfolio
+- **Topics:** `portfolio`, `certification`, `architecture-review`
 
-**15. 🔗 MCP & A2A — Tools vs Agents**
-- Agents using MCP servers as tools; A2A for agent-to-agent interop
-- Enterprise integrations (Azure DevOps, Jira, GitHub) + cross-agent trust
-- **Topics:** `mcp-agents`, `a2a`, `enterprise-ai`
+### Phase 5: Control Plane and Platform Architecture (Weeks 21-24)
 
-### **Control Plane & Platform Architecture** (Weeks 21-24)
-
-**16. 🏛️ Enterprise AI Control Plane**
+**Week 21: Enterprise AI Control Plane theory**
 - Identity · policy-as-code · agent registry · governance · evaluation · observability · cost
 - Control plane vs runtime; data plane separation; policy enforcement points
 - **Topics:** `ai-control-plane`, `ai-governance`, `platform-architecture`
 
-**17. 📈 Evaluation, Quality Gates & LLMOps**
-- Golden sets, LLM-as-judge, **agent trajectory evaluation**
-- Quality gates that block promotion; CI/CD for agents
-- **Topics:** `llmops`, `ai-evaluation`, `quality-gates`
+**Week 22: Simplified Control Plane build**
+- Build identity, registry, policy, cost, audit, observability, and evaluation capabilities
+- Integrate the control plane with the Agent Runtime
+- **Topics:** `control-plane`, `policy-enforcement`, `multi-tenancy`
 
-**18. 💰 AI Cost Management & FinOps**
-- Token + tool cost attribution to agent → tenant → business owner
-- Budgets, quotas, rate limits, model routing
-- **Topics:** `ai-finops`, `cost-attribution`, `token-budgeting`
+**Week 23: Evaluation, observability, cost, and governance**
+- Golden sets, trajectory evaluation, quality gates, OpenTelemetry, and provenance
+- Cost attribution, budgets, quotas, risk classification, and governance
+- **Topics:** `llmops`, `agent-evaluation`, `ai-governance`
 
-**19. 🔐 Governance, Risk, Audit & Multi-Tenancy**
-- Risk classification → required controls, audit trails, provenance, compliance
-- Tenant isolation across data, state, budget, policy and traces
-- **Topics:** `ai-governance`, `responsible-ai`, `multi-tenancy`
-
-**20. 🎯 Enterprise Governed Agent Platform (Capstone)**
-- End-to-end: Control Plane → Agent Runtime → Models / Tools / Agents via MCP
-- 20-section architecture document + 12 ADRs
-- **Topics:** `governed-agent-fleet`, `enterprise-ai-platform`, `production-ai`
+**Week 24: Governed Agent Platform capstone and certification exam**
+- Complete the Claude Certified Architect exam and final architecture document
+- Assemble the governed platform from the control plane, runtime, agents, and MCP layer
+- **Topics:** `capstone`, `enterprise-ai-platform`, `governed-agent-fleet`
 
 ---
 
@@ -135,26 +136,56 @@ LLM → Context → RAG → Tools/MCP → Agent → Agent Runtime
 | Context + RAG | 6-10 | Context lifecycle · retrieval as a capability |
 | **Agent Runtime** | 11-15 | Execution · recovery · security · observability |
 | Agents & Fleet | 16-20 | Identity · delegation · registry |
-| **Control Plane** | 21-22 | Policy · governance · evaluation · cost |
-| Governed Platform | 23-24 | The capstone |
+| **Control Plane** | 21-22 | Identity · policy · registry · audit |
+| **Operability and Capstone** | 23-24 | Evaluation · cost · governance · final platform |
 
 Full roadmap: [Learning-Plan/AI_LEARNING_PATHWAY_2026_FINAL.md](Learning-Plan/AI_LEARNING_PATHWAY_2026_FINAL.md)
 Progress tracker: [Learning-Plan/AI_24W_MASTER_TRACKER.md](Learning-Plan/AI_24W_MASTER_TRACKER.md)
 
 ---
 
-## �📖 About This Repository
+## About This Repository
 
-This repository documents my **24-week intensive journey** into AI Engineering, covering everything from Python fundamentals to production-ready LLM applications and MCP server development. Perfect for developers looking to transition into AI/ML roles or enhance their LLM integration skills.
+This repository documents a **24-week architecture-first learning journey**. It starts with Python and LLM integration, then builds context-aware systems, a reliable agent runtime, an agent fleet, and an enterprise control plane. The code and notes are added incrementally as each phase is completed.
 
-### 🎯 What You'll Learn
+### What You Will Learn
 
-- **Foundation** (Weeks 1-4): Python async patterns, LLM client implementations (OpenAI, Anthropic), streaming responses, error handling
-- **MCP Development** (Weeks 3-4): Building production-grade Model Context Protocol servers and clients
-- **Production Patterns**: Token tracking, rate limiting, retry logic, monitoring, and deployment strategies
-- **Real-World Projects**: Multi-provider CLI tools, streaming clients, MCP integrations
+- **Foundations** (Weeks 1-5): Python async patterns, multi-provider LLM clients, streaming, MCP, production integrations, and certifications
+- **Context and RAG** (Weeks 6-10): Prompt architecture, structured outputs, memory, context budgets, compaction, hybrid retrieval, reranking, and retrieval capabilities
+- **Agent Runtime** (Weeks 11-15): Execution loops, typed state, tools, checkpointing, resume, approvals, security, sandboxing, reliability, and OpenTelemetry
+- **Agents and Fleet** (Weeks 16-20): Agent configurations, budgets, permissions, delegation, MCP versus A2A, multi-agent coordination, and registry design
+- **Control Plane** (Weeks 21-24): Identity, policy, governance, evaluation gates, observability, cost attribution, audit, multi-tenancy, and the governed platform capstone
 
-## 🗂️ Repository Structure
+## 24-Week Coverage at a Glance
+
+| Week | Type | What the week covers | Main outcome |
+|------|------|----------------------|--------------|
+| 1 | Theory | Python async patterns, LLM APIs, streaming, Pydantic, retries | Foundation notes and comparisons |
+| 2 | Practice | OpenAI and Anthropic clients, streaming, retry, rate limiting, CLI | Multi-provider CLI |
+| 3 | Theory | MCP architecture, JSON-RPC, tools, resources, prompts, transports | MCP architecture and security notes |
+| 4 | Practice | API, database, and file/RAG MCP servers; validation, security, testing | Three production-pattern MCP builds |
+| 5 | Flex | Review, catch-up, MCP certifications, capstone direction | Two Anthropic MCP certificates |
+| 6 | Theory | Prompt patterns, structured outputs, memory, token economics, grounding, context lifecycle | Context engineering playbook |
+| 7 | Practice | Output validation, memory compaction, few-shot selection, budget enforcement | Typed `ContextEngine` |
+| 8 | Theory | Chunking, embeddings, hybrid search, reranking, agentic RAG | RAG decision tree and capability contract |
+| 9 | Practice | Hybrid RAG, bounded self-correction, reranking, work-document evaluation | RAG exposed as a typed MCP capability |
+| 10 | Flex | Review, ContextEngine + RAG + MCP integration, ADR-01 draft | Phase 2 integration checkpoint |
+| 11 | Theory | Runtime anatomy, state, planning, tools, durability, approvals, sandboxing | Agent Runtime reference architecture |
+| 12 | Practice | Minimal runtime loop, SQLite state, checkpointing, resume, approvals, tracing | Recoverable Agent Runtime |
+| 13 | Theory | Reliability, prompt injection containment, identity, authorization, guardrails, OTel | Runtime threat and reliability model |
+| 14 | Practice | Runtime hardening, fallbacks, idempotency, permissions, sandbox, stress tests | Secure and observable runtime |
+| 15 | Flex | Review, certifications, runtime integration, human approval architecture | ADR-04 and phase consolidation |
+| 16 | Theory | ReAct, Plan-Execute, Reflexion, agent identity, capabilities, memory boundaries | Agent pattern and configuration catalog |
+| 17 | Practice | Agents on one runtime, budgets, permissions, retrievable memory, sandboxing | ReAct and Plan-Execute agents |
+| 18 | Theory | Multi-agent coordination, delegation, MCP versus A2A, fleet concepts | Fleet and handoff design |
+| 19 | Practice | Coordinator and specialists, handoffs, isolated state, registry, policy enforcement | Multi-agent system with registry seed |
+| 20 | Flex | Review, Claude Code certification, portfolio preparation | Portfolio repos and ADR consolidation |
+| 21 | Theory | Control-plane capabilities, four identities, policy enforcement points, governance | Control Plane capability map and ADR-07 |
+| 22 | Practice | Identity, registry, policy, cost, audit, traces, evaluation gate, integration | Simplified Control Plane and design document |
+| 23 | Theory | Output/tool/trajectory evaluation, quality gates, OTel, FinOps, risk, provenance | Evaluation and governance model |
+| 24 | Capstone | Certification exam and final governed-agent architecture | Enterprise Governed Agent Platform |
+
+## Repository Structure
 
 ```
 📁 Foundation-Week-1/          # Python fundamentals & LLM basics
@@ -183,7 +214,7 @@ This repository documents my **24-week intensive journey** into AI Engineering, 
 📁 knowledge-material/         # Learning resources & documentation
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -242,37 +273,33 @@ cd Foundation-Week-3/Mcp-Project-1
 uv run mcp_server.py
 ```
 
-## 🎓 Learning Path
+## Completed Foundation Work
 
-### Week 1: Foundations
+### Weeks 1-2: LLM Client Foundations
 - ✅ Python async/await patterns
 - ✅ HTTP clients with `httpx`
 - ✅ Retry logic with `tenacity`
 - ✅ Data validation with `pydantic`
 - ✅ OpenAI & Anthropic SDK integration
 
-### Week 2: Advanced Integration
-- ✅ Streaming responses
-- ✅ Error handling strategies
-- ✅ Provider abstraction patterns
-- ✅ CLI tool development
-
-### Week 3: MCP Protocol
+### Weeks 3-4: MCP Development
 - ✅ MCP architecture & concepts
 - ✅ Server/client implementation
 - ✅ Tool registration & invocation
 - ✅ Prompt sampling
 - ✅ Transport mechanisms (stdio, HTTP)
-
-### Week 4: Production Readiness
 - ✅ Deployment patterns
 - ✅ Monitoring & logging
 - ✅ Security best practices
 - ✅ Performance optimization
 
+### Week 5: Certifications
+- ✅ Anthropic Introduction to MCP
+- ✅ Anthropic MCP Advanced Topics
+
 ## 📚 Key Projects
 
-### 🤖 Multi-Provider LLM CLI
+### Multi-Provider LLM CLI
 A unified CLI interface for multiple LLM providers with streaming support, error handling, and token tracking.
 
 **Features:**
@@ -284,7 +311,7 @@ A unified CLI interface for multiple LLM providers with streaming support, error
 
 [View Project →](Foundation-Week-1/project2-multi-provider-cli/)
 
-### 🔌 MCP Server Framework
+### MCP Server Framework
 Production-ready Model Context Protocol server implementations with real-world integrations.
 
 **Features:**
@@ -372,7 +399,7 @@ Have questions or want to collaborate? Feel free to:
 
 **📌 Note:** This is a learning repository. Code examples prioritize educational clarity over production optimization. For production use, additional error handling, testing, and security measures should be implemented.
 
-**🚧 Status:** Actively maintained and updated weekly as I progress through the learning curriculum.
+**🚧 Status:** Phase 1 complete. Currently progressing through Week 6 of Phase 2; future phases are planned and will be implemented incrementally.
 
 ---
 
