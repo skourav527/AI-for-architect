@@ -95,7 +95,7 @@ PHASE 1: FOUNDATIONS (Weeks 1-5)
   Week 2:  🔨 Python + LLM APIs — Practice
   Week 3:  📖 MCP Server Development — Theory
   Week 4:  🔨 MCP Server Development — Practice
-  Week 5:  🟡 FLEX: Review + Cert (Anthropic MCP courses)
+  Week 5:  🟡 FLEX: Review + Optional MCP Certification Readiness
 
 ═══════════════════════════════════════════════════════════════
 PHASE 2: CONTEXT ENGINEERING (Weeks 6-10)
@@ -408,7 +408,7 @@ These are the two checklists that define whether this program worked. Everything
 
 ---
 
-### 📅 WEEK 5: 🟡 FLEX WEEK — Review + Certifications
+### 📅 WEEK 5: 🟡 FLEX WEEK — Review + Optional MCP Certification Readiness
 **Hours: 4-8 (this is your breathing room)**
 
 #### What to Do This Week (Pick Based on Your Status)
@@ -419,6 +419,7 @@ These are the two checklists that define whether this program worked. Everything
 | Complete Anthropic cert: **Introduction to MCP** (if not done in Week 3) | 1h | 🏆 Do this |
 | Complete Anthropic cert: **MCP Advanced Topics** (if not done in Week 3) | 1h | 🏆 Do this |
 | Review all Week 1-4 notes | 1-2h | ✅ |
+| Optional MCP readiness checkpoint: architecture, security, and operational checklist | 30-45min | ✅ |
 | Read 1-2 industry articles (Simon Willison blog, Latent Space) | 1h | 💡 |
 | Start thinking about capstone project ideas | 30min | 💡 |
 
@@ -439,6 +440,10 @@ These are the two checklists that define whether this program worked. Everything
 #### 🏆 Certifications Due by End of Week 5:
 - [ ] **Anthropic: Introduction to Model Context Protocol** ← Certificate earned
 - [ ] **Anthropic: MCP Advanced Topics** ← Certificate earned
+
+Certification is optional validation after the MCP learning and build work. The readiness checkpoint is the
+architecture-first requirement: review the MCP architecture, transport choice, tool contracts, authentication,
+authorization, input validation, logging, and failure handling; record any gaps for later improvement.
 
 #### 🧭 Optional (30 min, high value)
 - [ ] Take your Week 1 **Stack Mental Model** page and place every artifact you built in Weeks 1–4
@@ -789,7 +794,7 @@ An LLM + a tool loop is a *demo*. A runtime is what makes it a *system*:
 | Tue | **State & control flow:** state machine vs loop-based agents, typed state, planning, replanning | LangGraph state concepts + workflow-vs-agent articles | 1.5h |
 | Wed | **Tool orchestration:** tool selection, invocation, error contracts, tool permissions, MCP integration | MCP spec (your Wk 3 notes) + tool-use docs | 1h |
 | Thu | **Durability:** checkpointing, resume, retry, long-running execution, subagents, human approval | LangGraph persistence + Temporal durable-execution concepts | 1h |
-| Sat | **Implementation comparison** (see matrix below) + sandbox & isolation models | LangGraph / OpenAI Agents SDK / Anthropic harness / cloud runtimes docs | 2-3h |
+| Sat | **Implementation comparison** (see matrix below) + agent isolation boundary and sandbox models | LangGraph / OpenAI Agents SDK / Anthropic harness / cloud runtimes docs | 2-3h |
 | Sun | Draw your own runtime architecture from memory. Update ADR-01. | Self-study | 1h |
 
 #### 🏗️ The Runtime Reference Architecture (learn to draw this from memory)
@@ -850,6 +855,7 @@ Score each on the **same runtime responsibilities**. This table is portfolio evi
 - [ ] Checkpointing & resume patterns
 - [ ] Human-in-the-loop patterns guide (approve / reject / edit / escalate)
 - [ ] Sandbox & isolation models (in-process → container → microVM), and what each protects against
+- [ ] Agent isolation boundary checklist: protected assets, allowed capabilities, residual risk, and compromise response
 - [ ] Model routing strategy (cheap model for X, powerful for Y)
 - [ ] **Runtime failure-mode catalog** (aim for 8+): infinite loop · budget exhaustion · tool timeout ·
       tool poisoning · state corruption · partial failure · lost checkpoint · stale context ·
@@ -973,7 +979,7 @@ You now have first-hand evidence. Write the Decision + Consequences sections:
 | Mon | **Input guardrails** + prompt injection (still an unsolved problem — design for containment, not prevention) | OWASP LLM Top 10 (2025) | 1.5h |
 | Tue | **Output guardrails:** schema validation, PII filtering, toxicity | Guardrails AI / Presidio *(as examples)* | 1.5h |
 | Wed | **Runtime reliability:** retry, timeout, circuit breaker, idempotency, partial failure, state corruption | "AI Engineering" Ch 6-7 + distributed-systems patterns | 1h |
-| Thu | **Runtime security:** agent identity, tool authorization, capability permissions, least privilege, sandboxing, secrets | MCP security best practices + least-privilege patterns | 1h |
+| Thu | **Runtime security:** agent identity, tool authorization, capability permissions, least privilege, sandboxing, credential isolation, secrets, and egress | MCP security best practices + least-privilege patterns | 1h |
 | Sat | **Agent & MCP threat model** (below) + self-critique loops | OWASP guide + MCP security docs | 2-3h |
 | Sun | **Runtime observability:** what to trace and why (OpenTelemetry first) | OTel GenAI semantic conventions | 1h |
 
@@ -1048,6 +1054,7 @@ Metrics that matter: failure rate · retry rate · approval latency · tokens & 
 - [ ] 🧭 Runtime reliability pattern table (retry / timeout / breaker / idempotency / partial failure)
 - [ ] 🧭 Agent identity & tool authorization model
 - [ ] 🧭 Sandbox decision guide: in-process vs container vs microVM — what each actually protects against
+- [ ] 🧭 Compromise review: maximum filesystem, credential, network, data, and action access if the model or tool is malicious
 - [ ] 🧭 Minimum viable agent trace spec (spans + attributes)
 - [ ] Fallback strategies guide (model fallback, response fallback, graceful degradation)
 
@@ -1263,7 +1270,7 @@ A subagent is a **new execution scope**, not a function call. Decide up front:
 | Wed | Retrievable memory across sessions — kept **separate** from runtime state | 1h |
 | Thu | 🧭 Per-agent **tool permission scopes** + budget control (max tool calls / max $ / max wall-clock) | 1h |
 | Sat | **Project:** Work agent using your MCP tools (ADO, DB, docs) to answer real work questions | 2-3h |
-| Sun | 🧭 Sandboxed tool execution for the risky tool + ADR-05 | 1h |
+| Sun | 🧭 Sandboxed risky-tool execution; scoped credentials, delegated-authority limits, blast-radius note + ADR-05 | 1h |
 
 #### 🧭 Thursday: Permissions and Budgets Are Runtime Concerns
 
@@ -1295,7 +1302,8 @@ Same runtime. Same code. **Different configuration, different authority.** That 
 
 #### 📐 ADR-05: Sandbox Strategy (Sunday)
 Which tools run sandboxed, at what isolation level (in-process / container / microVM), what each level
-protects against, what it costs in latency and ops, and what you accept as residual risk.
+protects against, what it costs in latency and ops, what authority and credentials each agent receives, and what
+you accept as residual risk.
 
 #### ✅ Week 17 Done When:
 - [ ] ReAct agent working with 3+ tools
@@ -1551,7 +1559,7 @@ How an agent gets an identity, how it differs from user identity, how the two co
 | Tue | **Policy:** policy enforcement points, policy-as-code, tool/model/data access policies, risk-based & approval policies | OPA/Cedar *as examples* + your ADR-04 | 1.5h |
 | Wed | **Agent registry & catalogs:** registration, metadata, capabilities, ownership, versioning, environment, status, discovery; model catalog; tool catalog | Service-registry + service-catalog patterns | 1h |
 | Thu | **Governance:** risk classification, responsible AI, compliance, audit, provenance, data/model/agent governance | Microsoft Responsible AI + EU AI Act basics | 1h |
-| Sat | **Enterprise patterns:** multi-tenancy & isolation, model gateway/routing, deployment & versioning, secrets/config *(+20-min runtime hosting note)* | Cloud AI architecture whitepapers + LiteLLM docs | 2-3h |
+| Sat | **Enterprise patterns:** multi-tenancy & isolation, hardened container vs microVM boundaries, ephemeral credentials, kill/revoke, independent observability, model gateway/routing, deployment & versioning, secrets/config *(+20-min runtime hosting note)* | Cloud AI architecture whitepapers + LiteLLM docs | 2-3h |
 | Sun | Draw the full control plane from memory · **ADR-07** | Self-study | 1h |
 
 #### 🔑 Monday: The Four Identities
@@ -1591,6 +1599,7 @@ the same reasons you version infrastructure. Policy buried in Python `if` statem
 - [ ] 🧭 Model catalog + tool catalog entry schemas
 - [ ] 🧭 Governance framework: risk classification tiers → required controls per tier
 - [ ] 🧭 Multi-tenancy isolation guide (data · state · budget · policy · traces)
+- [ ] 🧭 Production isolation controls: hardened boundary, ephemeral credentials, kill/revoke, independent evidence, and post-incident provenance
 - [ ] Model gateway & routing strategy
 - [ ] Runtime hosting options note (20 min: container / serverless / managed agent runtime — trade-offs only)
 - [ ] ADR template (reusable at work)
@@ -2220,62 +2229,6 @@ That's exactly what this program makes you.
 **Total Program Hours:** ~190-220 hours over 6 months (**unchanged** — the new content replaces, it does not add)
 **Flexibility:** 5 flex weeks where 4-5hr is perfectly fine
 **If you miss a week entirely:** Just shift everything by 1 week. No guilt. The plan is resilient.
-
----
-
-## 🔄 CHANGE LOG — September 2026 Update
-
-**What changed and why.** Weeks 1–10 are substantially preserved; Phase 3 and Phase 5 were re-anchored on
-the two capabilities that now define enterprise AI architecture.
-
-### Added (integrated, not appended)
-| Capability | Where |
-|---|---|
-| Agent Runtime Architecture | Wk 11 (theory), Wk 12 (build), Wk 13–14 (harden) |
-| Enterprise AI Control Plane | Wk 21 (theory), Wk 22 (build) |
-| Context lifecycle + context/memory/state | Wk 6 (30-min add-on) |
-| Retrieval as a capability + retrieval policy | Wk 8 (20-min add-on) |
-| Agent identity, tool permissions, sandboxing | Wk 13, 14, 17 |
-| Agent registry + policy enforcement points | Wk 19, 21, 22 |
-| A2A + agent discovery + fleet concepts | Wk 18 (concept level, capped) |
-| Trajectory evaluation + cost attribution | Wk 23 |
-| 12 ADRs | Distributed across Wk 10–23 (45-60 min slots) |
-
-### Renamed
-| From | To |
-|---|---|
-| Phase 3: Harness Engineering | **Phase 3: Agent Runtime Engineering** |
-| Phase 4: Agentic AI | **Phase 4: Agents & Agent Fleet** |
-| Phase 5: Architecture & Production | **Phase 5: Control Plane & Platform Architecture** |
-| Wk 11-12: LangGraph & Orchestration | **Agent Runtime Architecture / Build a Minimal Agent Runtime** |
-| Wk 13-14: Guardrails & Reliability | **Reliable & Secure Agent Runtime / Runtime Hardening** |
-| Wk 21-22: AI System Design & Platform Eng | **Enterprise AI Control Plane (Theory / Practice)** |
-
-### Moved
-- Architecture diagrams + ADR writing: Wk 22 (whole week) → **distributed across Wk 10–23**
-- Cost optimization: Wk 21 → **Wk 23** (consolidated with FinOps)
-- Human-in-the-loop: Wk 11-12 (framework feature) → **Wk 13-14 (runtime capability)** + Wk 21 (as policy)
-- Audit trail: Wk 19 (ad-hoc logging) → **Wk 21-22 (control-plane capability)**
-
-### Removed (❌ **CHANGE THIS** items — outdated, framework-specific, or low value)
-| Removed | Reason | Replaced by | Week |
-|---|---|---|---|
-| "LangGraph" as a phase/week title | Framework-first naming; architecture vocabulary must outlive libraries | Agent Runtime Architecture (LangGraph kept as 1 of 4 reference impls) | 11-12 |
-| AutoGen as a named framework | Consolidated into Microsoft's successor agent framework; teaches a choice that no longer exists | One row in the framework matrix | 18 |
-| CrewAI deep dive (1h) | Role/task DSLs proved brittle at enterprise scale | Delegation, handoff, shared-vs-isolated state | 18 |
-| LATS / tree-search deep dive | Research-grade, rarely deployed, not architect-relevant | Agent identity, capabilities, subagent boundaries | 16 |
-| K8s-for-AI + vector DB scaling deep dive | Infrastructure you already know from 15 yrs DevOps — lowest marginal value | Control-plane capability design | 21 |
-| Semantic Kernel deep dive | Superseded by the consolidated framework | Framework matrix row | 21 → 18 |
-| "Long-term memory = vector store" | 2023-era default; conflating state with semantic recall causes unreliable agents | context vs memory vs state (defined Wk 6, applied Wk 16-17) | 16-17 |
-| Vendor-first observability (LangSmith/Phoenix tutorial) | Most replaceable layer in the stack | **OpenTelemetry GenAI semantic conventions first**, backend second | 14, 23 |
-| NeMo Guardrails as a primary resource | Guardrail frameworks churn fast | OWASP LLM Top 10 (2025) + **MCP/agent threat model** | 13 |
-| Duplicate OWASP pass in Wk 23 | Already covered in Wk 13 | Governance, compliance, provenance | 23 |
-| DSPy (demoted, not removed) | Adoption stayed niche | Marked **optional stretch** | 8 |
-
-### Still Relevant — Deliberately Kept
-MCP (now the de-facto tool standard) · context engineering as a first-class discipline · hybrid search +
-reranking · evaluation & LLM-as-Judge · structured outputs · human-in-the-loop · durable execution
-(Temporal-style) · cost/FinOps · OWASP LLM Top 10 · all 6 Anthropic certs · Claude Architect exam alignment.
 
 ---
 

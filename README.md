@@ -31,9 +31,10 @@ The repository reflects the learning state, not a claim that every planned topic
 - Connect AI to APIs, databases, file systems
 - **Topics:** `mcp-protocol`, `anthropic-mcp`, `tool-integration`
 
-**Week 5: Flex review and MCP certifications**
+**Week 5: Flex review and optional MCP certification readiness**
 - Review Weeks 1-4 and close any remaining foundation tasks
-- Complete the Anthropic MCP certifications
+- Validate MCP architecture, security, and operational readiness
+- Use the Anthropic MCP certifications as optional validation
 - **Topics:** `mcp-certification`, `review`, `capstone-direction`
 
 ### Phase 2: Context Engineering and RAG (Weeks 6-10)
@@ -63,6 +64,7 @@ The repository reflects the learning state, not a claim that every planned topic
 **Week 11: Agent Runtime architecture**
 - The execution engine that turns a model into a reliable, stateful worker
 - Context · state · planning · tool orchestration · subagents · HITL · recovery
+- Agent isolation boundary: protected assets, allowed capabilities, and sandbox choices
 - Architecture-first; LangGraph / OpenAI Agents SDK / managed runtimes as reference implementations
 - **Topics:** `agent-runtime`, `agent-execution`, `stateful-agents`
 
@@ -73,7 +75,8 @@ The repository reflects the learning state, not a claim that every planned topic
 
 **Weeks 13-14: Reliable, secure, observable runtime hardening**
 - Agent identity, capability-based tool permissions, least privilege, sandbox isolation
-- Prompt injection containment, tool poisoning, confused deputy, OWASP LLM Top 10
+- Credential isolation, network/egress controls, prompt injection containment, tool poisoning, confused deputy
+- OWASP LLM Top 10 and adversarial runtime stress testing
 - **Topics:** `llm-security`, `agent-security`, `sandboxing`
 
 **Week 15: Flex review, certifications, and human approval ADR**
@@ -85,7 +88,7 @@ The repository reflects the learning state, not a claim that every planned topic
 
 **Weeks 16-17: Agents as runtime configurations**
 - ReAct and Plan-Execute running on ONE runtime — identity, capabilities, budgets
-- Scoped tool permissions enforced by the runtime, not the prompt
+- Scoped tool permissions, delegated-authority limits, credentials, and blast radius enforced by the runtime
 - **Topics:** `react-pattern`, `ai-agents`, `tool-use`
 
 **Weeks 18-19: Multi-agent coordination, A2A concepts, and agent registry**
@@ -103,6 +106,7 @@ The repository reflects the learning state, not a claim that every planned topic
 **Week 21: Enterprise AI Control Plane theory**
 - Identity · policy-as-code · agent registry · governance · evaluation · observability · cost
 - Control plane vs runtime; data plane separation; policy enforcement points
+- Production isolation: hardened boundaries, ephemeral credentials, kill/revoke, independent evidence, provenance
 - **Topics:** `ai-control-plane`, `ai-governance`, `platform-architecture`
 
 **Week 22: Simplified Control Plane build**
@@ -150,11 +154,11 @@ This repository documents a **24-week architecture-first learning journey**. It 
 
 ### What You Will Learn
 
-- **Foundations** (Weeks 1-5): Python async patterns, multi-provider LLM clients, streaming, MCP, production integrations, and certifications
+- **Foundations** (Weeks 1-5): Python async patterns, multi-provider LLM clients, streaming, MCP, production integrations, and optional certification readiness
 - **Context and RAG** (Weeks 6-10): Prompt architecture, structured outputs, memory, context budgets, compaction, hybrid retrieval, reranking, and retrieval capabilities
-- **Agent Runtime** (Weeks 11-15): Execution loops, typed state, tools, checkpointing, resume, approvals, security, sandboxing, reliability, and OpenTelemetry
-- **Agents and Fleet** (Weeks 16-20): Agent configurations, budgets, permissions, delegation, MCP versus A2A, multi-agent coordination, and registry design
-- **Control Plane** (Weeks 21-24): Identity, policy, governance, evaluation gates, observability, cost attribution, audit, multi-tenancy, and the governed platform capstone
+- **Agent Runtime** (Weeks 11-15): Execution loops, typed state, tools, checkpointing, resume, approvals, isolation boundaries, security, sandboxing, reliability, and OpenTelemetry
+- **Agents and Fleet** (Weeks 16-20): Agent configurations, budgets, permissions, delegated authority, scoped credentials, MCP versus A2A, multi-agent coordination, and registry design
+- **Control Plane** (Weeks 21-24): Identity, policy, production isolation, governance, evaluation gates, observability, cost attribution, audit, multi-tenancy, and the governed platform capstone
 
 ## 24-Week Coverage at a Glance
 
@@ -164,23 +168,23 @@ This repository documents a **24-week architecture-first learning journey**. It 
 | 2 | Practice | OpenAI and Anthropic clients, streaming, retry, rate limiting, CLI | Multi-provider CLI |
 | 3 | Theory | MCP architecture, JSON-RPC, tools, resources, prompts, transports | MCP architecture and security notes |
 | 4 | Practice | API, database, and file/RAG MCP servers; validation, security, testing | Three production-pattern MCP builds |
-| 5 | Flex | Review, catch-up, MCP certifications, capstone direction | Two Anthropic MCP certificates |
+| 5 | Flex | Review, catch-up, optional MCP readiness checkpoint, capstone direction | MCP foundation review and readiness evidence |
 | 6 | Theory | Prompt patterns, structured outputs, memory, token economics, grounding, context lifecycle | Context engineering playbook |
 | 7 | Practice | Output validation, memory compaction, few-shot selection, budget enforcement | Typed `ContextEngine` |
 | 8 | Theory | Chunking, embeddings, hybrid search, reranking, agentic RAG | RAG decision tree and capability contract |
 | 9 | Practice | Hybrid RAG, bounded self-correction, reranking, work-document evaluation | RAG exposed as a typed MCP capability |
 | 10 | Flex | Review, ContextEngine + RAG + MCP integration, ADR-01 draft | Phase 2 integration checkpoint |
-| 11 | Theory | Runtime anatomy, state, planning, tools, durability, approvals, sandboxing | Agent Runtime reference architecture |
+| 11 | Theory | Runtime anatomy, state, planning, tools, durability, approvals, isolation boundaries, sandboxing | Agent Runtime reference architecture |
 | 12 | Practice | Minimal runtime loop, SQLite state, checkpointing, resume, approvals, tracing | Recoverable Agent Runtime |
-| 13 | Theory | Reliability, prompt injection containment, identity, authorization, guardrails, OTel | Runtime threat and reliability model |
+| 13 | Theory | Reliability, prompt injection containment, identity, authorization, credential isolation, egress, guardrails, OTel | Runtime threat and reliability model |
 | 14 | Practice | Runtime hardening, fallbacks, idempotency, permissions, sandbox, stress tests | Secure and observable runtime |
 | 15 | Flex | Review, certifications, runtime integration, human approval architecture | ADR-04 and phase consolidation |
 | 16 | Theory | ReAct, Plan-Execute, Reflexion, agent identity, capabilities, memory boundaries | Agent pattern and configuration catalog |
-| 17 | Practice | Agents on one runtime, budgets, permissions, retrievable memory, sandboxing | ReAct and Plan-Execute agents |
+| 17 | Practice | Agents on one runtime, budgets, permissions, delegated authority, scoped credentials, memory, sandboxing | ReAct and Plan-Execute agents with bounded blast radius |
 | 18 | Theory | Multi-agent coordination, delegation, MCP versus A2A, fleet concepts | Fleet and handoff design |
 | 19 | Practice | Coordinator and specialists, handoffs, isolated state, registry, policy enforcement | Multi-agent system with registry seed |
 | 20 | Flex | Review, Claude Code certification, portfolio preparation | Portfolio repos and ADR consolidation |
-| 21 | Theory | Control-plane capabilities, four identities, policy enforcement points, governance | Control Plane capability map and ADR-07 |
+| 21 | Theory | Control-plane capabilities, four identities, policy enforcement points, production isolation, governance | Control Plane capability map and ADR-07 |
 | 22 | Practice | Identity, registry, policy, cost, audit, traces, evaluation gate, integration | Simplified Control Plane and design document |
 | 23 | Theory | Output/tool/trajectory evaluation, quality gates, OTel, FinOps, risk, provenance | Evaluation and governance model |
 | 24 | Capstone | Certification exam and final governed-agent architecture | Enterprise Governed Agent Platform |
@@ -293,7 +297,7 @@ uv run mcp_server.py
 - ✅ Security best practices
 - ✅ Performance optimization
 
-### Week 5: Certifications
+### Week 5: Optional MCP Certification Validation
 - ✅ Anthropic Introduction to MCP
 - ✅ Anthropic MCP Advanced Topics
 

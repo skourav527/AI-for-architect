@@ -337,6 +337,7 @@ Practical Goal:
 Certificate Goal:
 - [x] Complete Anthropic MCP Intro (2026-07-12)
 - [x] Complete Anthropic MCP Advanced (2026-07-14)
+- [ ] Optional MCP readiness checkpoint: architecture, security, and operational review
 
 Project Goal:
 - [ ] Phase 1 checklist complete
@@ -348,6 +349,7 @@ Daily Plan (Flexible)
 - [ ] Task 1 (1-2h): Catch-up most important pending item | Actual: __
 - [ ] Task 2 (1-2h): MCP Intro certificate | Actual: __
 - [ ] Task 3 (1-2h): MCP Advanced certificate | Actual: __
+- [ ] Task 4 (30-45m): MCP readiness checkpoint; record gaps, not just certificate status | Actual: __
 - [ ] Task 4 (1h): Phase reflection | Actual: __
 
 Phase Reward
@@ -579,7 +581,7 @@ Theory Goal:
 - [ ] Execution lifecycle, agent loop, state machine vs loop, sessions, runtime boundaries
 - [ ] Tool orchestration, tool permissions, MCP integration, model routing
 - [ ] Checkpointing, resume, retry, long-running execution, subagents, human approval
-- [ ] Sandbox and isolation models
+- [ ] Sandbox and isolation models; explicit agent isolation boundary and residual-risk checklist
 
 Practical Goal:
 - [ ] Implementation comparison matrix: custom / LangGraph / OpenAI Agents SDK / Anthropic harness / managed
@@ -673,7 +675,7 @@ Theory Goal:
 - [ ] OWASP LLM Top 10 (2025)
 - [ ] Input/output guardrails (applied to tool output too)
 - [ ] Reliability: retry, timeout, circuit breaker, idempotency, partial failure, state corruption
-- [ ] Security: agent identity, tool authorization, least privilege, sandbox isolation, secrets
+- [ ] Security: agent identity, tool authorization, least privilege, sandbox isolation, credential isolation, secrets, and egress
 - [ ] Agent/MCP threat model: injection, tool poisoning, confused deputy, token passthrough, exfiltration
 - [ ] Observability: OpenTelemetry GenAI semantic conventions
 
@@ -752,7 +754,7 @@ Daily Plan
 - [ ] Tue: Output + tool-output safety filters | Actual: __
 - [ ] Wed: Timeouts, breaker, fallback, idempotency keys | Actual: __
 - [ ] Thu: Recovery hardening, state versioning, self-critique | Actual: __
-- [ ] Sat: Tool permissions + sandboxed execution | Actual: __
+- [ ] Sat: Tool permissions + sandboxed execution; record protected assets and residual risk | Actual: __
 - [ ] Sun: OTel spans + stress test + ADR-02 and ADR-03 | Actual: __
 
 End-of-Week Review
@@ -887,7 +889,7 @@ Daily Plan
 - [ ] Wed: Retrievable memory (separate from state) | Actual: __
 - [ ] Thu: Tool permission scopes + budgets | Actual: __
 - [ ] Sat: MCP tools integration on real work task | Actual: __
-- [ ] Sun: Sandbox the risky tool + ADR-05 | Actual: __
+- [ ] Sun: Sandbox risky tool; scoped credentials, delegation limits, blast radius + ADR-05 | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -1034,7 +1036,7 @@ Theory Goal:
 - [ ] Policy: policy-as-code, tool/model/data access policies, risk-based and approval policies
 - [ ] Agent registry, agent lifecycle, discovery; model catalog; tool catalog
 - [ ] Governance: risk classification, responsible AI, compliance, audit, provenance
-- [ ] Multi-tenancy and isolation; model gateway/routing; deployment and versioning; secrets/config
+- [ ] Multi-tenancy and production isolation; hardened boundary, ephemeral credentials, kill/revoke, observability, model gateway/routing, deployment/versioning, secrets/config
 - [ ] Control Plane vs Runtime, and data plane vs control plane
 
 Practical Goal:
