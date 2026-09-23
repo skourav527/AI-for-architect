@@ -83,7 +83,7 @@ Carry-forward:
 
 ### Architecture Milestone Dashboard (new)
 - [ ] M-A1 (Wk 6): Can explain context vs memory vs state
-- [ ] M-A2 (Wk 7): ContextEngine built (assemble/observe/compact/persist)
+- [x] M-A2 (Wk 7): ContextEngine built (assemble/observe/compact/persist)
 - [ ] M-A3 (Wk 11): Can draw the Agent Runtime architecture from memory
 - [ ] M-A4 (Wk 12): **Agent Runtime built** - checkpoint + resume proven
 - [ ] M-A5 (Wk 14): Runtime hardened - guardrails, sandbox, permissions, traces
@@ -337,6 +337,7 @@ Practical Goal:
 Certificate Goal:
 - [x] Complete Anthropic MCP Intro (2026-07-12)
 - [x] Complete Anthropic MCP Advanced (2026-07-14)
+- [ ] Optional MCP readiness checkpoint: architecture, security, and operational review
 
 Project Goal:
 - [ ] Phase 1 checklist complete
@@ -348,6 +349,7 @@ Daily Plan (Flexible)
 - [ ] Task 1 (1-2h): Catch-up most important pending item | Actual: __
 - [ ] Task 2 (1-2h): MCP Intro certificate | Actual: __
 - [ ] Task 3 (1-2h): MCP Advanced certificate | Actual: __
+- [ ] Task 4 (30-45m): MCP readiness checkpoint; record gaps, not just certificate status | Actual: __
 - [ ] Task 4 (1h): Phase reflection | Actual: __
 
 Phase Reward
@@ -405,7 +407,7 @@ End-of-Week Review
 
 ---
 
-## Week 7 (Practical) - Context Engineering Build (Runtime Primitives)
+## Week 7 (Practical) - Context Engineering Build (Runtime Primitives) - COMPLETE
 
 Planned Hours: 8-10
 Actual Hours: __
@@ -414,34 +416,34 @@ Theory Goal:
 - [ ] Light review
 
 Practical Goal:
-- [ ] Build structured output validator and retry loop
-- [ ] Build memory compaction module
-- [ ] Build token budget manager
-- [ ] NEW: Treat all four as runtime primitives behind one interface
+- [x] Build structured output validator and retry loop
+- [x] Build memory compaction module
+- [x] Build token budget manager
+- [x] NEW: Treat all four as runtime primitives behind one interface
 
 Certificate Goal:
 - [ ] None this week
 
 Project Goal:
-- [ ] ContextEngine v1 (assemble / observe / compact / persist)
+- [x] ContextEngine v1 (assemble / observe / compact / persist)
 
 Outcome Goal:
-- [ ] Reusable context pipeline that the Week 12 runtime will call
-- [ ] M-A2: typed state survives a process restart
+- [x] Reusable context pipeline that the Week 12 runtime will call
+- [x] M-A2: typed state survives a process restart
 
 Daily Plan
-- [ ] Mon: Validator with retry | Actual: __
-- [ ] Tue: Memory compaction flow | Actual: __
-- [ ] Wed: Few-shot selector | Actual: __
-- [ ] Thu: Token budget manager | Actual: __
-- [ ] Sat: Integrate into ContextEngine with a typed state model | Actual: __
-- [ ] Sun: Real scenario test + restart/reload test | Actual: __
+- [x] Mon: Validator with retry | Actual: __
+- [x] Tue: Memory compaction flow | Actual: __
+- [x] Wed: Few-shot selector | Actual: __
+- [x] Thu: Token budget manager | Actual: __
+- [x] Sat: Integrate into ContextEngine with a typed state model | Actual: __
+- [x] Sun: Real scenario test + restart/reload test | Actual: __
 
 End-of-Week Review
-- Completion percent: __
-- Biggest win: __
-- Blocker: __
-- Priority for next week: __
+- Completion percent: 100%
+- Biggest win: ContextEngine verified end to end with restart-safe persistence and reported budget eviction
+- Blocker: None identified
+- Priority for next week: Advanced RAG and retrieval as a runtime capability
 - Reward used: __
 
 ---
@@ -579,7 +581,7 @@ Theory Goal:
 - [ ] Execution lifecycle, agent loop, state machine vs loop, sessions, runtime boundaries
 - [ ] Tool orchestration, tool permissions, MCP integration, model routing
 - [ ] Checkpointing, resume, retry, long-running execution, subagents, human approval
-- [ ] Sandbox and isolation models
+- [ ] Sandbox and isolation models; explicit agent isolation boundary and residual-risk checklist
 
 Practical Goal:
 - [ ] Implementation comparison matrix: custom / LangGraph / OpenAI Agents SDK / Anthropic harness / managed
@@ -673,7 +675,7 @@ Theory Goal:
 - [ ] OWASP LLM Top 10 (2025)
 - [ ] Input/output guardrails (applied to tool output too)
 - [ ] Reliability: retry, timeout, circuit breaker, idempotency, partial failure, state corruption
-- [ ] Security: agent identity, tool authorization, least privilege, sandbox isolation, secrets
+- [ ] Security: agent identity, tool authorization, least privilege, sandbox isolation, credential isolation, secrets, and egress
 - [ ] Agent/MCP threat model: injection, tool poisoning, confused deputy, token passthrough, exfiltration
 - [ ] Observability: OpenTelemetry GenAI semantic conventions
 
@@ -752,7 +754,7 @@ Daily Plan
 - [ ] Tue: Output + tool-output safety filters | Actual: __
 - [ ] Wed: Timeouts, breaker, fallback, idempotency keys | Actual: __
 - [ ] Thu: Recovery hardening, state versioning, self-critique | Actual: __
-- [ ] Sat: Tool permissions + sandboxed execution | Actual: __
+- [ ] Sat: Tool permissions + sandboxed execution; record protected assets and residual risk | Actual: __
 - [ ] Sun: OTel spans + stress test + ADR-02 and ADR-03 | Actual: __
 
 End-of-Week Review
@@ -887,7 +889,7 @@ Daily Plan
 - [ ] Wed: Retrievable memory (separate from state) | Actual: __
 - [ ] Thu: Tool permission scopes + budgets | Actual: __
 - [ ] Sat: MCP tools integration on real work task | Actual: __
-- [ ] Sun: Sandbox the risky tool + ADR-05 | Actual: __
+- [ ] Sun: Sandbox risky tool; scoped credentials, delegation limits, blast radius + ADR-05 | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -1034,7 +1036,7 @@ Theory Goal:
 - [ ] Policy: policy-as-code, tool/model/data access policies, risk-based and approval policies
 - [ ] Agent registry, agent lifecycle, discovery; model catalog; tool catalog
 - [ ] Governance: risk classification, responsible AI, compliance, audit, provenance
-- [ ] Multi-tenancy and isolation; model gateway/routing; deployment and versioning; secrets/config
+- [ ] Multi-tenancy and production isolation; hardened boundary, ephemeral credentials, kill/revoke, observability, model gateway/routing, deployment/versioning, secrets/config
 - [ ] Control Plane vs Runtime, and data plane vs control plane
 
 Practical Goal:
