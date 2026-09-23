@@ -1,5 +1,8 @@
 # Day 1 (~3 hours): Shared Interface, Output Validator, and Conversation Memory
 
+**Status:** Complete. The Day 1 primitives are integrated into the Week 7
+`ContextEngine` and covered by the project test suite.
+
 ## Block 1 (90 minutes): Structured Output Validator
 
 - **Goal:** Output contract enforcement

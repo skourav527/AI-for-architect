@@ -8,12 +8,13 @@
 
 ## Current Progress
 
-**Current position: Week 6 - Context Engineering and Prompt Mastery**
+**Current position: Week 7 complete - Context Engineering Practice**
 
 - **Weeks 1-5:** Foundation phase complete as of September 10, 2026.
 - **Certificates earned:** Anthropic Introduction to MCP and MCP Advanced Topics.
-- **Week 6:** Theory and notes in progress, including context lifecycle and context/memory/state separation.
-- **Next build:** Week 7 `ContextEngine`, using four reusable runtime primitives.
+- **Week 6:** Theory and notes complete, including context lifecycle and context/memory/state separation.
+- **Week 7:** Practice complete. `ContextEngine` and four reusable runtime primitives are implemented and verified.
+- **Next build:** Week 8 Advanced RAG and retrieval as a runtime capability.
 
 The repository reflects the learning state, not a claim that every planned topic is already complete. Future weeks are shown below as the intended build sequence.
 
@@ -44,7 +45,7 @@ The repository reflects the learning state, not a claim that every planned topic
 - Structured output enforcement with retry
 - **Topics:** `prompt-engineering`, `system-prompts`, `structured-outputs`
 
-**Week 7: Context primitives and `ContextEngine`**
+**Week 7: Context primitives and `ContextEngine` (complete)**
 - Dynamic token budget management, context lifecycle, compaction
 - Context vs memory vs state — the separation reliable agents depend on
 - **Topics:** `context-engineering`, `token-optimization`, `agent-state`

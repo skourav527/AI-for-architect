@@ -1,5 +1,8 @@
 # Week 7, Day 2: Dynamic Few-Shot Selection and Token Budget Management
 
+**Status:** Complete. The Day 2 primitives are integrated into the Week 7
+`ContextEngine` and verified with reported budget eviction.
+
 ## Block 1: Dynamic Few-Shot Selection
 
 ### 1. Purpose

@@ -1,5 +1,8 @@
 # Week 7 — Context Engineering: PRACTICE (Runtime Primitives)
 
+**Status:** Complete — implementation verified with `28` passing tests, a
+successful demo run, restart-safe state reload, and reported budget eviction.
+
 **Original budget:** 8-10h across a full week (Mon-Sun)
 **Your budget:** 3 days × ~3h = 9h total — same four builds, same `ContextEngine`
 project, compressed and sequenced so each day ends with something runnable.
@@ -52,13 +55,13 @@ pytest -q
 ```
 
 ## ✅ Week 7 Done When
-- [ ] Structured output pipeline with retry working (`OutputValidator`)
-- [ ] Conversation memory with compaction working (`ConversationMemory`)
-- [ ] Can assemble context intelligently for different scenarios
-- [ ] All four integrated into one reusable module
-- [ ] 🧭 `ContextEngine` exposes `assemble / observe / compact / persist`
-- [ ] 🧭 State is a **typed model** and survives a process restart (load it back and continue)
-- [ ] 🧭 Budget enforcement is provable: feed it oversized input, confirm it evicts and *reports* the eviction
+- [x] Structured output pipeline with retry working (`OutputValidator`)
+- [x] Conversation memory with compaction working (`ConversationMemory`)
+- [x] Can assemble context intelligently for different scenarios
+- [x] All four integrated into one reusable module
+- [x] 🧭 `ContextEngine` exposes `assemble / observe / compact / persist`
+- [x] 🧭 State is a **typed model** and survives a process restart (load it back and continue)
+- [x] 🧭 Budget enforcement is provable: feed it oversized input, confirm it evicts and *reports* the eviction
 
 ## 📖 Next Steps After Week 7
 Move to Week 8. Keep `Projects/context-engine/` — in Week 12 you wrap a loop

@@ -1,5 +1,8 @@
 # Week 7 Quick Revision Cheatsheet
 
+**Status:** Complete. The Week 7 implementation and verification checklist are
+complete; the next build is Week 8 Advanced RAG.
+
 ## The framing
 Context → State → Runtime, not "prompt tricks." Four primitives this week
 become the context layer of the Week 12 Agent Runtime.

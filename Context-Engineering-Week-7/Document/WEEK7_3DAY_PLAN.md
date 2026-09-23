@@ -1,5 +1,8 @@
 # Week 7: Context Engineering Practice — 3-DAY BUILD PLAN
 
+**Status:** Complete. The implementation and verification evidence are recorded
+in `Projects/context-engine/`.
+
 ## Sprint Goal
 Compress the original 6-session week (Mon/Tue/Wed/Thu/Sat/Sun, 8-10h) into
 **3 focused days of ~3h each = 9h total**. Nothing is dropped: the four
@@ -148,9 +151,9 @@ over budget, and reports exactly what was dropped"
 ```
 
 **Done Day 2 when:**
-- [ ] `few_shot.py` returns different top-K examples for different queries
-- [ ] `budget.py` evicts by priority, not by fixed order
-- [ ] Fed an oversized input and confirmed the eviction is named in the report
+- [x] `few_shot.py` returns different top-K examples for different queries
+- [x] `budget.py` evicts by priority, not by fixed order
+- [x] Fed an oversized input and confirmed the eviction is named in the report
 
 ---
 
@@ -232,22 +235,22 @@ match what you actually built (update either if the code drifted from the
 design during the build).
 
 **Done Day 3 when:**
-- [ ] `ContextEngine` exposes `assemble/observe/compact/persist`
-- [ ] Restarting the process and reloading state continues the same session
-- [ ] Oversized input produces a reported eviction, not a silent truncation
-- [ ] All tests pass (`pytest -q`)
+- [x] `ContextEngine` exposes `assemble/observe/compact/persist`
+- [x] Restarting the process and reloading state continues the same session
+- [x] Oversized input produces a reported eviction, not a silent truncation
+- [x] All tests pass (`pytest -q`)
 
 ---
 
 ## ✅ Week 7 Deliverables (Definition of Done)
-- [ ] `OutputValidator` — generic, retry-with-refined-prompt, reports attempts
-- [ ] `ConversationMemory` — compacts turns older than `keep_last`, reports what happened
-- [ ] `FewShotSelector` — swappable embedding function, returns top-K + report
-- [ ] `TokenBudgetManager` — priority-based eviction, never silent, always reported
-- [ ] `ContextEngine` — `assemble/observe/compact/persist` over a typed `EngineState`
-- [ ] State survives a simulated restart (`demo.py` run twice)
-- [ ] Budget enforcement proven with an oversized-input test
-- [ ] `pytest -q` passes in `Projects/context-engine/`
+- [x] `OutputValidator` — generic, retry-with-refined-prompt, reports attempts
+- [x] `ConversationMemory` — compacts turns older than `keep_last`, reports what happened
+- [x] `FewShotSelector` — swappable embedding function, returns top-K + report
+- [x] `TokenBudgetManager` — priority-based eviction, never silent, always reported
+- [x] `ContextEngine` — `assemble/observe/compact/persist` over a typed `EngineState`
+- [x] State survives a simulated restart (`demo.py` run twice)
+- [x] Budget enforcement proven with an oversized-input test
+- [x] `pytest -q` passes in `Projects/context-engine/`
 
 ## 🧘 Minimum Viable Plan (if a day gets shorter than 3h)
 Cut order if squeezed: (1) keep Block 2 Day 1 (`OutputValidator` — most reused

@@ -577,13 +577,13 @@ class ContextEngine:
 ```
 
 #### ✅ Week 7 Done When:
-- [ ] Structured output pipeline with retry working
-- [ ] Conversation memory with compaction working
-- [ ] Can assemble context intelligently for different scenarios
-- [ ] All integrated into a reusable module
-- [ ] 🧭 `ContextEngine` exposes `assemble / observe / compact / persist`
-- [ ] 🧭 State is a **typed model** and survives a process restart (load it back and continue)
-- [ ] 🧭 Budget enforcement is provable: feed it oversized input, confirm it evicts and *reports* the eviction
+- [x] Structured output pipeline with retry working
+- [x] Conversation memory with compaction working
+- [x] Can assemble context intelligently for different scenarios
+- [x] All integrated into a reusable module
+- [x] 🧭 `ContextEngine` exposes `assemble / observe / compact / persist`
+- [x] 🧭 State is a **typed model** and survives a process restart (load it back and continue)
+- [x] 🧭 Budget enforcement is provable: feed it oversized input, confirm it evicts and *reports* the eviction
 
 ---
 
