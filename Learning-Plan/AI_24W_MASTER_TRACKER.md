@@ -1,8 +1,8 @@
 # AI 24-Week Master Tracker (Single VS Code File)
 
-Start Date: ________
-Target End Date: ________
-Current Week: ________
+Start Date: 1 July 2026 
+Target End Date: Feb 2027
+Current Week: Week - 8 
 
 ## Today View (2-minute update)
 
