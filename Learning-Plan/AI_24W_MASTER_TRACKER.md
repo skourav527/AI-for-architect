@@ -390,7 +390,7 @@ End-of-Week Review
 
 ---
 
-## Week 6 (Theory) - Context Engineering  [CURRENT WEEK]
+## Week 6 (Theory) - Context Engineering
 
 Planned Hours: 8-10
 Actual Hours: __
@@ -474,7 +474,7 @@ End-of-Week Review
 
 ---
 
-## Week 8 (Theory) - Advanced RAG - NOT STARTED (planned start 13 Oct 2026)
+## Week 8 (Theory) - Advanced RAG - NOT STARTED (planned start 13 Oct 2026) [CURRENT WEEK]
 
 Planned Hours: 8-10 (run as a compressed 2-day, ~9h plan)
 Actual Hours: __
