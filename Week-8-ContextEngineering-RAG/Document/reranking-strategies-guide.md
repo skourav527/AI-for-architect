@@ -1,24 +1,28 @@
 # Reranking Strategies Guide
 
 ## Core Principle
-> A reranker is always a *second pass* over a small candidate set, never the
-> first-pass retrieval mechanism — it's too expensive to run against an entire
-> index.
+> Reranking is an **optional stage justified by measurement**, not a mandatory
+> part of a "proper" RAG pipeline. When it is used, it is always a *second
+> pass* over a small candidate set — never the first-pass retrieval mechanism,
+> because it is far too expensive to run against a whole index.
+
+Keep it only if it earns its latency and cost on your evaluation set
+([retrieval-evaluation-guide.md](retrieval-evaluation-guide.md)).
 
 ## Why Reranking Exists
-Embedding similarity search uses a **bi-encoder**: query and document are
+First-pass dense retrieval uses a **bi-encoder**: query and document are
 embedded independently, then compared with cosine/dot-product similarity.
-This is fast (precompute document embeddings once, index them) but it's a
-weaker relevance signal because the model never actually looks at the query
-and document together.
+This is fast (document embeddings are precomputed and indexed) but it is a
+weaker relevance signal, because the model never sees the query and the
+document together.
 
-A **reranker** scores query+document pairs **jointly**, which is far more
-accurate but far more expensive — so the pattern is always:
+A **reranker** scores query+document pairs **jointly**, which is more accurate
+and much more expensive — hence the two-stage shape:
 
 ```
-index (millions of chunks)
-   → bi-encoder retrieval → top 20-50 candidates (cheap, fast)
-      → reranker → top 3-5 (expensive, accurate)
+index (many chunks)
+   → first-pass retrieval → top 20-50 candidates (cheap, fast)
+      → [optional] reranker → top 3-5 (expensive, more accurate)
          → generation
 ```
 
@@ -26,39 +30,57 @@ index (millions of chunks)
 
 | Approach | How it scores | Cost/latency | Notes |
 |---|---|---|---|
-| **Cross-encoder** (e.g. a BERT-style model fine-tuned on relevance pairs) | Concatenates query+document, runs one forward pass per pair | Moderate-high (one inference per candidate) | Open-source options available (self-hosted); best accuracy for cost if you can host |
-| **Cohere Rerank API** | Hosted cross-encoder-style rerank endpoint | Low-moderate (hosted, pay per call) | Easiest to integrate, no model hosting, good general quality |
-| **ColBERT (late interaction)** | Token-level embeddings, max-similarity matching between query and document tokens | Moderate (precomputed token embeddings, cheaper than full cross-encoder at query time) | Middle ground: more accurate than bi-encoder, cheaper at query time than a full cross-encoder, more complex to set up and index |
+| **Cross-encoder** (BERT-style model fine-tuned on relevance pairs) | Concatenates query+document, one forward pass per pair | Moderate-high (one inference per candidate) | Open-source options available for self-hosting; strong accuracy if you can host it |
+| **Hosted rerank API** (e.g. Cohere Rerank) | Hosted cross-encoder-style endpoint | Low-moderate per call, plus network latency | Easiest to integrate, no model hosting; hosted data-residency considerations apply |
+| **ColBERT (late interaction)** | Token-level embeddings, max-similarity matching between query and document tokens | Moderate — token embeddings precomputed, cheaper at query time than a full cross-encoder | Middle ground on both accuracy and cost; more complex to set up and index |
+| **Built-in semantic ranking in a managed engine** | Provided by the retrieval service as part of the query | Included in the service's cost/latency profile | Less control, far less integration work — part of the managed-vs-custom trade-off |
 
-## When Reranking Helps
-- Corpus has **many near-duplicate or topically similar chunks** that a
-  bi-encoder can't distinguish well.
-- **Precision at top-1/top-3** matters more than recall (e.g. the answer must
-  come from the single best clause, not "somewhere in the top 10").
-- The embedding model is **generic/weak for your domain** and a reranker can
-  recover some of that quality gap cheaply at query time (cheaper than
-  fine-tuning the embedding model).
+## Deciding Whether to Rerank at All
+Reranking is worth adding when **all** of these hold:
 
-## When Reranking Helps Less
-- The corpus is **small and clean** — the first-pass top-K is already
-  near-perfect, so reranking adds latency/cost without moving the answer.
-- **Latency budget is extremely tight** (e.g. sub-200ms p95) and the reranker
-  call itself would blow the budget.
-- Queries are **highly diverse with low candidate overlap** — reranking a
-  noisy top-50 won't fix a retrieval problem that's actually a recall problem
-  (wrong candidates entirely, not wrong order).
+1. Your evaluation shows **good Recall@K but weak nDCG/MRR** — the right
+   documents are being retrieved, just ranked badly. (If recall is the
+   problem, reranking cannot help: it only reorders what the first pass
+   already found.)
+2. The measured **nDCG/MRR improvement is material** on your evaluation set,
+   not on a public benchmark.
+3. The added **p95 latency fits the capability's latency budget**.
+4. The added **cost per call fits the cost budget**.
 
-## Decision Checklist
-1. Did your Week 9 Sunday evaluation show **right documents, wrong order**?
-   → reranking is the fix.
-2. Did it show **wrong documents retrieved entirely**? → fix retrieval
-   (hybrid search, chunking, embedding model) before adding a reranker.
-3. Can your latency/cost budget absorb reranking the top 20-50 candidates on
-   every call? If not, consider reranking only when the bi-encoder's top
-   score is below a confidence threshold (conditional reranking).
+Record all four numbers. "We added a reranker because best practice says so"
+is not a decision; "reranking moved nDCG@5 from 0.61 to 0.78 for +180 ms p95
+and +$X per 1k calls, measured on 2026-XX-XX" is.
+
+### Where it typically helps
+- Corpora with many near-duplicate or topically similar chunks that a
+  bi-encoder cannot separate.
+- Cases where **precision at top-1/top-3** matters more than recall.
+- A generic embedding model on a specialized domain — reranking can recover
+  part of that gap more cheaply than fine-tuning the embedding model.
+
+### Where it typically does not
+- Small, clean corpora where the first-pass top-K is already near-perfect.
+- Very tight latency budgets that the rerank call alone would breach.
+- Cases where the real failure is **wrong candidates entirely** (a recall
+  problem) rather than wrong order.
+
+### Middle path: conditional reranking
+Rerank only when the first pass looks uncertain (few candidates, scores
+clustered, or a calibrated confidence signal), rather than on every call. This
+keeps the average latency and cost closer to the no-rerank baseline while
+still improving the hard queries. The trigger must be calibrated on your
+evaluation data — see the score-semantics warning in
+[retrieval-evaluation-guide.md](retrieval-evaluation-guide.md).
+
+## Score Semantics Warning
+A reranker's output score is **not** on the same scale as your first-pass
+similarity score, and may be a probability, a logit, or an arbitrary relevance
+value depending on the model. Never compare them directly, never reuse a
+threshold across scorers, and always record which scorer produced the score
+you are surfacing to callers.
 
 ## Week 9 Build Pointer
-Wednesday's build integrates a reranker (Cohere or a self-hosted
-cross-encoder) on top of Tuesday's hybrid search — rerank only the top 20-50
-hybrid results, not the full index, and measure the latency delta it adds
-before deciding it's worth keeping in the Saturday capstone.
+Wednesday's build integrates a reranker on top of Tuesday's retrieval and
+reranks only the top 20-50 candidates, never the whole index. Measure nDCG/MRR
+before and after, plus the latency and cost delta, and keep the stage only if
+those numbers justify it — dropping it is a legitimate, documented outcome.

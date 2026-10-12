@@ -8,15 +8,16 @@
 
 ## Current Progress
 
-**Current position: Week 7 complete - Context Engineering Practice**
+**Current position: Week 7 complete - Context Engineering Practice. Week 8 has not started; it is planned to begin on 13 October 2026.**
 
 - **Weeks 1-5:** Foundation phase complete as of September 10, 2026.
 - **Certificates earned:** Anthropic Introduction to MCP and MCP Advanced Topics.
 - **Week 6:** Theory and notes complete, including context lifecycle and context/memory/state separation.
 - **Week 7:** Practice complete. `ContextEngine` and four reusable runtime primitives are implemented and verified.
-- **Next build:** Week 8 Advanced RAG and retrieval as a runtime capability.
+- **Week 8:** Not started. Plan, reference notes, and the typed retrieval capability template are prepared; the learning itself begins 13 October 2026.
+- **Week 9 onward:** Not started.
 
-The repository reflects the learning state, not a claim that every planned topic is already complete. Future weeks are shown below as the intended build sequence.
+The repository reflects the learning state, not a claim that every planned topic is already complete. Prepared material is not the same as completed learning. Future weeks are shown below as the intended build sequence.
 
 ## Program Coverage
 
@@ -50,13 +51,15 @@ The repository reflects the learning state, not a claim that every planned topic
 - Context vs memory vs state — the separation reliable agents depend on
 - **Topics:** `context-engineering`, `token-optimization`, `agent-state`
 
-**Weeks 8-9: Advanced RAG and retrieval as a capability**
-- Self-corrective retrieval, adaptive query refinement
-- Hybrid search (BM25 + vector) + reranking
-- **Topics:** `agentic-rag`, `self-corrective-ai`, `retrieval-augmented-generation`
+**Weeks 8-9: Advanced retrieval and retrieval as a capability**
+- Retrieval evaluation first: Recall@K, Precision@K, MRR, nDCG, citation correctness, groundedness, latency, cost, authorization correctness
+- Keyword, dense-vector, and hybrid retrieval chosen by measurement; reranking as an optional measured trade-off
+- Bounded self-corrective retrieval, adaptive query refinement, and routing
+- Retrieval exposed as a typed capability with enforced authorization and typed failure outcomes
+- **Topics:** `agentic-rag`, `retrieval-evaluation`, `retrieval-augmented-generation`
 
 **Week 10: Flex review, Phase 2 integration, and ADR-01 draft**
-- Integrate `ContextEngine`, the RAG capability, and MCP
+- Integrate `ContextEngine`, the RAG capability, and MCP, with caller identity preserved end to end
 - Review Phase 2 and draft ADR-01
 - **Topics:** `integration`, `architecture-decisions`, `retrieval-capabilities`
 
@@ -77,13 +80,13 @@ The repository reflects the learning state, not a claim that every planned topic
 **Weeks 13-14: Reliable, secure, observable runtime hardening**
 - Agent identity, capability-based tool permissions, least privilege, sandbox isolation
 - Credential isolation, network/egress controls, prompt injection containment, tool poisoning, confused deputy
-- OWASP LLM Top 10 and adversarial runtime stress testing
+- OWASP GenAI LLM Top 10 (2026), the OWASP Agent Control Standard, and adversarial runtime stress testing
 - **Topics:** `llm-security`, `agent-security`, `sandboxing`
 
-**Week 15: Flex review, certifications, and human approval ADR**
-- Review the runtime phase and complete planned certifications
+**Week 15: Flex review, courses, and human approval ADR**
+- Review the runtime phase and complete the planned Anthropic courses
 - Document human approval architecture and integrate the runtime components
-- **Topics:** `runtime-review`, `human-approval`, `certification`
+- **Topics:** `runtime-review`, `human-approval`, `continuous-learning`
 
 ### Phase 4: Agents and Agent Fleet (Weeks 16-20)
 
@@ -97,10 +100,10 @@ The repository reflects the learning state, not a claim that every planned topic
 - Shared vs isolated state, agent registry, discovery, versioning
 - **Topics:** `multi-agent-systems`, `agent-fleet`, `agent-coordination`
 
-**Week 20: Flex review, portfolio, and Claude Code certification**
-- Complete the Claude Code certification and review the fleet phase
+**Week 20: Flex review, portfolio, and the Claude Code course**
+- Complete the Claude Code in Action course and review the fleet phase
 - Prepare the runtime, agent, and registry work for the portfolio
-- **Topics:** `portfolio`, `certification`, `architecture-review`
+- **Topics:** `portfolio`, `continuous-learning`, `architecture-review`
 
 ### Phase 5: Control Plane and Platform Architecture (Weeks 21-24)
 
@@ -120,9 +123,9 @@ The repository reflects the learning state, not a claim that every planned topic
 - Cost attribution, budgets, quotas, risk classification, and governance
 - **Topics:** `llmops`, `agent-evaluation`, `ai-governance`
 
-**Week 24: Governed Agent Platform capstone and certification exam**
-- Complete the Claude Certified Architect exam and final architecture document
-- Assemble the governed platform from the control plane, runtime, agents, and MCP layer
+**Week 24: Governed Agent Platform capstone and architecture review**
+- Complete the final architecture document and assemble the governed platform from the control plane, runtime, agents, and MCP layer
+- Optionally sit the Claude Certified Architect exam if the programme is open, you are eligible, and a sitting is available; the capstone proceeds either way
 - **Topics:** `capstone`, `enterprise-ai-platform`, `governed-agent-fleet`
 
 ---
@@ -156,7 +159,7 @@ This repository documents a **24-week architecture-first learning journey**. It 
 ### What You Will Learn
 
 - **Foundations** (Weeks 1-5): Python async patterns, multi-provider LLM clients, streaming, MCP, production integrations, and optional certification readiness
-- **Context and RAG** (Weeks 6-10): Prompt architecture, structured outputs, memory, context budgets, compaction, hybrid retrieval, reranking, and retrieval capabilities
+- **Context and RAG** (Weeks 6-10): Prompt architecture, structured outputs, memory, context budgets, compaction, retrieval evaluation, method selection, reranking trade-offs, and retrieval capabilities with enforced authorization
 - **Agent Runtime** (Weeks 11-15): Execution loops, typed state, tools, checkpointing, resume, approvals, isolation boundaries, security, sandboxing, reliability, and OpenTelemetry
 - **Agents and Fleet** (Weeks 16-20): Agent configurations, budgets, permissions, delegated authority, scoped credentials, MCP versus A2A, multi-agent coordination, and registry design
 - **Control Plane** (Weeks 21-24): Identity, policy, production isolation, governance, evaluation gates, observability, cost attribution, audit, multi-tenancy, and the governed platform capstone
@@ -172,51 +175,52 @@ This repository documents a **24-week architecture-first learning journey**. It 
 | 5 | Flex | Review, catch-up, optional MCP readiness checkpoint, capstone direction | MCP foundation review and readiness evidence |
 | 6 | Theory | Prompt patterns, structured outputs, memory, token economics, grounding, context lifecycle | Context engineering playbook |
 | 7 | Practice | Output validation, memory compaction, few-shot selection, budget enforcement | Typed `ContextEngine` |
-| 8 | Theory | Chunking, embeddings, hybrid search, reranking, agentic RAG | RAG decision tree and capability contract |
-| 9 | Practice | Hybrid RAG, bounded self-correction, reranking, work-document evaluation | RAG exposed as a typed MCP capability |
-| 10 | Flex | Review, ContextEngine + RAG + MCP integration, ADR-01 draft | Phase 2 integration checkpoint |
+| 8 | Theory | Retrieval evaluation, chunking, embeddings, method selection, reranking trade-offs, bounded adaptive retrieval | RAG decision tree and capability contract |
+| 9 | Practice | Measured retrieval, bounded self-correction, reranking decision, authorization correctness, work-document evaluation | RAG exposed as a typed MCP capability |
+| 10 | Flex | Review, ContextEngine + RAG + MCP integration with identity propagation, ADR-01 draft | Phase 2 integration checkpoint |
 | 11 | Theory | Runtime anatomy, state, planning, tools, durability, approvals, isolation boundaries, sandboxing | Agent Runtime reference architecture |
 | 12 | Practice | Minimal runtime loop, SQLite state, checkpointing, resume, approvals, tracing | Recoverable Agent Runtime |
-| 13 | Theory | Reliability, prompt injection containment, identity, authorization, credential isolation, egress, guardrails, OTel | Runtime threat and reliability model |
+| 13 | Theory | Reliability, prompt injection containment, identity, authorization, credential isolation, egress, guardrails, OWASP GenAI LLM Top 10 (2026), Agent Control Standard, OTel | Runtime threat and reliability model |
 | 14 | Practice | Runtime hardening, fallbacks, idempotency, permissions, sandbox, stress tests | Secure and observable runtime |
-| 15 | Flex | Review, certifications, runtime integration, human approval architecture | ADR-04 and phase consolidation |
+| 15 | Flex | Review, Anthropic courses, runtime integration, human approval architecture | ADR-04 and phase consolidation |
 | 16 | Theory | ReAct, Plan-Execute, Reflexion, agent identity, capabilities, memory boundaries | Agent pattern and configuration catalog |
 | 17 | Practice | Agents on one runtime, budgets, permissions, delegated authority, scoped credentials, memory, sandboxing | ReAct and Plan-Execute agents with bounded blast radius |
 | 18 | Theory | Multi-agent coordination, delegation, MCP versus A2A, fleet concepts | Fleet and handoff design |
 | 19 | Practice | Coordinator and specialists, handoffs, isolated state, registry, policy enforcement | Multi-agent system with registry seed |
-| 20 | Flex | Review, Claude Code certification, portfolio preparation | Portfolio repos and ADR consolidation |
+| 20 | Flex | Review, Claude Code course, portfolio preparation | Portfolio repos and ADR consolidation |
 | 21 | Theory | Control-plane capabilities, four identities, policy enforcement points, production isolation, governance | Control Plane capability map and ADR-07 |
 | 22 | Practice | Identity, registry, policy, cost, audit, traces, evaluation gate, integration | Simplified Control Plane and design document |
 | 23 | Theory | Output/tool/trajectory evaluation, quality gates, OTel, FinOps, risk, provenance | Evaluation and governance model |
-| 24 | Capstone | Certification exam and final governed-agent architecture | Enterprise Governed Agent Platform |
+| 24 | Capstone | Final governed-agent architecture document and capstone release (optional certification exam) | Enterprise Governed Agent Platform |
 
 ## Repository Structure
 
 ```
-📁 Foundation-Week-1/          # Python fundamentals & LLM basics
-  ├── project1-llm-client/     # OpenAI & Anthropic streaming clients
+📁 Week-1-Foundation-Basics/        # Python fundamentals & LLM basics
+  ├── project1-llm-client/          # OpenAI & Anthropic streaming clients
   ├── project2-multi-provider-cli/  # Cross-provider CLI tool
-  ├── project3-token-tracker/  # Usage monitoring & budgeting
-  └── quick-references/        # Cheat sheets & patterns
+  ├── project3-token-tracker/       # Usage monitoring & budgeting
+  └── quick-references/             # Cheat sheets & patterns
 
-📁 Foundation-Week-2/          # Advanced async patterns
-  └── Project-1/               # Enhanced multi-provider implementation
+📁 Week-2-Foundation-Basic-Build/   # Advanced async patterns
+  └── Project-1/                    # Enhanced multi-provider implementation
 
-📁 Foundation-Week-3/          # MCP Protocol deep-dive
-  └── Mcp-Project-1/          # MCP server/client implementations
-    ├── core/                  # Core MCP abstractions
-    ├── sampling/              # Prompt sampling patterns
-    └── stdio-vs-statelesshttptransport/  # Transport comparisons
+📁 Week-3-Foundation-MCP/           # MCP Protocol deep-dive
+  └── Mcp-Project-1/                # MCP server/client implementations
 
-📁 Foundation-Week-4/          # Production deployment
-  ├── templates/               # Production-ready templates
-  └── Document/                # Deployment guides & checklists
+📁 Week-4-Foundation-MCP-Build/     # Production deployment
+  ├── templates/                    # Production-ready templates
+  └── Document/                     # Deployment guides & checklists
 
-📁 mcp-servers/                # Real-world MCP integrations
-  ├── ado_server.py           # Azure DevOps MCP server
-  └── sonarqube_server.py     # SonarQube MCP server
+📁 Week-6-ContextEngineering-Basic/ # Context engineering theory + templates
+📁 Week-7-ContextEngineering-ContextEngine/  # ContextEngine build
+📁 Week-8-ContextEngineering-RAG/   # Retrieval theory, notes, capability contract
 
-📁 knowledge-material/         # Learning resources & documentation
+📁 mcp-servers/                     # Real-world MCP integrations
+  ├── ado_server.py                 # Azure DevOps MCP server
+  └── sonarqube_server.py           # SonarQube MCP server
+
+📁 knowledge-material/              # Learning resources & documentation
 ```
 
 ## Quick Start
@@ -260,21 +264,21 @@ This repository documents a **24-week architecture-first learning journey**. It 
 #### 1. Basic Streaming Chat
 
 ```bash
-cd Foundation-Week-1/project1-llm-client
+cd Week-1-Foundation-Basics/project1-llm-client
 uv run openAPI_streaming_client.py
 ```
 
 #### 2. Multi-Provider CLI
 
 ```bash
-cd Foundation-Week-1/project2-multi-provider-cli
+cd Week-1-Foundation-Basics/project2-multi-provider-cli
 uv run chat_cli.py --provider openai --prompt "Explain async Python"
 ```
 
 #### 3. MCP Server
 
 ```bash
-cd Foundation-Week-3/Mcp-Project-1
+cd Week-3-Foundation-MCP/Mcp-Project-1
 uv run mcp_server.py
 ```
 
@@ -299,8 +303,8 @@ uv run mcp_server.py
 - ✅ Performance optimization
 
 ### Week 5: Optional MCP Certification Validation
-- ✅ Anthropic Introduction to MCP
-- ✅ Anthropic MCP Advanced Topics
+- ✅ Anthropic Introduction to MCP (certificate earned)
+- ✅ Anthropic MCP Advanced Topics (certificate earned)
 
 ## 📚 Key Projects
 
@@ -314,7 +318,7 @@ A unified CLI interface for multiple LLM providers with streaming support, error
 - Token usage monitoring
 - Async/await patterns
 
-[View Project →](Foundation-Week-1/project2-multi-provider-cli/)
+[View Project →](Week-1-Foundation-Basics/project2-multi-provider-cli/)
 
 ### MCP Server Framework
 Production-ready Model Context Protocol server implementations with real-world integrations.
@@ -326,7 +330,7 @@ Production-ready Model Context Protocol server implementations with real-world i
 - Multiple transport options
 - Azure DevOps & SonarQube integrations
 
-[View Project →](Foundation-Week-3/Mcp-Project-1/)
+[View Project →](Week-3-Foundation-MCP/Mcp-Project-1/)
 
 ## 🛠️ Tech Stack
 

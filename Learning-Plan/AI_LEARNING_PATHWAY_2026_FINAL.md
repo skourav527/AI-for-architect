@@ -3,7 +3,25 @@
 ## For: Senior Architect / Tech Lead / DevOps Expert  
 ## New Identity: **AI Platform & Agentic Systems Architect**  
 ## Duration: 24 Weeks (~6 Months) | 8-10 hours/week (flexible down to 4-5hr)  
-## Created: May 2026 | Start Date: ___________  
+## Created: May 2026 | Start Date: 1 July 2026  
+
+---
+
+## 📍 Current Status (as of 12 October 2026)
+
+| | |
+|---|---|
+| Phase 1 (Weeks 1-5) | ✅ Complete |
+| Week 6 | ✅ Complete — theory and notes |
+| Week 7 | ✅ Complete — `ContextEngine` built and verified |
+| **Week 8** | ⬜ **Not started — planned to begin 13 October 2026** (materials prepared) |
+| Week 9 | ⬜ Not started |
+| Weeks 10-24 | ⬜ Not started |
+
+> Week 8's notes and templates exist as **prepared material**, not as completed
+> learning. Nothing in Week 8 or later is ticked until the work is actually done,
+> and actual hours are recorded in
+> [AI_24W_MASTER_TRACKER.md](AI_24W_MASTER_TRACKER.md) as they happen.
 
 ---
 
@@ -80,7 +98,7 @@ FLEX/BUFFER WEEK (4-8 hours) — every 5th week:
 | Tutorial-only LangChain | Tutorials teach toys | Build real work tools |
 | Fine-tuning deep dives | 95% of enterprise doesn't need it | Know WHEN (rare), focus on RAG/context |
 | IIT/academic programs | 50% below your level, too slow | This roadmap covers relevant parts better |
-| Multiple beginner certs | You're beyond beginner validation | Only strategic certs (Claude Architect, Azure AI) |
+| Multiple beginner certs | You're beyond beginner validation | Only strategic credentials, and only where currently available |
 
 ---
 
@@ -594,12 +612,17 @@ class ContextEngine:
 
 | Day | Topic | Resource | Time |
 |-----|-------|----------|------|
-| Mon | RAG fundamentals: chunking strategies (fixed, semantic, recursive) | **LangChain Academy: RAG From Scratch** (videos 1-4) | 1.5h |
-| Tue | Embedding models + Vector databases comparison | **LangChain RAG From Scratch** (videos 5-8) + DB docs | 1.5h |
-| Wed | Hybrid search: BM25 + vector + metadata filtering **+ retrieval-as-a-capability (20 min, below)** | Research + docs | 1h |
-| Thu | Reranking: cross-encoders, Cohere reranker, ColBERT | **DeepLearning.AI: Building Agentic RAG** (Part 1) | 1h |
-| Sat | Agentic RAG: self-corrective, adaptive, routing *(DSPy = optional stretch)* | **DeepLearning.AI: Building Agentic RAG** (Part 2) | 2-3h |
-| Sun | Review notes, create RAG architecture decision tree | Self-study | 1h |
+| Mon | **Retrieval evaluation frame** (Recall@K, Precision@K, MRR, nDCG, citation correctness, groundedness, latency, cost, authorization correctness) + chunking strategies (fixed, recursive, semantic, structure-aware, parent-child) with provenance, freshness, update/deletion | **LangChain Academy: RAG From Scratch** (videos 1-4) | 1.5h |
+| Tue | Embedding models + retrieval engines; **managed vs custom retrieval** | **LangChain RAG From Scratch** (videos 5-8) + engine docs | 1.5h |
+| Wed | Choosing keyword vs dense vs hybrid **by evaluation**; filter placement vs authorization **+ retrieval-as-a-capability (20 min, below)** | Research + docs | 1h |
+| Thu | Reranking as an **optional, measured trade-off**: cross-encoders, hosted rerank, ColBERT | **DeepLearning.AI: Building Agentic RAG** (Part 1) | 1h |
+| Sat | Adaptive/agentic retrieval: self-corrective, adaptive, routing — **bounded by attempts, latency, tokens, cost** *(DSPy = optional stretch)* | **DeepLearning.AI: Building Agentic RAG** (Part 2) | 2-3h |
+| Sun | Review notes, create RAG architecture decision tree (**long-context vs retrieval**, **managed vs custom**, then evaluation-driven method selection) | Self-study | 1h |
+
+> 📌 **Execution note:** this week is run as a compressed **2-day (~9h) plan** in
+> [Week-8-ContextEngineering-RAG/Document/WEEK8_2DAY_PLAN.md](../Week-8-ContextEngineering-RAG/Document/WEEK8_2DAY_PLAN.md).
+> The day-by-day table above is the original shape; the detail for every topic
+> lives in the Week 8 notes, not here.
 
 #### 🧭 Wednesday Add-On: Retrieval as a Runtime Capability (20 min)
 
@@ -607,33 +630,41 @@ A runtime does not call "a RAG pipeline". It invokes a **declared capability** w
 
 ```
 Capability: search_knowledge
-  ├─ Input contract     typed query + filters
-  ├─ Output contract    typed results + scores + citations
-  ├─ Retrieval policy   which corpora? which tenant? which classification?
-  ├─ Latency budget     p95 target the runtime can plan around
-  ├─ Cost budget        embedding + rerank cost per call
-  └─ Failure contract   what does "no good results" return? (never an exception soup)
+  ├─ Caller identity     trusted, authenticated principal (never caller-asserted)
+  ├─ Input contract      typed query + filters (filters narrow; they never grant)
+  ├─ Authorization       entitlements enforced before results leave the capability
+  ├─ Output contract     typed results + source/version metadata + citations + scores
+  ├─ Score semantics     which scorer, what scale, what a value does not mean
+  ├─ Retrieval policy    which corpora? which tenant? which classification?
+  ├─ Latency budget      measured p95 the runtime can plan around
+  ├─ Cost budget         embedding + rerank + generation cost per call
+  ├─ Observability       attempts, stage timings, corpora touched, decisions
+  └─ Failure contract    typed no-results, distinct from typed operational failure
 ```
 
 Write one page answering: *Who decides which documents this agent is allowed to retrieve?*
 That answer is a **retrieval policy** — and in Week 21 you'll see it is a control-plane concern, not a RAG concern.
 
 #### 📝 Notes to Create
-- [ ] RAG architecture decision tree (naive → hybrid → agentic)
-- [ ] Chunking strategies comparison table (with when to use each)
-- [ ] Embedding models comparison (OpenAI, Cohere, open-source, cost)
-- [ ] Vector DB comparison (Chroma, FAISS, Qdrant, Pinecone — features/cost/scale)
-- [ ] Reranking strategies guide
-- [ ] 🧭 **Retrieval capability contract** (input/output/policy/latency/cost/failure)
+*(All of these live in `Week-8-ContextEngineering-RAG/Document/` — write them there, not here.)*
+- [ ] **Retrieval evaluation guide** — Recall@K, Precision@K, MRR, nDCG, citation correctness, groundedness, latency, cost, **authorization correctness**
+- [ ] RAG architecture decision tree (long-context vs retrieval → managed vs custom → evaluation-driven method selection → bounded adaptive retrieval)
+- [ ] Chunking strategies comparison (incl. structure-aware, parent-child retrieval, provenance, freshness, update/deletion)
+- [ ] Embedding models comparison (current and prior generation; date-stamp anything you look up)
+- [ ] Retrieval engine comparison (Chroma, FAISS, Qdrant, Pinecone, Azure AI Search; note Foundry IQ as a managed knowledge layer; separate **preview** from **GA**)
+- [ ] Reranking strategies guide — framed as an optional, measured trade-off
+- [ ] 🧭 **Retrieval capability contract** (identity / input / authorization / output+provenance / score semantics / policy / latency / cost / observability / typed failures)
 - [ ] *(Optional stretch)* DSPy overview note — what it is, when useful, vs manual prompting
 
 #### ✅ Week 8 Done When:
-- [ ] Can design RAG architecture for any use case
-- [ ] Know when to use vector vs BM25 vs hybrid
-- [ ] Understand reranking and when it helps
-- [ ] Can explain agentic RAG vs naive RAG
-- [ ] Created RAG decision tree
+- [ ] Can design a retrieval architecture for any use case, **and name the metric that settles each choice**
+- [ ] Can explain why keyword vs dense vs hybrid is an **evaluation question**, not a rule
+- [ ] Can explain when reranking is worth its latency and cost — and when to remove it
+- [ ] Can explain naive vs self-corrective vs adaptive vs routing retrieval, and the **four bounds** (attempts, latency, tokens, cost)
+- [ ] Can explain why there is **no universal relevance threshold** and how one is calibrated
+- [ ] Created the RAG decision tree, including the long-context and managed-vs-custom branches
 - [ ] 🧭 Can express retrieval as a **capability contract**, not a pipeline
+- [ ] 🔐 Can state where **authorization** is enforced, why filter placement is not the security control, and what "fail closed" means here
 - [ ] 🧭 Can explain what a **retrieval policy** is and who owns it
 
 ---
@@ -645,12 +676,12 @@ That answer is a **retrieval policy** — and in Week 21 you'll see it is a cont
 
 | Day | Build | Copilot Use | Time |
 |-----|-------|-------------|------|
-| Mon | Basic RAG: load docs → chunk → embed → store (ChromaDB) | Document loading code | 1.5h |
-| Tue | Add hybrid search (BM25 + vector) + metadata filtering | Search implementation | 1.5h |
-| Wed | Add reranking step (Cohere or cross-encoder) | Reranker integration | 1h |
-| Thu | **Self-correction as a runtime loop:** if retrieval quality low → reformulate → retry (bounded) | Loop + bounded retry | 1h |
-| Sat | **Project:** Agentic RAG on your work docs, **exposed as an MCP tool** with a declared contract | Full integration | 2-3h |
-| Sun | Evaluate quality: test with 10 questions, measure accuracy | Test data, scoring | 1h |
+| Mon | Basic RAG: load docs → chunk (deterministic IDs + provenance) → embed → store (ChromaDB) **+ start the evaluation set** | Document loading code | 1.5h |
+| Tue | Compare keyword, dense, and hybrid on the same evaluation set + metadata filtering **+ authorization filtering from a trusted identity** | Search implementation | 1.5h |
+| Wed | Add a reranking step — and measure whether it earns its latency and cost | Reranker integration | 1h |
+| Thu | **Self-correction as a runtime loop:** if retrieval quality is low → reformulate → retry, bounded by attempts, latency, tokens and cost | Loop + bounded retry | 1h |
+| Sat | **Project:** agentic RAG on your work docs, **exposed as an MCP tool** with the declared contract | Full integration | 2-3h |
+| Sun | Evaluate quality: Recall@K / nDCG / citation correctness / groundedness, plus measured latency, cost, and **authorization correctness** | Test data, scoring | 1h |
 
 #### 🧭 Thursday: Make Self-Correction a *Bounded* Loop
 
@@ -664,36 +695,40 @@ This is your first real agent loop — treat it like one:
 ```
 
 **Non-negotiables — these are runtime rules, and they will reappear in Week 12:**
-- Hard iteration cap (never "retry until good")
+- Bounded on **four axes**: attempts, latency, tokens, cost (never "retry until good")
 - A defined **give-up path** that returns a useful low-confidence answer, not an exception
-- Every attempt is recorded (query, score, decision) so it can be traced later
+- Every attempt is recorded (query, scorer + score, decision, elapsed time, cost) so it can be traced later
+- **No-results and operational failure are different outcomes** — "nothing matched" is data, while a timeout, an unavailable index, or an unresolvable entitlement is an incident that must surface in monitoring
+- Any relevance cut-off is **calibrated on your evaluation set for the scorer in use** — there is no universal threshold to copy
 
 #### 🧱 Saturday: Expose RAG as a Capability
 
 Wrap the pipeline as an **MCP tool** with the contract you wrote in Week 8, and publish alongside it:
 - declared **latency budget** (measured p95, not guessed)
-- declared **cost per call** (embedding + rerank + tokens)
-- declared **failure behaviour**
+- declared **cost per call** (embedding + rerank + tokens, date-stamped)
+- declared **failure behaviour** (typed no-results vs typed operational failure)
+- declared **authorization model** — whose identity decides what is retrievable, enforced inside the tool, **failing closed** when entitlements cannot be resolved
 
 This is the moment RAG stops being a project and becomes a **tool your future agents can call**.
 
 #### 🤖 Copilot Prompts for This Week
 ```
 1. "Create RAG pipeline with ChromaDB, hybrid search, and reranking"
-2. "Add self-corrective retrieval: if results score <0.7, rephrase and retry, max 3 attempts"
-3. "Implement metadata filtering for document type and date range"
-4. "Expose this RAG pipeline as an MCP tool with a typed input/output schema"
-5. "Create an evaluation script: 10 test questions, score faithfulness 1-10"
+2. "Add self-corrective retrieval bounded by attempts, latency, tokens and cost, recording every attempt"
+3. "Implement metadata filtering for document type and date range, plus entitlement filtering from a trusted identity"
+4. "Expose this RAG pipeline as an MCP tool with a typed input/output schema and typed failure outcomes"
+5. "Create an evaluation script: Recall@K, nDCG, citation correctness, groundedness, latency and cost per call"
 ```
 
 #### ✅ Week 9 Done When:
-- [ ] Working RAG with hybrid search + reranking
-- [ ] Self-correction on bad retrievals
+- [ ] Working retrieval pipeline whose method (keyword / dense / hybrid) was **chosen by measurement**
+- [ ] Reranking kept or removed **based on measured nDCG/MRR gain vs latency and cost**
+- [ ] Self-correction bounded on all four axes, with every attempt recorded
 - [ ] Tested with YOUR real documents
-- [ ] Quality evaluation: >7/10 on test questions
-- [ ] 🧭 RAG is callable as an **MCP tool** with a typed contract
-- [ ] 🧭 Retry loop is **bounded** and has a graceful give-up path
-- [ ] 🧭 You can state its measured latency and cost per call
+- [ ] Quality evaluation recorded: Recall@K, nDCG, citation correctness, groundedness
+- [ ] 🔐 **Authorization correctness verified** — an adversarial query set returns zero unauthorized chunks, and the pipeline fails closed when entitlements can't be resolved
+- [ ] 🧭 RAG is callable as an **MCP tool** with a typed contract and typed failure outcomes
+- [ ] 🧭 You can state its measured latency (p50/p95) and cost per call, with the date the rates were checked
 - [ ] 🧱 **CAPSTONE UPDATE:** This RAG capability becomes a registered tool in your capstone
 
 ---
@@ -724,7 +759,7 @@ This is the moment RAG stops being a project and becomes a **tool your future ag
   ContextEngine.assemble()      ← Week 7
       ↓
   search_knowledge (MCP tool)   ← Week 9, called over MCP from Week 4
-      ↓
+      ↓                           identity propagated, authorization enforced in the tool
   ContextEngine.observe()
       ↓
    grounded answer + citations
@@ -732,6 +767,12 @@ This is the moment RAG stops being a project and becomes a **tool your future ag
 
 If you can run this end to end, **you have already built the context layer of an Agent Runtime.**
 Week 11 gives it a name and Week 12 gives it a loop.
+
+> 🔐 **Integration check:** the caller identity must survive the whole chain. If `ContextEngine`
+> can call `search_knowledge` without passing a trusted identity, authorization is decorative.
+> Re-run the Week 9 authorization-correctness check **through the integrated path**, not just
+> against the tool in isolation — and confirm the integrated chain still reports measured
+> latency and cost per call.
 
 #### 📐 Draft ADR-01: Agent Runtime vs Framework (45 min)
 
@@ -976,11 +1017,11 @@ You now have first-hand evidence. Write the Decision + Consequences sections:
 
 | Day | Topic | Resource | Time |
 |-----|-------|----------|------|
-| Mon | **Input guardrails** + prompt injection (still an unsolved problem — design for containment, not prevention) | OWASP LLM Top 10 (2025) | 1.5h |
+| Mon | **Input guardrails** + prompt injection (still an unsolved problem — design for containment, not prevention) | **OWASP GenAI LLM Top 10 (2026)** | 1.5h |
 | Tue | **Output guardrails:** schema validation, PII filtering, toxicity | Guardrails AI / Presidio *(as examples)* | 1.5h |
 | Wed | **Runtime reliability:** retry, timeout, circuit breaker, idempotency, partial failure, state corruption | "AI Engineering" Ch 6-7 + distributed-systems patterns | 1h |
 | Thu | **Runtime security:** agent identity, tool authorization, capability permissions, least privilege, sandboxing, credential isolation, secrets, and egress | MCP security best practices + least-privilege patterns | 1h |
-| Sat | **Agent & MCP threat model** (below) + self-critique loops | OWASP guide + MCP security docs | 2-3h |
+| Sat | **Agent & MCP threat model** (below) + self-critique loops | OWASP GenAI guidance + **OWASP Agent Control Standard** + MCP security docs | 2-3h |
 | Sun | **Runtime observability:** what to trace and why (OpenTelemetry first) | OTel GenAI semantic conventions | 1h |
 
 #### 🛡️ Pillar 1 — Reliability
@@ -1049,7 +1090,8 @@ Metrics that matter: failure rate · retry rate · approval latency · tokens & 
 
 #### 📝 Notes to Create
 - [ ] Guardrails checklist: input + output + runtime
-- [ ] OWASP LLM Top 10 (2025) summary — risk + mitigation each
+- [ ] **OWASP GenAI LLM Top 10 (2026)** summary — risk + mitigation each
+- [ ] 🔐 **OWASP Agent Control Standard** summary — its model is *middleware hooks exposed by the agent platform, with declarative policies enforced through them at runtime*. Write down which hooks your Week 12 runtime already has (tool invocation, model invocation, state checkpoint, approval) and which it is missing
 - [ ] 🧭 **Agent & MCP threat model table** (above, in your own words)
 - [ ] 🧭 Runtime reliability pattern table (retry / timeout / breaker / idempotency / partial failure)
 - [ ] 🧭 Agent identity & tool authorization model
@@ -1059,7 +1101,8 @@ Metrics that matter: failure rate · retry rate · approval latency · tokens & 
 - [ ] Fallback strategies guide (model fallback, response fallback, graceful degradation)
 
 #### ✅ Week 13 Done When:
-- [ ] Know all OWASP LLM Top 10 risks
+- [ ] Know the **OWASP GenAI LLM Top 10 (2026)** risks
+- [ ] 🔐 Can explain the **Agent Control Standard** model — middleware hooks + declarative, runtime-enforced policy — and name which hooks your runtime exposes
 - [ ] Can list 5+ guardrail types and when each is needed
 - [ ] 🧭 Can explain why prompt injection is contained by **architecture**, not prompting
 - [ ] 🧭 Can explain idempotency and why resume breaks without it
@@ -1146,8 +1189,8 @@ container with no network and a read-only mount. Write down what that boundary d
 **If ON TRACK:**
 | Activity | Time |
 |----------|------|
-| Complete cert: **Anthropic — Building with the Claude API** | 2-3h |
-| Complete cert: **Anthropic — Introduction to Agent Skills** | 1-2h |
+| Complete course: **Anthropic — Building with the Claude API** | 2-3h |
+| Complete course: **Anthropic — Introduction to Agent Skills** | 1-2h |
 | Review Phase 1-3 notes (quick scan all cheat sheets) | 1-2h |
 | 🧭 **Runtime integration checkpoint:** MCP + RAG + Runtime + Guardrails on one diagram | 1h |
 | 📐 **ADR-04: Human Approval Architecture** | 45min |
@@ -1169,8 +1212,8 @@ and *how the approval is audited*. This ADR gets reused verbatim in Week 21 as a
 - [ ] What are the first three spans you'd add to an untraced agent?
 
 #### 🏆 Certifications Due by End of Week 15:
-- [ ] **Anthropic: Building with the Claude API** ← Certificate earned
-- [ ] **Anthropic: Introduction to Agent Skills** ← Certificate earned
+- [ ] **Anthropic: Building with the Claude API** — course completed (learning checkpoint)
+- [ ] **Anthropic: Introduction to Agent Skills** — course completed (learning checkpoint)
 - [ ] (Total Anthropic certs so far: 4/6)
 
 ---
@@ -1467,7 +1510,7 @@ How an agent gets an identity, how it differs from user identity, how the two co
 **If ON TRACK:**
 | Activity | Time |
 |----------|------|
-| Complete cert: **Anthropic — Claude Code in Action** | 2h |
+| Complete course: **Anthropic — Claude Code in Action** | 2h |
 | **Portfolio:** push MCP servers to GitHub (public repo) | 2h |
 | **Portfolio:** push `agent-runtime` repo (Weeks 12 + 14) with the architecture diagram | 2h |
 | **Portfolio:** push `governed-agent-system` repo (Weeks 17 + 19) | 1-2h |
@@ -1478,7 +1521,7 @@ How an agent gets an identity, how it differs from user identity, how the two co
 **If LIFE IS BUSY:** Complete the cert (2h). Brief note review (1h). That's fine.
 
 #### 🏆 Certifications Due by End of Week 20:
-- [ ] **Anthropic: Claude Code in Action** ← Certificate earned
+- [ ] **Anthropic: Claude Code in Action** — course completed (learning checkpoint)
 - [ ] (Total Anthropic certs so far: 5/6)
 
 #### 📂 Portfolio Actions:
@@ -1598,6 +1641,7 @@ the same reasons you version infrastructure. Policy buried in Python `if` statem
 - [ ] 🧭 Agent registry schema (metadata · capabilities · owner · version · env · status · lifecycle)
 - [ ] 🧭 Model catalog + tool catalog entry schemas
 - [ ] 🧭 Governance framework: risk classification tiers → required controls per tier
+- [ ] 🔐 **Agent Control Standard mapping** — which control-plane capability owns each control, and which were already partly built in Weeks 8-9 (retrieval policy) and 13-14 (runtime hardening)
 - [ ] 🧭 Multi-tenancy isolation guide (data · state · budget · policy · traces)
 - [ ] 🧭 Production isolation controls: hardened boundary, ephemeral credentials, kill/revoke, independent evidence, and post-incident provenance
 - [ ] Model gateway & routing strategy
@@ -1616,6 +1660,7 @@ what happens when the control plane is unavailable, and the latency budget for e
 - [ ] 🧭 Can design an agent registry schema and explain agent lifecycle states
 - [ ] 🧭 Can explain multi-tenancy isolation across data, state, budget, policy and traces
 - [ ] 🧭 Can explain governance: risk classification → required controls
+- [ ] 🔐 Can map the **OWASP Agent Control Standard** onto control-plane capabilities, including who grants and revokes **retrieval policy** (the Week 8 question, answered properly)
 - [ ] 📐 ADR-07 complete
 - [ ] Can present this architecture to non-technical stakeholders
 
@@ -1800,9 +1845,9 @@ Token cost  +  Tool cost  →  attributed to  →  agent → tenant → business
 - [ ] **ADR-11: Evaluation Architecture** (Tue)
 - [ ] **ADR-12: Observability + Agent Cost Management** (Sun)
 
-#### 🏆 Certification:
-- [ ] **Anthropic: AI Fluency: Framework & Foundations** ← Certificate earned
-- [ ] (Total Anthropic certs: 6/6 — ALL COMPLETE ✅)
+#### 🏆 Learning Checkpoint:
+- [ ] **Anthropic: AI Fluency: Framework & Foundations** — course completed
+- [ ] (Anthropic course track: 6/6 complete — two of these, Introduction to MCP and MCP Advanced Topics, awarded verified certificates; the rest are course completions unless a credential is issued)
 
 #### ✅ Week 23 Done When:
 - [ ] Can design an eval pipeline from scratch
@@ -1812,22 +1857,28 @@ Token cost  +  Tool cost  →  attributed to  →  agent → tenant → business
 - [ ] 🧭 Can design cost attribution from a token to a business owner
 - [ ] 🧭 Can explain risk classification → required controls
 - [ ] 📐 ADR-11 and ADR-12 complete — **all 12 ADRs done**
-- [ ] All 6 Anthropic certificates COMPLETE
+- [ ] All 6 Anthropic courses completed
 
 ---
 
-### 📅 WEEK 24: 🏆 CERTIFICATION EXAM + GOVERNED AGENT PLATFORM CAPSTONE
-**Hours: 8-10 | Focus: Pass the Claude Architect exam + finalize your flagship architecture**
+### 📅 WEEK 24: 🏆 CAPSTONE + ARCHITECTURE REVIEW (+ exam, if available)
+**Hours: 8-10 | Focus: Finalize your flagship architecture — and sit the Claude Architect exam if you are eligible**
+
+> ⚠️ **The capstone and the final architecture document are the deliverables for this week and are
+> not conditional on any certification.** The exam is an optional validation on top. Before planning
+> around it, confirm the **Claude Certified Architect** programme is currently open, that you meet its
+> eligibility requirements, and that a sitting is available in your region. If it is not, Week 24 runs
+> unchanged minus the exam blocks — use the reclaimed time for the architecture document and review.
 
 #### This Week's Plan
 
 | Day | Activity | Time |
 |-----|----------|------|
-| Mon | **CERT PREP:** Domain 1 — Agentic Architecture (27%) — Weeks 11-19 notes | 1.5h |
-| Tue | **CERT PREP:** Domain 2 — Tool Design & MCP (18%) — Weeks 3-4, 17 notes | 1.5h |
-| Wed | **CERT PREP:** Domain 3 — Claude Code Config (20%) — cert course notes | 1h |
-| Thu | **CERT PREP:** Domains 4-5 — Prompts (20%) + Context (15%) — Weeks 6-9 notes | 1h |
-| Sat | **🏆 TAKE EXAM: Claude Certified Architect** + capstone final polish | 3-4h |
+| Mon | **REVIEW:** Agentic architecture — Weeks 11-19 notes *(also exam Domain 1 prep, if sitting)* | 1.5h |
+| Tue | **REVIEW:** Tool design & MCP — Weeks 3-4, 17 notes *(Domain 2)* | 1.5h |
+| Wed | **REVIEW:** Claude Code configuration — course notes *(Domain 3)* | 1h |
+| Thu | **REVIEW:** Prompts + context — Weeks 6-9 notes *(Domains 4-5)* | 1h |
+| Sat | **🏆 Capstone final polish** — and **take the exam if eligible and available** | 3-4h |
 | Sun | **Final architecture document** (20 sections below) + celebrate | 1-2h |
 
 #### 🏆 Claude Certified Architect Exam Domains (Your Readiness)
@@ -1922,8 +1973,6 @@ This document is the single strongest artifact in your portfolio. Explain each:
 > 📌 Each section: **one diagram or one table + one paragraph.** Twenty tight sections beat forty vague ones.
 
 #### ✅ PROGRAM COMPLETE When:
-- [ ] 🏆 **Claude Certified Architect** — PASSED
-- [ ] 🏆 **6/6 Anthropic Course Certificates** — ALL DONE
 - [ ] 📂 **5 GitHub repos** — public, documented, professional
 - [ ] 📐 **4+ architecture diagrams** — incl. runtime + control plane (drawn from memory)
 - [ ] 📝 **12 ADRs** — portfolio-quality architecture evidence
@@ -1933,7 +1982,9 @@ This document is the single strongest artifact in your portfolio. Explain each:
 - [ ] 📊 **Eval pipeline** — with a quality gate that actually blocks
 - [ ] 🧱 **Capstone** — Enterprise Governed Agent Platform, end to end
 - [ ] 📄 **Final architecture document** — all 20 sections
-- [ ] 📅 **Azure AI Engineer** — exam scheduled (Month 7-8)
+- [ ] 📚 **6 Anthropic courses** — completed (2 with verified certificates: Introduction to MCP, MCP Advanced Topics)
+- [ ] 🏆 *(Conditional)* **Claude Certified Architect** — only if the programme is open, you are eligible, and a sitting is available
+- [ ] 📅 *(Optional, evaluate later)* **AI-103** — Azure AI implementation certification, decided after the program, not a prerequisite for anything here
 
 #### 🎯 The Two Mastery Checklists
 Before declaring the program complete, go back to
@@ -1942,19 +1993,43 @@ Those 25 statements are the actual definition of *AI Platform & Agentic Systems 
 
 ---
 
-## 🏆 COMPLETE CERTIFICATION TIMELINE
+## 🏆 COMPLETE LEARNING & CERTIFICATION TIMELINE
+
+> **Label discipline:** a *certificate* is only claimed where the provider awards a verifiable
+> credential. Everything else is a **course** or a **learning checkpoint**. Do not record a
+> credential you cannot link to.
 
 ```
-Week 3-5:   ✅ Anthropic: Introduction to MCP
-             ✅ Anthropic: MCP Advanced Topics
-Week 15:     ✅ Anthropic: Building with the Claude API
-             ✅ Anthropic: Introduction to Agent Skills
-Week 20:     ✅ Anthropic: Claude Code in Action
-Week 23:     ✅ Anthropic: AI Fluency: Framework & Foundations
-Week 24:     🏆 CLAUDE CERTIFIED ARCHITECT EXAM ← Main goal
-Month 7-8:   🏆 Azure AI Engineer Associate ← Stretch goal
-Future:      📅 Agentic AI Business Solutions Architect (Microsoft, when GA)
+Week 3-5:   ✅ Anthropic: Introduction to MCP ............. CERTIFICATE EARNED
+             ✅ Anthropic: MCP Advanced Topics ............ CERTIFICATE EARNED
+Week 15:     □ Anthropic: Building with the Claude API .... course / learning checkpoint
+             □ Anthropic: Introduction to Agent Skills ... course / learning checkpoint
+Week 20:     □ Anthropic: Claude Code in Action .......... course / learning checkpoint
+Week 23:     □ Anthropic: AI Fluency: Framework & Foundations . course / learning checkpoint
+Week 24:     □ Claude Certified Architect exam ........... CONDITIONAL — only if the programme
+                                                           is open, you are eligible, and a
+                                                           sitting is available. The capstone
+                                                           and architecture review happen either way.
+Later:       □ AI-103 (Azure AI implementation) .......... OPTIONAL — intent only; confirm the exam
+                                                           exists and is open before planning for it
 ```
+
+**Retired / deliberately excluded:**
+- **AI-102 (Azure AI Engineer Associate)** — removed as a target. ✅ **Verified 12 Oct 2026:** the
+  [Microsoft Learn certification page](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/)
+  carries the notice "This certification and the renewal assessment are retired." Any older reference
+  to "Azure AI Engineer exam scheduled" in your notes is stale.
+- **AB-100** — not added to the core pathway. It is oriented toward Microsoft's business-solutions
+  ecosystem rather than the platform/runtime architecture this program builds. Consider it only if
+  your role moves in that direction.
+
+⚠️ **AI-103 is recorded as an intent, not a verified exam.** Confirm on Microsoft Learn that it
+exists, is open for booking, and covers what you want before planning any time around it. It is
+not a prerequisite for anything in this program.
+
+⚠️ **Verify before committing time or money:** certification availability, eligibility rules,
+exam retirement dates, and successor exams change. Check the provider's page at the time you plan
+to book.
 
 ---
 
@@ -1983,7 +2058,8 @@ These are specs and conventions, not tutorials. They outlive frameworks, which i
 | 1 | **MCP specification** | The tool/capability protocol you build on | Weeks 3-4, 9, 17 |
 | 2 | **MCP security best practices** | Tool poisoning, confused deputy, token passthrough | Week 13 |
 | 3 | **OpenTelemetry GenAI semantic conventions** | Vendor-neutral agent tracing — the durable observability skill | Weeks 13-14, 23 |
-| 4 | **OWASP LLM Top 10 (2025)** | The canonical LLM/agent risk list | Week 13 |
+| 4 | **OWASP GenAI LLM Top 10 (2026)** | The canonical LLM/agent risk list — [published Aug 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/). The 2025 edition (LLM01 Prompt Injection … LLM10 Unbounded Consumption) is still the version indexed on the landing page; read the 2026 resource and note what changed | Week 13 |
+| 4b | **OWASP Agent Control Standard (ACS)** | Published Sept 2026, now part of the OWASP GenAI Security Project. Defines how agent platforms expose **middleware hooks** and how safety policies are enforced through them — declarative controls that are portable across agent frameworks and enforced **at runtime**. [Spec on GitHub](https://github.com/GenAI-Security-Project/agent-control-standard) | Weeks 13, 21 |
 | 5 | **A2A specification** | Agent-to-agent interop — concept level only (~1.5h) | Week 18 |
 | 6 | **Anthropic engineering blog** (agent/harness + context engineering) | Closest public writing to real runtime design | Weeks 6, 11 |
 | 7 | **Temporal durable-execution docs** | Long-running, must-not-lose-work agents | Weeks 11, 18 |
@@ -2088,14 +2164,15 @@ These are specs and conventions, not tutorials. They outlive frameworks, which i
 - [ ] 🧭 **Control Plane built** — identity, policy, registry, eval, obs, cost, audit
 - [ ] Control-plane design document complete (12 sections)
 - [ ] Evaluation, observability and cost governance understood
-- [ ] 6/6 Anthropic certificates earned
+- [ ] 6/6 Anthropic courses completed (2 with verified certificates)
 - [ ] All 12 ADRs complete
 - [ ] **Confidence:** "I can architect and govern enterprise AI systems."
 
 ### ✅ End of Month 6 (Week 24) 🎉
-- [ ] 🏆 Claude Certified Architect PASSED
 - [ ] Capstone project complete
+- [ ] Final architecture document complete (20 sections)
 - [ ] Full portfolio live on GitHub
+- [ ] *(Conditional)* Claude Certified Architect attempted, if available and eligible
 - [ ] **Confidence:** "My job is secure. I am an AI Platform Architect."
 
 ---
@@ -2150,9 +2227,10 @@ Headline: AI Platform & Agentic Systems Architect |
           Agent Runtime | Enterprise AI Control Plane | MCP | LLMOps
 
 About: Designing and operationalizing enterprise AI systems.
-       Claude Certified Architect. Specializing in agent runtime
-       architecture, enterprise AI control planes, governed agent
-       fleets, MCP ecosystems, and production AI reliability.
+       Specializing in agent runtime architecture, enterprise AI
+       control planes, governed agent fleets, MCP ecosystems, and
+       production AI reliability.
+       (Add any credential only once it is actually awarded.)
 ```
 
 ---
@@ -2170,7 +2248,7 @@ Most "AI Engineers" have:          YOU will have:
 • No governance                    • Security + compliance + audit
 • Single agent (if any)            • Multi-agent orchestration
 • No MCP                           • Custom MCP ecosystem
-• No certifications                • Claude Architect + Azure AI
+• No certifications                • MCP certificates + evidence-backed portfolio
 • No portfolio                     • 4 GitHub repos + architecture docs
 • No enterprise experience         • 15+ years of enterprise delivery
 ```

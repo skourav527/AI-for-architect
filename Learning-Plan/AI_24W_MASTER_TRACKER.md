@@ -2,7 +2,17 @@
 
 Start Date: 1 July 2026 
 Target End Date: Feb 2027
-Current Week: Week - 8 
+
+## Status as of 12 October 2026
+- Weeks 1-5: complete
+- Week 6: complete
+- Week 7: complete
+- **Week 8: not started — planned start 13 October 2026** (materials prepared, no learning tasks ticked)
+- Week 9 onward: not started
+- Current Week: **Week 8 (starting 13 Oct 2026)**
+
+> Actual hours stay blank until the sessions actually happen. Do not pre-tick
+> learning tasks.
 
 ## Today View (2-minute update)
 
@@ -93,16 +103,32 @@ Carry-forward:
 - [ ] M-A9 (Wk 22): **Control Plane built** - 7 capabilities + design document
 - [ ] M-A10 (Wk 24): Governed Agent Platform capstone + 20-section architecture doc
 
-### Certification Dashboard
+### Certification and Course Dashboard
+*Only tick "certificate" where a verifiable credential was awarded. Everything
+else is a course completion / learning checkpoint.*
+
+Certificates earned:
 - [x] Anthropic: Introduction to MCP (earned 2026-07-12)
 - [x] Anthropic: MCP Advanced Topics (earned 2026-07-14)
-- [ ] Anthropic: Building with the Claude API
-- [ ] Anthropic: Introduction to Agent Skills
-- [ ] Anthropic: Claude Code in Action
-- [ ] Anthropic: AI Fluency Framework and Foundations
-- [ ] Claude Certified Architect Exam
-- [ ] Azure AI Engineer Exam Scheduled
-- [ ] Azure AI Engineer Exam Passed
+
+Courses / learning checkpoints (no credential assumed):
+- [ ] Anthropic: Building with the Claude API (Wk 15)
+- [ ] Anthropic: Introduction to Agent Skills (Wk 15)
+- [ ] Anthropic: Claude Code in Action (Wk 20)
+- [ ] Anthropic: AI Fluency Framework and Foundations (Wk 23)
+
+Conditional / optional:
+- [ ] Claude Certified Architect Exam - **conditional** on the programme being
+  open, eligibility met, and a sitting available. Week 24's capstone and
+  architecture review proceed regardless.
+- [ ] AI-103 (Azure AI implementation) - **optional, intent only**. Confirm on
+  Microsoft Learn that the exam exists and is open before planning for it.
+  Not a Week 8 or Phase 2 requirement.
+- Removed: AI-102 (Azure AI Engineer Associate) - verified retired on Microsoft
+  Learn (checked 12 Oct 2026: "This certification and the renewal assessment
+  are retired").
+- Not in the core pathway: AB-100 - oriented to Microsoft's business-solutions
+  ecosystem rather than this platform/runtime track.
 
 ### Portfolio Dashboard
 - [Done] AI-for-architect - created this repo to share knowldge with all - public repo 
@@ -448,19 +474,25 @@ End-of-Week Review
 
 ---
 
-## Week 8 (Theory) - Advanced RAG
+## Week 8 (Theory) - Advanced RAG - NOT STARTED (planned start 13 Oct 2026)
 
-Planned Hours: 8-10
+Planned Hours: 8-10 (run as a compressed 2-day, ~9h plan)
 Actual Hours: __
 
 Theory Goal:
-- [ ] Chunking and embeddings strategy
-- [ ] Hybrid search and reranking
-- [ ] Agentic RAG patterns
-- [ ] NEW: Retrieval as a capability (contract + policy + latency/cost budget)
+- [ ] Retrieval evaluation frame: Recall@K, Precision@K, MRR, nDCG, citation
+      correctness, groundedness, latency, cost, authorization correctness
+- [ ] Chunking and embeddings strategy (incl. structure-aware, parent-child,
+      provenance, freshness, update/deletion)
+- [ ] Choosing keyword vs dense vs hybrid by measurement; reranking as an
+      optional measured trade-off
+- [ ] Adaptive/agentic retrieval bounded by attempts, latency, tokens, cost
+- [ ] NEW: Retrieval as a capability (contract + identity + authorization +
+      policy + latency/cost budget + observability + typed failures)
 
 Practical Goal:
-- [ ] Prepare RAG architecture decision tree
+- [ ] Prepare RAG architecture decision tree (long-context vs retrieval,
+      managed vs custom, then evaluation-driven method selection)
 
 Certificate Goal:
 - [ ] None this week
@@ -470,15 +502,16 @@ Project Goal:
 - [ ] NEW: Retrieval capability contract note
 
 Outcome Goal:
-- [ ] Design confidence for production RAG
+- [ ] Design confidence for production retrieval, with a metric behind each choice
+- [ ] Can say where authorization is enforced and who owns retrieval policy
 
-Daily Plan
-- [ ] Mon: Chunking strategy study | Actual: __
-- [ ] Tue: Embedding and vector DB study | Actual: __
-- [ ] Wed: Hybrid search + retrieval-as-capability (20 min) | Actual: __
-- [ ] Thu: Reranking study | Actual: __
-- [ ] Sat: Agentic RAG (DSPy optional stretch) | Actual: __
-- [ ] Sun: Finalize RAG decision tree | Actual: __
+Daily Plan (2-day compressed; original 6-day shape kept for reference)
+- [ ] Day 1 Block 1: Evaluation frame + chunking | Actual: __
+- [ ] Day 1 Block 2: Embeddings + engines + managed vs custom | Actual: __
+- [ ] Day 1 Block 3: Method selection + filtering vs authorization + capability (20 min) | Actual: __
+- [ ] Day 2 Block 1: Reranking as a measured trade-off | Actual: __
+- [ ] Day 2 Block 2: Bounded adaptive retrieval (DSPy optional stretch) | Actual: __
+- [ ] Day 2 Blocks 3-4: Decision tree + contract review + cheatsheet | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -489,7 +522,7 @@ End-of-Week Review
 
 ---
 
-## Week 9 (Practical) - Advanced RAG Build
+## Week 9 (Practical) - Advanced RAG Build - NOT STARTED
 
 Planned Hours: 8-10
 Actual Hours: __
@@ -498,26 +531,30 @@ Theory Goal:
 - [ ] Light review
 
 Practical Goal:
-- [ ] Build hybrid RAG pipeline with reranker
-- [ ] Add query self-correction (bounded loop + graceful give-up)
+- [ ] Build the retrieval pipeline and choose keyword/dense/hybrid by measurement
+- [ ] Add reranking and keep or remove it based on measured gain vs latency/cost
+- [ ] Add query self-correction bounded by attempts, latency, tokens, cost
+- [ ] Enforce authorization from a trusted identity; fail closed
 - [ ] Run on your work docs
-- [ ] NEW: Expose RAG as an MCP tool with a typed contract
+- [ ] NEW: Expose RAG as an MCP tool with a typed contract and typed failures
 
 Certificate Goal:
 - [ ] None this week
 
 Project Goal:
 - [ ] Agentic RAG pipeline v1, registered as a capability
+- [ ] Evaluation set (20-50 queries) committed alongside the code
 
 Outcome Goal:
-- [ ] Retrieval quality benchmarked and improved
-- [ ] Measured latency and cost per call documented
+- [ ] Retrieval quality measured: Recall@K, nDCG, citation correctness, groundedness
+- [ ] Measured latency (p50/p95) and cost per call documented, rates date-stamped
+- [ ] Authorization correctness verified against an adversarial query set
 
 Daily Plan
-- [ ] Mon: RAG ingestion baseline | Actual: __
-- [ ] Tue: Hybrid retrieval | Actual: __
-- [ ] Wed: Reranker integration | Actual: __
-- [ ] Thu: Bounded self-correction retry loop | Actual: __
+- [ ] Mon: RAG ingestion baseline + start evaluation set | Actual: __
+- [ ] Tue: Compare keyword/dense/hybrid + metadata and entitlement filtering | Actual: __
+- [ ] Wed: Reranker integration + measure whether it stays | Actual: __
+- [ ] Thu: Bounded self-correction loop with recorded attempts | Actual: __
 - [ ] Sat: Work-doc benchmark + expose as MCP tool | Actual: __
 - [ ] Sun: Evaluation notes and fixes | Actual: __
 
@@ -530,7 +567,7 @@ End-of-Week Review
 
 ---
 
-## Week 10 (Flex) - Review, Integration and First ADR
+## Week 10 (Flex) - Review, Integration and First ADR - NOT STARTED
 
 Planned Hours: 4-8
 Actual Hours: __
@@ -540,6 +577,8 @@ Theory Goal:
 
 Practical Goal:
 - [ ] Integrate ContextEngine + RAG capability + MCP into ONE callable capability
+- [ ] Confirm caller identity survives the integrated chain and re-run the
+      authorization-correctness check end to end
 
 Certificate Goal:
 - [ ] None
@@ -550,6 +589,7 @@ Project Goal:
 
 Outcome Goal:
 - [ ] Strong phase consolidation; context layer of a runtime effectively exists
+- [ ] Integrated path reports measured latency and cost per call
 
 Daily Plan (Flexible)
 - [ ] Task 1: Catch-up pending item | Actual: __
@@ -672,7 +712,10 @@ Planned Hours: 8-10
 Actual Hours: __
 
 Theory Goal:
-- [ ] OWASP LLM Top 10 (2025)
+- [ ] OWASP GenAI LLM Top 10 (2026)
+- [ ] OWASP Agent Control Standard (ACS) - middleware hooks exposed by the agent
+      platform + declarative policies enforced through them at runtime; map which
+      hooks your runtime exposes and which are missing
 - [ ] Input/output guardrails (applied to tool output too)
 - [ ] Reliability: retry, timeout, circuit breaker, idempotency, partial failure, state corruption
 - [ ] Security: agent identity, tool authorization, least privilege, sandbox isolation, credential isolation, secrets, and egress
@@ -779,8 +822,8 @@ Practical Goal:
 - [ ] Runtime integration checkpoint: MCP + RAG + Runtime + Guardrails on one diagram
 
 Certificate Goal:
-- [ ] Anthropic Building with the Claude API
-- [ ] Anthropic Introduction to Agent Skills
+- [ ] Anthropic Building with the Claude API (course / learning checkpoint)
+- [ ] Anthropic Introduction to Agent Skills (course / learning checkpoint)
 
 Project Goal:
 - [ ] Integration checkpoint complete
@@ -797,8 +840,8 @@ Phase 3 self-check
 - [ ] Know the first three spans to add to an untraced agent
 
 Daily Plan (Flexible)
-- [ ] Task 1: Claude API certificate | Actual: __
-- [ ] Task 2: Agent Skills certificate | Actual: __
+- [ ] Task 1: Claude API course | Actual: __
+- [ ] Task 2: Agent Skills course | Actual: __
 - [ ] Task 3: Backlog cleanup + integration diagram | Actual: __
 - [ ] Task 4: ADR-04 (45 min) + phase reflection | Actual: __
 
@@ -997,7 +1040,7 @@ Practical Goal:
 - [ ] Collect ADR-01 .. ADR-06 into docs/adr/
 
 Certificate Goal:
-- [ ] Anthropic Claude Code in Action
+- [ ] Anthropic Claude Code in Action (course / learning checkpoint)
 
 Project Goal:
 - [ ] Portfolio baseline visible
@@ -1006,7 +1049,7 @@ Outcome Goal:
 - [ ] Phase 4 complete with public proof of work
 
 Daily Plan (Flexible)
-- [ ] Task 1: Claude Code certificate | Actual: __
+- [ ] Task 1: Claude Code course | Actual: __
 - [ ] Task 2: Push mcp-servers repo with README | Actual: __
 - [ ] Task 3: Push agent-runtime repo (diagram + recovery demo) | Actual: __
 - [ ] Task 4: Push governed-agent-system repo + tidy ADRs | Actual: __
@@ -1143,7 +1186,7 @@ Practical Goal:
 - [ ] Governance and ops checklist (risk tier -> required controls -> evidence)
 
 Certificate Goal:
-- [ ] Anthropic AI Fluency Framework and Foundations
+- [ ] Anthropic AI Fluency Framework and Foundations (course / learning checkpoint)
 
 Project Goal:
 - [ ] Evaluation, observability and cost governance docs
@@ -1160,7 +1203,7 @@ Daily Plan
 - [ ] Wed: Fleet observability (OTel first) | Actual: __
 - [ ] Thu: Cost, budgets, attribution, quotas, routing | Actual: __
 - [ ] Sat: Governance, risk tiers, audit and provenance | Actual: __
-- [ ] Sun: AI Fluency cert + ADR-12 | Actual: __
+- [ ] Sun: AI Fluency course + ADR-12 | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -1177,40 +1220,41 @@ Planned Hours: 8-10
 Actual Hours: __
 
 Theory Goal:
-- [ ] Claude Architect domain revision
+- [ ] Architecture revision across Weeks 11-23 (doubles as Claude Architect domain revision if sitting the exam)
 
 Practical Goal:
 - [ ] Capstone polish and final demo
 - [ ] Final architecture document - all 20 sections
 
 Certificate Goal:
-- [ ] Claude Certified Architect Exam
+- [ ] Claude Certified Architect Exam - CONDITIONAL (programme open, eligible,
+      sitting available). The capstone and architecture review happen regardless.
 
 Project Goal:
 - [ ] Enterprise Governed Agent Platform capstone final release
   (control plane over agent runtime over models/tools/agents via MCP)
 
 Outcome Goal:
-- [ ] M-A10: program completion with certification and portfolio
+- [ ] M-A10: program completion with capstone and portfolio (certification optional)
 - [ ] Both architect-level "Done When" checklists fully ticked (Runtime + Control Plane)
 
 Daily Plan
-- [ ] Mon: Domain 1 and 2 revision | Actual: __
-- [ ] Tue: Domain 3 and 4 revision | Actual: __
-- [ ] Wed: Domain 5 revision and weak areas | Actual: __
+- [ ] Mon: Agentic architecture revision | Actual: __
+- [ ] Tue: Tool design and MCP revision | Actual: __
+- [ ] Wed: Claude Code configuration revision | Actual: __
 - [ ] Thu: Capstone docs and README polish | Actual: __
-- [ ] Sat: Take exam and record capstone demo | Actual: __
+- [ ] Sat: Record capstone demo (and take the exam if eligible/available) | Actual: __
 - [ ] Sun: Final architecture document (20 sections) + celebrate | Actual: __
 
 Final Milestone Reward
 - [ ] M5 claimed: iPhone Fold fund or Ladakh trip fund
 
 End-of-Program Review
-- Claude Architect result: __
+- Claude Architect result (if sat): __
 - Total program completion percent: __
 - Biggest transformation in your skills: __
 - What you are most proud of: __
-- Next 3-month plan (Azure AI and beyond): __
+- Next 3-month plan (optionally evaluate AI-103): __
 
 ---
 
