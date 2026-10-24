@@ -63,6 +63,23 @@ parent expansion is on.
 In every case, confirm the choice by measuring Recall@K before and after; a
 strategy that sounds better and measures worse is worse.
 
+## Decision tree/map: 
+
+flowchart TD
+    A["Identify the document type"] --> B{"Does its structure carry meaning?"}
+    B -->|Yes| C["Start with structure-aware chunking"]
+    B -->|No| D{"Is it general prose?"}
+    D -->|Yes| E["Start with recursive chunking"]
+    D -->|No| F{"Are topic boundaries the main concern?"}
+    F -->|Yes| G["Test semantic chunking"]
+    F -->|No| H["Use fixed-size as a baseline"]
+    C --> I["Check whether small matches need larger context"]
+    E --> I
+    G --> I
+    H --> I
+    I --> J["Consider parent-child retrieval"]
+    J --> K["Evaluate on the same labelled queries"]
+
 ## Parameters That Matter More Than the Strategy Name
 
 - **Chunk size:** too small → each chunk loses surrounding context needed to
