@@ -1,10 +1,10 @@
 # Week 8: Advanced RAG & Retrieval Systems — 2-DAY FAST-TRACK PLAN
 
-**Progress status:** In Progress — Completion Verification Pending. The
-learner-provided update confirms Block 1 concepts and knowledge check; the
-remaining acceptance evidence is tracked in
-[WEEK8_ACCEPTANCE_CHECKLIST.md](WEEK8_ACCEPTANCE_CHECKLIST.md). Do not treat
-this prepared plan or its unchecked exercises as completion evidence.
+**Progress status:** Day 1 learning complete based on the learner-reported
+completed assessment and revision work. Day 2 is pending; Week 8 remains in
+progress. No date, actual hours, score, or artifact link was supplied. The
+acceptance checklist records this status separately from repository deliverable
+synchronization.
 
 ## Sprint Goal
 Compress the original 6-day theory week (Mon-Sun, 8-10h) into **2 focused days
@@ -165,13 +165,17 @@ retrieval on the same 30-query evaluation set, reporting Recall@K and nDCG,
 and explain where authorization filtering must be enforced"
 ```
 
-**Done Day 1 when:**
-- [ ] Can name the retrieval, answer, operational, and security metrics and what each decides
-- [ ] Can explain fixed vs recursive vs semantic vs structure-aware chunking, plus parent-child retrieval
-- [ ] Can state what every chunk must carry, and what happens on update and deletion
-- [ ] Can justify an embedding model + engine choice, and a managed-vs-custom position
-- [ ] Can explain why keyword / dense / hybrid is an evaluation question, not a rule
-- [ ] Wrote the one-page retrieval-policy answer
+**Day 1 learning complete:** the learner reports completing the Day 1 assessment
+and revision work. The checklist below is synchronized to that report; no
+score, date, actual hours, or assessment artifact is asserted.
+
+**Day 1 learning checks:**
+- [x] Can name the retrieval, answer, operational, and security metrics and what each decides
+- [x] Can explain fixed vs recursive vs semantic vs structure-aware chunking, plus parent-child retrieval
+- [x] Can state what every chunk must carry, and what happens on update and deletion
+- [x] Can justify an embedding model + engine choice, and a managed-vs-custom position
+- [x] Can explain why keyword / dense / hybrid is an evaluation question, not a rule
+- [x] Completed Day 1 assessment and revision work (learner-reported; artifact not linked)
 
 ---
 
@@ -278,7 +282,7 @@ end to end. Fix anything that reads wrong or incomplete now, while it's fresh.
 Skim [templates/retrieval_capability.py](../templates/retrieval_capability.py)
 so Week 9 Monday starts by filling in a contract you already recognize.
 
-**Done Day 2 when:**
+**Done Day 2 when (pending):**
 - [ ] Can state the measurements that justify (or remove) reranking
 - [ ] Can explain naive vs self-corrective vs adaptive vs routing retrieval
 - [ ] Can name the four bounds and the two failure kinds for retrieval loops

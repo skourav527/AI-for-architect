@@ -1,11 +1,10 @@
 # Week 8 — Advanced RAG & Retrieval Systems: THEORY (2-Day Fast-Track)
 
-**Progress status:** In Progress — Completion Verification Pending. Block 1
-concepts and knowledge check were covered; independent model/engine
-justification, Block 3, and retrieval acceptance evidence remain unverified.
-The [acceptance checklist](Document/WEEK8_ACCEPTANCE_CHECKLIST.md) is the
-evidence record. This plan and its unchecked exercises are not proof of
-completion.
+**Progress status:** Day 1 learning complete based on the learner-reported
+completed assessment and revision work. Day 2 is pending; Week 8 remains in
+progress. No date, actual hours, score, or assessment artifact was supplied.
+The [acceptance checklist](Document/WEEK8_ACCEPTANCE_CHECKLIST.md) records
+learner completion separately from repository deliverable synchronization.
 
 **Original budget:** 8-10h across a full week (Mon-Sun)
 **Your budget:** 2 days × ~4.5h = 9h total — nothing dropped, the six short
@@ -110,7 +109,7 @@ boxes unchecked until the work is completed and record the evidence in the
 acceptance checklist.
 
 **Resume with:** [Document/WEEK8_2DAY_PLAN.md](Document/WEEK8_2DAY_PLAN.md)
-and the first unchecked item in the acceptance checklist.
+at Day 2 and its first pending item in the acceptance checklist.
 
 ## 🏆 Certification
 No dedicated certificate for this topic in the master roadmap. Optional

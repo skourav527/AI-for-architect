@@ -7,22 +7,25 @@ Target End Date: Feb 2027
 - Weeks 1-5: complete
 - Week 6: complete
 - Week 7: complete
-- **Week 8: In Progress — Completion Verification Pending**
+- **Week 8 Day 1: Learning complete** — based on learner-reported completed assessment and revision work
+- **Week 8 Day 2: Pending; Week 8 remains In Progress**
 - **Week 9: implementation baseline exists in the repository; learner acceptance is not verified**
 - Weeks 10-24: not started
 - Current Week: **Week 8**
 
-Progress provenance: this status reflects the learner-provided update. Repository
-code, prepared notes, and automated tests do not by themselves prove that the
-learner completed a learning task. Weeks 1-7 evidence and all actual-hour fields
-remain unchanged.
+Progress provenance: Day 1 completion reflects the learner-provided update
+that the assessment and revision work were completed. No date, score, hours, or
+assessment artifact was supplied. Repository deliverable synchronization is
+separate from learner completion. Repository code, prepared notes, and
+automated tests do not by themselves prove that the learner completed a
+learning task. Weeks 1-7 evidence and all actual-hour fields remain unchanged.
 
 Week 8 verification details are maintained in
 [WEEK8_ACCEPTANCE_CHECKLIST.md](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 
-> Actual hours stay blank until the sessions actually happen. Do not pre-tick
-> learning tasks. Week 8 remains in progress until its acceptance evidence is
-> recorded; Week 9 implementation is not marked complete.
+> Actual hours stay blank until supplied. Day 1 learning is complete; Day 2 and
+> the overall Week 8 acceptance decision remain pending. Week 9 implementation
+> is not marked complete.
 
 ## Today View (2-minute update)
 
@@ -48,7 +51,8 @@ Quick checks:
 ## Weekly Snapshot (Sunday 3-minute review)
 
 Week number: ________
-Phase: Foundation / Context / **Agent Runtime** / **Agents & Fleet** / **Control Plane**
+Phase: Foundations / Context Engineering and RAG / **Agent Runtime Engineering** /
+**Agentic AI, Interoperability and Orchestration** / **Enterprise Architecture and Production**
 Week type: Theory / Practical / Flex
 
 Hours:
@@ -96,10 +100,10 @@ Carry-forward:
 ## Program Dashboard
 
 - [Done ] Phase 1 Complete (Weeks 1-5) - by 10 Sept 2026 
-- [ ] Phase 2 Complete (Weeks 6-10) - Context Engineering + RAG
+- [ ] Phase 2 Complete (Weeks 6-10) - **Context Engineering and RAG**
 - [ ] Phase 3 Complete (Weeks 11-15) - **Agent Runtime Engineering**
-- [ ] Phase 4 Complete (Weeks 16-20) - **Agents & Agent Fleet**
-- [ ] Phase 5 Complete (Weeks 21-24) - **Control Plane & Platform Architecture**
+- [ ] Phase 4 Complete (Weeks 16-20) - **Agentic AI, Interoperability and Orchestration**
+- [ ] Phase 5 Complete (Weeks 21-24) - **Enterprise Architecture and Production**
 
 ### Architecture Milestone Dashboard (new)
 - [ ] M-A1 (Wk 6): Can explain context vs memory vs state
@@ -107,7 +111,7 @@ Carry-forward:
 - [ ] M-A3 (Wk 11): Can draw the Agent Runtime architecture from memory
 - [ ] M-A4 (Wk 12): **Agent Runtime built** - checkpoint + resume proven
 - [ ] M-A5 (Wk 14): Runtime hardened - guardrails, sandbox, permissions, traces
-- [ ] M-A6 (Wk 17): Agents run as configurations on ONE runtime
+- [ ] M-A6 (Wk 19): Durable coordinated workflow runs on the shared runtime
 - [ ] M-A7 (Wk 19): Agent registry + policy enforcement point live
 - [ ] M-A8 (Wk 21): Can explain Control Plane vs Runtime without hesitation
 - [ ] M-A9 (Wk 22): **Control Plane built** - 7 capabilities + design document
@@ -143,7 +147,7 @@ Conditional / optional:
 ### Portfolio Dashboard
 - [Done] AI-for-architect - created this repo to share knowldge with all - public repo 
 - [ ] Repo 1: MCP Servers (Wk 4)
-- [ ] Repo 2: **agent-runtime** (Wk 12 + 14)
+- [ ] Repo 2: **agent-runtime** (Wk 11-15 integrated foundation)
 - [ ] Repo 3: **governed-agent-system** (Wk 17 + 19)
 - [ ] Repo 4: **ai-control-plane** (Wk 22)
 - [ ] Repo 5: Enterprise AI Platform (Capstone, Wk 24)
@@ -484,14 +488,16 @@ End-of-Week Review
 
 ---
 
-## Week 8 (Theory) - Advanced RAG - IN PROGRESS; COMPLETION VERIFICATION PENDING [CURRENT WEEK]
+## Week 8 (Theory) - Advanced RAG - DAY 1 LEARNING COMPLETE; DAY 2 PENDING [CURRENT WEEK]
 
 Planned Hours: 8-10 (run as a compressed 2-day, ~9h plan)
 Actual Hours: __
 
-Progress note: Block 1 concepts and knowledge check are reported as covered.
-Independent Block 2 justification, Block 3, and retrieval acceptance evidence
-remain unverified. See the [Week 8 acceptance checklist](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
+Progress note: Day 1 learning is complete based on the learner-reported
+completed assessment and revision work. Day 2 is pending; Week 8 remains in
+progress. No date, score, or actual hours were supplied. Repository deliverable
+synchronization is separate from learner completion. See the [Week 8 acceptance
+checklist](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 
 Theory Goal:
 - [ ] Retrieval evaluation frame: Recall@K, Precision@K, MRR, nDCG, citation
@@ -520,9 +526,9 @@ Outcome Goal:
 - [ ] Can say where authorization is enforced and who owns retrieval policy
 
 Daily Plan (2-day compressed; original 6-day shape kept for reference)
-- [ ] Day 1 Block 1: Evaluation frame + chunking | Actual: __
-- [ ] Day 1 Block 2: Embeddings + engines + managed vs custom | Actual: __
-- [ ] Day 1 Block 3: Method selection + filtering vs authorization + capability (20 min) | Actual: __
+- [x] Day 1 Block 1: Evaluation frame + chunking | Actual: __
+- [x] Day 1 Block 2: Embeddings + engines + managed vs custom | Actual: __
+- [x] Day 1 Block 3: Method selection + filtering vs authorization + capability | Actual: __
 - [ ] Day 2 Block 1: Reranking as a measured trade-off | Actual: __
 - [ ] Day 2 Block 2: Bounded adaptive retrieval (DSPy optional stretch) | Actual: __
 - [ ] Day 2 Blocks 3-4: Decision tree + contract review + cheatsheet | Actual: __
@@ -674,7 +680,7 @@ End-of-Week Review
 
 ---
 
-## Week 12 (Practical) - BUILD A MINIMAL AGENT RUNTIME
+## Week 12 (Practical) - HARNESS ENGINEERING AND AGENT ISOLATION
 
 Scope discipline: single agent, <=3 tools, SQLite state, one approval gate, in-process.
 If over 8 hours, cut a tool - never cut checkpointing or tracing.
@@ -692,6 +698,9 @@ Practical Goal:
 - [ ] Checkpoint after every step + resume(session_id)
 - [ ] Human approval gate that survives process exit
 - [ ] OpenTelemetry spans for model and tool calls
+- [ ] Trusted harness enforces filesystem, process/execution, network, tools/side effects, memory/context, and identity/credential boundaries
+- [ ] Resource quotas, secret isolation/brokerage, process termination and supply-chain provenance are documented and testable
+- [ ] Negative tests prove prompt/model-generated tool requests cannot bypass authorized execution
 
 Certificate Goal:
 - [ ] None
@@ -725,7 +734,7 @@ End-of-Week Review
 
 ---
 
-## Week 13 (Theory) - RELIABLE AND SECURE AGENT RUNTIME
+## Week 13 (Theory + Prototype) - IDENTITY AND DELEGATED AUTHORIZATION
 
 (expanded from "Guardrails and Reliability" - same content, organised as runtime engineering)
 
@@ -733,6 +742,8 @@ Planned Hours: 8-10
 Actual Hours: __
 
 Theory Goal:
+- [ ] Distinguish user authorization from agent authorization; agent does not inherit unrestricted user permissions
+- [ ] Delegated authorization, least privilege, short-lived credentials, brokerage/token exchange, scope enforcement, revocation and audit
 - [ ] OWASP GenAI LLM Top 10 (2026)
 - [ ] OWASP Agent Control Standard (ACS) - middleware hooks exposed by the agent
       platform + declarative policies enforced through them at runtime; map which
@@ -744,6 +755,8 @@ Theory Goal:
 - [ ] Observability: OpenTelemetry GenAI semantic conventions
 
 Practical Goal:
+- [ ] Trusted identity propagation and scoped delegated access prototype
+- [ ] Tests for identity/scope/audience, expiry/revocation, missing identity and audit correlation
 - [ ] Minimum viable agent trace spec (spans + attributes)
 
 Certificate Goal:
@@ -757,12 +770,12 @@ Outcome Goal:
 - [ ] Can explain idempotency and why resume breaks without it
 
 Daily Plan
-- [ ] Mon: Input guardrails + prompt injection reality | Actual: __
-- [ ] Tue: Output guardrails (schema, PII, toxicity) | Actual: __
-- [ ] Wed: Runtime reliability patterns | Actual: __
-- [ ] Thu: Agent identity, tool authorization, sandboxing, secrets | Actual: __
-- [ ] Sat: Agent/MCP threat model + self-critique | Actual: __
-- [ ] Sun: Trace spec (OTel GenAI conventions) | Actual: __
+- [ ] Mon: User/agent identity and delegated authorization model | Actual: __
+- [ ] Tue: Short-lived scoped credentials, brokerage/token exchange and least privilege | Actual: __
+- [ ] Wed: Scope, audience, expiry and revocation tests | Actual: __
+- [ ] Thu: Tool authorization, sandboxing, secrets and egress | Actual: __
+- [ ] Sat: Agent/MCP threat model + audit correlation | Actual: __
+- [ ] Sun: Trace spec and versioned telemetry mapping | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -773,7 +786,7 @@ End-of-Week Review
 
 ---
 
-## Week 14 (Practical) - RUNTIME HARDENING
+## Week 14 (Practical) - AGENT EVALUATION, OBSERVABILITY AND RUNTIME HARDENING
 
 No new project - harden the Week 12 runtime.
 
@@ -791,6 +804,8 @@ Practical Goal:
 - [ ] Per-agent tool allow-list enforced by the runtime
 - [ ] One tool running sandboxed (container, no network, read-only mount)
 - [ ] OTel spans per the Week 13 spec
+- [ ] Versioned agent-evaluation cases for trajectories, tool correctness, task completion, side effects, unsupported actions and isolation denials
+- [ ] Provider-neutral telemetry contract; assess/version GenAI semantic-convention mapping
 
 Certificate Goal:
 - [ ] None
@@ -814,12 +829,12 @@ Stress test checklist
 - [ ] Infinite plan loop -> step cap with clear stop reason
 
 Daily Plan
-- [ ] Mon: Injection detector | Actual: __
-- [ ] Tue: Output + tool-output safety filters | Actual: __
+- [ ] Mon: Evaluation dataset and trajectory/tool correctness cases | Actual: __
+- [ ] Tue: Side-effect, unsupported-action and isolation-denial assertions | Actual: __
 - [ ] Wed: Timeouts, breaker, fallback, idempotency keys | Actual: __
-- [ ] Thu: Recovery hardening, state versioning, self-critique | Actual: __
+- [ ] Thu: Recovery hardening, state versioning, failure classification | Actual: __
 - [ ] Sat: Tool permissions + sandboxed execution; record protected assets and residual risk | Actual: __
-- [ ] Sun: OTel spans + stress test + ADR-02 and ADR-03 | Actual: __
+- [ ] Sun: Correlated OTel traces, convention maturity decision, stress tests + ADR-02 and ADR-03 | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -830,24 +845,24 @@ End-of-Week Review
 
 ---
 
-## Week 15 (Flex) - Review and Certifications
+## Week 15 (Flex) - RUNTIME RELIABILITY AND OPERATIONS
 
 Planned Hours: 4-8
 Actual Hours: __
 
 Theory Goal:
-- [ ] Review phase 3 notes (Agent Runtime Engineering)
+- [ ] Checkpoint/recovery, retries, timeouts, cancellation, idempotency, containment, runtime versioning and release readiness
 
 Practical Goal:
+- [ ] Integrate Weeks 11-14 into one secure, observable, recoverable runtime
+- [ ] Run an end-to-end recovery/cancellation drill; produce version/migration/rollback notes and an operational runbook
 - [ ] Close pending runtime and hardening tasks
-- [ ] Runtime integration checkpoint: MCP + RAG + Runtime + Guardrails on one diagram
 
 Certificate Goal:
-- [ ] Anthropic Building with the Claude API (course / learning checkpoint)
-- [ ] Anthropic Introduction to Agent Skills (course / learning checkpoint)
+- [ ] Optional learning checkpoint only; does not replace runtime integration
 
 Project Goal:
-- [ ] Integration checkpoint complete
+- [ ] Integrated runtime foundation for all Phase 4 work
 - [ ] ADR-04 Human Approval Architecture
 
 Outcome Goal:
@@ -861,9 +876,9 @@ Phase 3 self-check
 - [ ] Know the first three spans to add to an untraced agent
 
 Daily Plan (Flexible)
-- [ ] Task 1: Claude API course | Actual: __
-- [ ] Task 2: Agent Skills course | Actual: __
-- [ ] Task 3: Backlog cleanup + integration diagram | Actual: __
+- [ ] Task 1: Integrate Weeks 11-14 as one runtime | Actual: __
+- [ ] Task 2: Recovery, cancellation and release/version drill | Actual: __
+- [ ] Task 3: Operational runbook + backlog review | Actual: __
 - [ ] Task 4: ADR-04 (45 min) + phase reflection | Actual: __
 
 Phase Reward
@@ -878,20 +893,21 @@ End-of-Week Review
 
 ---
 
-## Week 16 (Theory) - Agent Fundamentals
+## Week 16 (Theory) - AGENTIC ARCHITECTURE PATTERNS
 
 Planned Hours: 8-10
 Actual Hours: __
 
 Theory Goal:
-- [ ] ReAct and Plan-Execute patterns (LATS deep dive removed - low value)
+- [ ] ReAct, planner-executor, router, supervisor, workflow-based, human-in-the-loop, tool-centric patterns
+- [ ] Deterministic vs autonomous execution; use/non-use, failure modes, complexity, cost and security for each
 - [ ] Memory done correctly: context vs retrievable memory vs durable state
 - [ ] Agent as a runtime CONFIGURATION: identity, capabilities, tool permissions
 - [ ] Subagent boundaries: permissions, state, budget, depth cap
 - [ ] Framework overview: OpenAI Agents SDK, Microsoft Agent Framework
 
 Practical Goal:
-- [ ] Agent pattern catalog
+- [ ] Agent pattern catalog and scenario-based comparison
 - [ ] Agent configuration schema
 
 Certificate Goal:
@@ -901,15 +917,16 @@ Project Goal:
 - [ ] Agent strategy notes and framework matrix
 
 Outcome Goal:
+- [ ] Choose the simplest suitable pattern for enterprise scenarios and explain trade-offs
 - [ ] Can explain an agent as a runtime configuration, not a codebase
 
 Daily Plan
-- [ ] Mon: ReAct pattern | Actual: __
-- [ ] Tue: Plan-Execute + replanning | Actual: __
-- [ ] Wed: Memory vs state vs context (applied) | Actual: __
-- [ ] Thu: Agent as configuration; subagent boundaries | Actual: __
-- [ ] Sat: Reflexion + framework overview | Actual: __
-- [ ] Sun: Pattern catalog + framework matrix | Actual: __
+- [ ] Mon: ReAct and tool-centric patterns | Actual: __
+- [ ] Tue: Planner-executor, router and supervisor | Actual: __
+- [ ] Wed: Workflow-based and deterministic vs autonomous | Actual: __
+- [ ] Thu: HITL, identity and subagent boundaries | Actual: __
+- [ ] Sat: Compare failure, complexity, cost and security trade-offs | Actual: __
+- [ ] Sun: Pattern catalog + scenario-based simplest-fit decision | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -920,7 +937,7 @@ End-of-Week Review
 
 ---
 
-## Week 17 (Practical) - Agents on Your Runtime
+## Week 17 (Practical) - MCP AND A2A INTEROPERABILITY
 
 Rule: do NOT write a second agent loop. Every agent is a config on the Week 12 runtime.
 
@@ -931,29 +948,28 @@ Theory Goal:
 - [ ] Light review
 
 Practical Goal:
-- [ ] ReAct agent as a config on your runtime
-- [ ] Plan-Execute agent with replanning
-- [ ] Retrievable memory across sessions, separate from runtime state
-- [ ] Per-agent tool permission scopes + budgets (calls / USD / wall-clock)
-- [ ] Sandboxed execution for the risky tool
+- [ ] Read current official MCP specification and A2A specification; record revision and feature lifecycle/status
+- [ ] MCP capability discovery, tools/resources/prompts, transport, identity/authorization, errors, versions and security
+- [ ] A2A agent discovery/cards, delegation, task lifecycle, communication, trust and identity
+- [ ] Implement/test MCP boundary and testable A2A boundary with scoped identity and authorization; no new loop
 
 Certificate Goal:
 - [ ] None
 
 Project Goal:
-- [ ] Work assistant agent v1 (with MCP tools)
-- [ ] ADR-05 Sandbox Strategy
+- [ ] Testable MCP/A2A interoperability boundary and protocol decision record
+- [ ] ADR-05 Interoperability decision; certification remains optional only
 
 Outcome Goal:
-- [ ] M-A6: two agents, one runtime, zero duplicated loop code
+- [ ] Protocol tests cover discovery/version/error/cancellation/authorization and A2A task/delegation trust
 
 Daily Plan
-- [ ] Mon: ReAct agent config | Actual: __
-- [ ] Tue: Planner-executor with replanning | Actual: __
-- [ ] Wed: Retrievable memory (separate from state) | Actual: __
-- [ ] Thu: Tool permission scopes + budgets | Actual: __
-- [ ] Sat: MCP tools integration on real work task | Actual: __
-- [ ] Sun: Sandbox risky tool; scoped credentials, delegation limits, blast radius + ADR-05 | Actual: __
+- [ ] Mon: Current MCP revision, roles, features and discovery | Actual: __
+- [ ] Tue: Transport, authorization, identity, errors and version compatibility | Actual: __
+- [ ] Wed: A2A cards, task lifecycle, delegation and trust | Actual: __
+- [ ] Thu: Extension lifecycle and protocol decision record | Actual: __
+- [ ] Sat: MCP and A2A test-peer/adaptor integration | Actual: __
+- [ ] Sun: Contract tests, trust-boundary review + ADR-05 | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -964,17 +980,18 @@ End-of-Week Review
 
 ---
 
-## Week 18 (Theory) - Multi-Agent Systems, A2A and Fleet Concepts
+## Week 18 (Theory) - MULTI-AGENT COORDINATION
 
 Planned Hours: 8-10
 Actual Hours: __
 
 Theory Goal:
-- [ ] Multi-agent coordination patterns
+- [ ] Multi-agent coordination patterns and when a single agent or deterministic workflow is preferable
 - [ ] Delegation, handoff contracts, shared vs isolated state
 - [ ] MCP vs A2A (concept level, ~1.5h cap) + agent discovery / agent cards
 - [ ] Fleet concepts: registry, versioning, deployment, lifecycle, ownership
 - [ ] Durable execution (Temporal-style) for long-running agents
+- [ ] Ownership, concurrency/conflicts, trust, and coordination/isolation/failure boundaries
 
 Practical Goal:
 - [ ] Framework decision matrix final (AutoGen removed; CrewAI = one row)
@@ -986,6 +1003,7 @@ Project Goal:
 - [ ] Multi-agent architecture notes + fleet concepts note
 
 Outcome Goal:
+- [ ] Can justify multi-agent use and design explicit ownership, trust and failure boundaries
 - [ ] Can explain One Runtime -> Many Agents -> Fleet, and what a fleet needs that agents don't
 
 Daily Plan
@@ -1005,7 +1023,7 @@ End-of-Week Review
 
 ---
 
-## Week 19 (Practical) - Multi-Agent Build + Agent Registry
+## Week 19 (Practical) - DURABLE AGENT WORKFLOWS
 
 Planned Hours: 8-10
 Actual Hours: __
@@ -1014,30 +1032,29 @@ Theory Goal:
 - [ ] Light review
 
 Practical Goal:
-- [ ] Coordinator and specialist agents - all configs on ONE runtime
-- [ ] Handoff protocol (identity, context, task, constraints, remaining budget)
-- [ ] Shared retrievable memory with isolated per-agent runtime state
-- [ ] Minimal agent registry (id, version, owner, capabilities, allowed_tools, budget)
-- [ ] Single policy enforcement point for EVERY tool call (ALLOW/DENY/REQUIRE_APPROVAL)
-- [ ] One distributed trace spanning coordinator -> specialists -> tools
+- [ ] Resumable workflow with durable state, checkpoints and human approvals
+- [ ] Bounded retries, idempotency, compensation/recovery and workflow version/migration
+- [ ] Safe handling of external side effects; no production side effects in the exercise
+- [ ] Integrate coordinator/specialists, registry, identity handoff and policy enforcement on the shared runtime
+- [ ] Trace and tests cover restart, duplicate delivery, approval timeout/rejection and version change
 
 Certificate Goal:
 - [ ] None
 
 Project Goal:
-- [ ] Multi-agent app v1 (real work scenario)
+- [ ] Durable workflow prototype for a realistic enterprise scenario
 - [ ] ADR-06 Agent Identity Model
 
 Outcome Goal:
 - [ ] M-A7: no agent can bypass the policy enforcement point
 
 Daily Plan
-- [ ] Mon: Coordinator and specialist configs | Actual: __
-- [ ] Tue: Handoff protocol with budget | Actual: __
-- [ ] Wed: Shared memory, isolated state | Actual: __
-- [ ] Thu: Agent registry + policy enforcement point | Actual: __
-- [ ] Sat: Full work use-case integration | Actual: __
-- [ ] Sun: Trace the flow, architecture doc, ADR-06 | Actual: __
+- [ ] Mon: Durable enterprise workflow states/checkpoints | Actual: __
+- [ ] Tue: Approval pause/resume and delegated identity | Actual: __
+- [ ] Wed: Idempotent retries and external side-effect handling | Actual: __
+- [ ] Thu: Compensation/recovery and workflow versioning | Actual: __
+- [ ] Sat: Integrate coordinator, specialists, registry and PEP on shared runtime | Actual: __
+- [ ] Sun: Restart/duplicate/approval/version scenarios, trace and ADR-06 | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -1048,17 +1065,18 @@ End-of-Week Review
 
 ---
 
-## Week 20 (Flex) - Portfolio and Certificate Buffer
+## Week 20 (Flex) - AGENT FLEET ENGINEERING AND REVIEW
 
 Planned Hours: 4-8
 Actual Hours: __
 
 Theory Goal:
-- [ ] Review phase 4 notes
+- [ ] Fleet lifecycle/scheduling, concurrency/quotas/routing, runtime placement/capacity
+- [ ] Cost/governance, agent versioning and fleet monitoring
 
 Practical Goal:
-- [ ] Publish mcp-servers, agent-runtime and governed-agent-system repos
-- [ ] Collect ADR-01 .. ADR-06 into docs/adr/
+- [ ] Fleet operations design and Phase 4 integration review
+- [ ] Portfolio organization (optional within flex time)
 
 Certificate Goal:
 - [ ] Anthropic Claude Code in Action (course / learning checkpoint)
@@ -1067,13 +1085,13 @@ Project Goal:
 - [ ] Portfolio baseline visible
 
 Outcome Goal:
-- [ ] Phase 4 complete with public proof of work
+- [ ] Show multiple agents operate under shared runtime, identity, policy, isolation and operational controls
 
 Daily Plan (Flexible)
-- [ ] Task 1: Claude Code course | Actual: __
-- [ ] Task 2: Push mcp-servers repo with README | Actual: __
-- [ ] Task 3: Push agent-runtime repo (diagram + recovery demo) | Actual: __
-- [ ] Task 4: Push governed-agent-system repo + tidy ADRs | Actual: __
+- [ ] Task 1: Fleet lifecycle/scheduling and runtime placement/capacity | Actual: __
+- [ ] Task 2: Concurrency, quotas, routing, cost and governance review | Actual: __
+- [ ] Task 3: Versioning, health monitoring and Phase 4 integration checkpoint | Actual: __
+- [ ] Task 4: Portfolio organization or optional course within flex budget | Actual: __
 
 Phase Reward
 - [ ] M4 claimed: Weekend local trip or family celebration
@@ -1098,7 +1116,7 @@ Actual Hours: __
 Theory Goal:
 - [ ] Identity: agent / user / service / workload; authN; RBAC vs ABAC; capability permissions
 - [ ] Policy: policy-as-code, tool/model/data access policies, risk-based and approval policies
-- [ ] Agent registry, agent lifecycle, discovery; model catalog; tool catalog
+- [ ] Agent registry and lifecycle, routing/capability discovery, management APIs/configuration; model/tool catalogs
 - [ ] Governance: risk classification, responsible AI, compliance, audit, provenance
 - [ ] Multi-tenancy and production isolation; hardened boundary, ephemeral credentials, kill/revoke, observability, model gateway/routing, deployment/versioning, secrets/config
 - [ ] Control Plane vs Runtime, and data plane vs control plane
@@ -1119,9 +1137,9 @@ Outcome Goal:
 Daily Plan
 - [ ] Mon: Identity and authorization models | Actual: __
 - [ ] Tue: Policy, policy-as-code, enforcement points | Actual: __
-- [ ] Wed: Agent registry + model/tool catalogs | Actual: __
+- [ ] Wed: Agent lifecycle, registry/discovery, APIs/configuration, model/tool catalogs | Actual: __
 - [ ] Thu: Governance, risk classification, audit, provenance | Actual: __
-- [ ] Sat: Multi-tenancy, gateway/routing, deployment, secrets (+20-min hosting note) | Actual: __
+- [ ] Sat: Multi-tenancy, gateway/routing, deployment, secrets and runtime/control-plane outage behavior | Actual: __
 - [ ] Sun: Draw control plane from memory + ADR-07 | Actual: __
 
 End-of-Week Review
@@ -1133,9 +1151,9 @@ End-of-Week Review
 
 ---
 
-## Week 22 (Practical) - BUILD A SIMPLIFIED CONTROL PLANE
+## Week 22 (Practical) - GOVERNANCE, SECURITY AND PROVENANCE
 
-Scope: single-process FastAPI + SQLite, in-process policy evaluation, over your Week 12 runtime.
+Scope: small reference control-plane service and persistence over the integrated Weeks 11-15 runtime.
 Out of scope: Kubernetes, a real IdP, a distributed policy engine, a UI.
 The design document is worth as much as the code.
 
@@ -1153,6 +1171,8 @@ Practical Goal:
 - [ ] Audit log (append-only) + trace store ingesting Week 14 OTel traces
 - [ ] Evaluation gate blocking promotion on regression
 - [ ] Runtime wired to call the control plane at every enforcement point
+- [ ] Risk-tier policy enforced; approval, revocation and denial tests recorded
+- [ ] Provenance links actor/delegation, policy/resource version, action, decision and trace
 
 Certificate Goal:
 - [ ] None
@@ -1173,11 +1193,11 @@ Design document sections checklist
 - [ ] Failure modes  - [ ] Scaling model  - [ ] Multi-tenancy  - [ ] Observability  - [ ] Cost model
 
 Daily Plan
-- [ ] Mon: Identity + agent registry | Actual: __
-- [ ] Tue: Policy service + ADR-08 | Actual: __
+- [ ] Mon: Identity + agent registry/lifecycle | Actual: __
+- [ ] Tue: Risk-tier policy service + ADR-08 | Actual: __
 - [ ] Wed: Cost ledger + budgets/quotas | Actual: __
-- [ ] Thu: Audit log + trace store + ADR-09 | Actual: __
-- [ ] Sat: Evaluation gate + full runtime integration + multi-tenant demo | Actual: __
+- [ ] Thu: Audit, provenance and trace store + ADR-09 | Actual: __
+- [ ] Sat: Governance/security tests + runtime integration + tenant boundary demo | Actual: __
 - [ ] Sun: Write the design document + ADR-10 | Actual: __
 
 End-of-Week Review
@@ -1189,7 +1209,7 @@ End-of-Week Review
 
 ---
 
-## Week 23 (Theory) - Evaluation, Observability, Cost and Governance
+## Week 23 (Theory + Operations) - LLMOPS, RELIABILITY AND FINOPS
 
 (control-plane capabilities; duplicate OWASP pass removed - covered in Week 13)
 
@@ -1202,9 +1222,12 @@ Theory Goal:
 - [ ] Observability: OTel GenAI conventions -> fleet traces, metrics, dashboards
 - [ ] Cost and FinOps: budgets, attribution, quotas, rate limits, model routing
 - [ ] Governance: responsible AI, EU AI Act basics, risk tiers, audit and provenance
+- [ ] SLOs, alert thresholds, capacity planning, incident response and performance monitoring
+- [ ] Model lifecycle, version promotion, deployment, rollback and retirement
 
 Practical Goal:
-- [ ] Governance and ops checklist (risk tier -> required controls -> evidence)
+- [ ] Incident/recovery exercise and model/agent promotion plus rollback record
+- [ ] Record measured evaluation, telemetry, performance, capacity and cost evidence with method/environment/limitations; leave unmeasured values blank
 
 Certificate Goal:
 - [ ] Anthropic AI Fluency Framework and Foundations (course / learning checkpoint)
@@ -1221,10 +1244,10 @@ Outcome Goal:
 Daily Plan
 - [ ] Mon: Evaluation metrics and golden sets | Actual: __
 - [ ] Tue: LLM-as-judge, quality gates, trajectory eval + ADR-11 | Actual: __
-- [ ] Wed: Fleet observability (OTel first) | Actual: __
-- [ ] Thu: Cost, budgets, attribution, quotas, routing | Actual: __
-- [ ] Sat: Governance, risk tiers, audit and provenance | Actual: __
-- [ ] Sun: AI Fluency course + ADR-12 | Actual: __
+- [ ] Wed: Fleet observability, SLOs and alert thresholds | Actual: __
+- [ ] Thu: Cost, budgets, capacity, attribution, quotas, routing | Actual: __
+- [ ] Sat: Incident/recovery exercise, model lifecycle and deploy/rollback | Actual: __
+- [ ] Sun: Governance/provenance review, optional AI Fluency course + ADR-12 | Actual: __
 
 End-of-Week Review
 - Completion percent: __
@@ -1235,7 +1258,7 @@ End-of-Week Review
 
 ---
 
-## Week 24 (Capstone and Exam) - Final Week
+## Week 24 (Capstone and Architecture Review) - ENTERPRISE GOVERNED AGENT PLATFORM
 
 Planned Hours: 8-10
 Actual Hours: __
@@ -1244,7 +1267,10 @@ Theory Goal:
 - [ ] Architecture revision across Weeks 11-23 (doubles as Claude Architect domain revision if sitting the exam)
 
 Practical Goal:
-- [ ] Capstone polish and final demo
+- [ ] Integrate and verify the cumulative platform and final demo
+- [ ] Automated functional, security and Agent Isolation Boundary tests
+- [ ] Evaluation datasets and actual result manifests; observability evidence
+- [ ] Deployment/recovery instructions, threat model and production-readiness assessment
 - [ ] Final architecture document - all 20 sections
 
 Certificate Goal:
@@ -1252,20 +1278,20 @@ Certificate Goal:
       sitting available). The capstone and architecture review happen regardless.
 
 Project Goal:
-- [ ] Enterprise Governed Agent Platform capstone final release
-  (control plane over agent runtime over models/tools/agents via MCP)
+- [ ] Enterprise Governed Agent Platform capstone final review
+  (control plane governs; runtime executes models/tools/agents via MCP/A2A boundaries)
 
 Outcome Goal:
 - [ ] M-A10: program completion with capstone and portfolio (certification optional)
 - [ ] Both architect-level "Done When" checklists fully ticked (Runtime + Control Plane)
 
 Daily Plan
-- [ ] Mon: Agentic architecture revision | Actual: __
-- [ ] Tue: Tool design and MCP revision | Actual: __
-- [ ] Wed: Claude Code configuration revision | Actual: __
-- [ ] Thu: Capstone docs and README polish | Actual: __
-- [ ] Sat: Record capstone demo (and take the exam if eligible/available) | Actual: __
-- [ ] Sun: Final architecture document (20 sections) + celebrate | Actual: __
+- [ ] Mon: Review runtime/isolation/identity/workflow/fleet evidence | Actual: __
+- [ ] Tue: Verify retrieval, MCP/A2A, authorization and protocol compatibility | Actual: __
+- [ ] Wed: Run functional, security and isolation tests; capture outputs | Actual: __
+- [ ] Thu: Verify deployment/recovery instructions, threat model and readiness limits | Actual: __
+- [ ] Sat: Integrated capstone evidence review; optional exam only if available/eligible | Actual: __
+- [ ] Sun: Final architecture document (20 sections) and architecture review | Actual: __
 
 Final Milestone Reward
 - [ ] M5 claimed: iPhone Fold fund or Ladakh trip fund

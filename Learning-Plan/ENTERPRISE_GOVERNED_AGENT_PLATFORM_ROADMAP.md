@@ -8,9 +8,9 @@ capstones.
 |---|---:|---|---|
 | Foundations | 1-5 | LLM client and MCP integration foundations | Reusable provider, async, and MCP patterns |
 | Context Engineering and RAG | 6-10 | Context lifecycle, governed retrieval, evaluation, typed capabilities | `ContextEngine` plus retrieval capability with trusted identity and provenance |
-| Agent Runtime Engineering | 11-15 | Durable execution, state, recovery, approvals, isolation, and observability | One runtime that invokes capabilities under explicit limits and policy |
-| Agents and Agent Fleet | 16-20 | Agent configurations, delegated authority, coordination, and registry | Multiple agents using the same governed runtime and bounded handoffs |
-| Control Plane and Platform Architecture | 21-24 | Identity, policy, registry, cost, evaluation, audit, governance | Integrated **Enterprise Governed Agent Platform** capstone |
+| Agent Runtime Engineering | 11-15 | Framework-neutral runtime, harness isolation, delegated identity, evaluation, recovery, and operations | One secure, observable, recoverable runtime |
+| Agentic AI, Interoperability and Orchestration | 16-20 | Patterns, MCP/A2A, multi-agent coordination, durable workflows, and fleet operations | Agents and workflows operating under shared runtime, identity, policy, and isolation |
+| Enterprise Architecture and Production | 21-24 | Control plane, governance/provenance, LLMOps, reliability, FinOps, and architecture review | Integrated **Enterprise Governed Agent Platform** capstone |
 
 ## Architecture boundaries
 
@@ -28,13 +28,26 @@ capstones.
 
 1. **Week 10:** combine Week 7 context primitives and Week 9 retrieval while
    preserving identity and typed failure outcomes.
-2. **Weeks 11-15:** make the runtime the enforcement and recovery boundary for
-   tool/capability calls.
-3. **Weeks 16-20:** configure agents on the same runtime; limit delegated
-   authority and make handoffs auditable.
-4. **Weeks 21-24:** centralize shared policy and governance in the control
-   plane, then document the end-to-end governed platform and its threat,
-   evaluation, and operating model.
+2. **Weeks 11-15:** define framework-neutral runtime roles and interfaces;
+   build one harness/runtime with filesystem, process, network, tools/effects,
+   memory/context, and identity/credential isolation; add delegated identity,
+   evaluation, telemetry, recovery, and operational readiness.
+3. **Weeks 16-20:** compare architecture patterns; implement/test MCP and A2A
+   boundaries; add coordination and durable workflows; operate a fleet on the
+   same runtime with bounded delegation and auditable handoffs.
+4. **Weeks 21-22:** centralize registry, lifecycle, identity, policy,
+   governance, provenance, and oversight in the control plane. Keep it
+   separate from runtime execution.
+5. **Week 23:** produce measured evaluation, SLO, reliability, capacity,
+   performance, and cost evidence with environment and limitations.
+6. **Week 24:** integrate and review the **Enterprise Governed Agent Platform**
+   with implementation, automated/security/isolation tests, datasets/results,
+   observability, deployment/recovery instructions, threat model, and
+   production-readiness assessment.
+
+The Agent Isolation Boundary is a cumulative invariant, not a Week 12-only
+topic. A design, synthetic smoke run, or unverified prototype is not described
+as production-ready.
 
 The final architecture review and capstone remain Week 24 work. No future-phase
 deliverable is marked complete by this roadmap.
