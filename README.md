@@ -8,14 +8,15 @@
 
 ## Current Progress
 
-**Current position: Week 7 complete - Context Engineering Practice. Week 8 has not started; it is planned to begin on 13 October 2026.**
+**Current position: Week 8 — In Progress; Completion Verification Pending.**
 
 - **Weeks 1-5:** Foundation phase complete as of September 10, 2026.
 - **Certificates earned:** Anthropic Introduction to MCP and MCP Advanced Topics.
 - **Week 6:** Theory and notes complete, including context lifecycle and context/memory/state separation.
 - **Week 7:** Practice complete. `ContextEngine` and four reusable runtime primitives are implemented and verified.
-- **Week 8:** Not started. Plan, reference notes, and the typed retrieval capability template are prepared; the learning itself begins 13 October 2026.
-- **Week 9 onward:** Not started.
+- **Week 8:** In progress. Block 1 concepts and knowledge check were covered; independent model/engine justification, Block 3, and retrieval acceptance evidence are not yet verified. See the [Week 8 acceptance checklist](Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
+- **Week 9:** A practical baseline exists in [Week-9-RAG-Implementation](Week-9-RAG-Implementation/); learner acceptance is not verified. Its tests and synthetic smoke set are implementation evidence only, not learner completion or a representative benchmark.
+- **Weeks 10-24:** Planned; not started.
 
 The repository reflects the learning state, not a claim that every planned topic is already complete. Prepared material is not the same as completed learning. Future weeks are shown below as the intended build sequence.
 
@@ -149,6 +150,9 @@ LLM → Context → RAG → Tools/MCP → Agent → Agent Runtime
 
 Full roadmap: [Learning-Plan/AI_LEARNING_PATHWAY_2026_FINAL.md](Learning-Plan/AI_LEARNING_PATHWAY_2026_FINAL.md)
 Progress tracker: [Learning-Plan/AI_24W_MASTER_TRACKER.md](Learning-Plan/AI_24W_MASTER_TRACKER.md)
+Platform roadmap: [Learning-Plan/ENTERPRISE_GOVERNED_AGENT_PLATFORM_ROADMAP.md](Learning-Plan/ENTERPRISE_GOVERNED_AGENT_PLATFORM_ROADMAP.md)
+Progress changes: [Learning-Plan/CURRICULUM_CHANGELOG.md](Learning-Plan/CURRICULUM_CHANGELOG.md)
+Technology audit: [Learning-Plan/TECHNOLOGY_STATUS_AUDIT_2026-11-12.md](Learning-Plan/TECHNOLOGY_STATUS_AUDIT_2026-11-12.md)
 
 ---
 
@@ -215,6 +219,7 @@ This repository documents a **24-week architecture-first learning journey**. It 
 📁 Week-6-ContextEngineering-Basic/ # Context engineering theory + templates
 📁 Week-7-ContextEngineering-ContextEngine/  # ContextEngine build
 📁 Week-8-ContextEngineering-RAG/   # Retrieval theory, notes, capability contract
+📁 Week-9-RAG-Implementation/       # Provider-neutral retrieval baseline
 
 📁 mcp-servers/                     # Real-world MCP integrations
   ├── ado_server.py                 # Azure DevOps MCP server
@@ -408,7 +413,7 @@ Have questions or want to collaborate? Feel free to:
 
 **📌 Note:** This is a learning repository. Code examples prioritize educational clarity over production optimization. For production use, additional error handling, testing, and security measures should be implemented.
 
-**🚧 Status:** Phase 1 complete. Currently progressing through Week 6 of Phase 2; future phases are planned and will be implemented incrementally.
+**🚧 Status:** Weeks 1-7 are complete. Week 8 is in progress with completion verification pending; Week 9 implementation work is not learner-acceptance evidence. Future phases remain planned.
 
 ---
 

@@ -1,5 +1,11 @@
 # Week 8: Advanced RAG & Retrieval Systems — 2-DAY FAST-TRACK PLAN
 
+**Progress status:** In Progress — Completion Verification Pending. The
+learner-provided update confirms Block 1 concepts and knowledge check; the
+remaining acceptance evidence is tracked in
+[WEEK8_ACCEPTANCE_CHECKLIST.md](WEEK8_ACCEPTANCE_CHECKLIST.md). Do not treat
+this prepared plan or its unchecked exercises as completion evidence.
+
 ## Sprint Goal
 Compress the original 6-day theory week (Mon-Sun, 8-10h) into **2 focused days
 of ~4.5h each = 9h total**. Nothing is dropped: chunking, embeddings, vector

@@ -1,0 +1,7 @@
+{
+  "dataset_version": "1.0",
+  "corpus_version": "1.0",
+  "description": "Synthetic smoke data only; replace with a learner-reviewed, access-approved corpus and labels.",
+  "synthetic": true
+}
+

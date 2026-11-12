@@ -3,16 +3,26 @@
 Start Date: 1 July 2026 
 Target End Date: Feb 2027
 
-## Status as of 12 October 2026
+## Progress Reconciliation
 - Weeks 1-5: complete
 - Week 6: complete
 - Week 7: complete
-- **Week 8: not started — planned start 13 October 2026** (materials prepared, no learning tasks ticked)
-- Week 9 onward: not started
-- Current Week: **Week 8 (starting 13 Oct 2026)**
+- **Week 8: In Progress — Completion Verification Pending**
+- **Week 9: implementation baseline exists in the repository; learner acceptance is not verified**
+- Weeks 10-24: not started
+- Current Week: **Week 8**
+
+Progress provenance: this status reflects the learner-provided update. Repository
+code, prepared notes, and automated tests do not by themselves prove that the
+learner completed a learning task. Weeks 1-7 evidence and all actual-hour fields
+remain unchanged.
+
+Week 8 verification details are maintained in
+[WEEK8_ACCEPTANCE_CHECKLIST.md](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 
 > Actual hours stay blank until the sessions actually happen. Do not pre-tick
-> learning tasks.
+> learning tasks. Week 8 remains in progress until its acceptance evidence is
+> recorded; Week 9 implementation is not marked complete.
 
 ## Today View (2-minute update)
 
@@ -474,10 +484,14 @@ End-of-Week Review
 
 ---
 
-## Week 8 (Theory) - Advanced RAG - NOT STARTED (planned start 13 Oct 2026) [CURRENT WEEK]
+## Week 8 (Theory) - Advanced RAG - IN PROGRESS; COMPLETION VERIFICATION PENDING [CURRENT WEEK]
 
 Planned Hours: 8-10 (run as a compressed 2-day, ~9h plan)
 Actual Hours: __
+
+Progress note: Block 1 concepts and knowledge check are reported as covered.
+Independent Block 2 justification, Block 3, and retrieval acceptance evidence
+remain unverified. See the [Week 8 acceptance checklist](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 
 Theory Goal:
 - [ ] Retrieval evaluation frame: Recall@K, Precision@K, MRR, nDCG, citation
@@ -522,7 +536,12 @@ End-of-Week Review
 
 ---
 
-## Week 9 (Practical) - Advanced RAG Build - NOT STARTED
+## Week 9 (Practical) - Advanced RAG Build - LEARNER ACCEPTANCE NOT VERIFIED
+
+Implementation starter code exists in the repository. This is not evidence that
+the learner completed the practical week. The Week 9 checklist and actual hours
+remain open until the learner's own implementation and acceptance evidence are
+recorded.
 
 Planned Hours: 8-10
 Actual Hours: __
@@ -535,7 +554,7 @@ Practical Goal:
 - [ ] Add reranking and keep or remove it based on measured gain vs latency/cost
 - [ ] Add query self-correction bounded by attempts, latency, tokens, cost
 - [ ] Enforce authorization from a trusted identity; fail closed
-- [ ] Run on your work docs
+- [ ] Evaluate on a privacy-approved corpus; keep work documents and secrets out of Git
 - [ ] NEW: Expose RAG as an MCP tool with a typed contract and typed failures
 
 Certificate Goal:
@@ -543,11 +562,13 @@ Certificate Goal:
 
 Project Goal:
 - [ ] Agentic RAG pipeline v1, registered as a capability
-- [ ] Evaluation set (20-50 queries) committed alongside the code
+- [ ] Evaluation set (20-50 queries) committed alongside the code; use synthetic
+      data for public fixtures and document any private evaluation separately
 
 Outcome Goal:
-- [ ] Retrieval quality measured: Recall@K, nDCG, citation correctness, groundedness
-- [ ] Measured latency (p50/p95) and cost per call documented, rates date-stamped
+- [ ] Retrieval quality measured on a learner-reviewed set; answer metrics are
+      recorded only when answers are generated and evaluated
+- [ ] Latency and cost per call documented for a specified environment and provider
 - [ ] Authorization correctness verified against an adversarial query set
 
 Daily Plan
@@ -555,7 +576,7 @@ Daily Plan
 - [ ] Tue: Compare keyword/dense/hybrid + metadata and entitlement filtering | Actual: __
 - [ ] Wed: Reranker integration + measure whether it stays | Actual: __
 - [ ] Thu: Bounded self-correction loop with recorded attempts | Actual: __
-- [ ] Sat: Work-doc benchmark + expose as MCP tool | Actual: __
+- [ ] Sat: Privacy-approved corpus benchmark + expose as MCP tool | Actual: __
 - [ ] Sun: Evaluation notes and fixes | Actual: __
 
 End-of-Week Review

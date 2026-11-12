@@ -1,5 +1,12 @@
 # Week 8 — Advanced RAG & Retrieval Systems: THEORY (2-Day Fast-Track)
 
+**Progress status:** In Progress — Completion Verification Pending. Block 1
+concepts and knowledge check were covered; independent model/engine
+justification, Block 3, and retrieval acceptance evidence remain unverified.
+The [acceptance checklist](Document/WEEK8_ACCEPTANCE_CHECKLIST.md) is the
+evidence record. This plan and its unchecked exercises are not proof of
+completion.
+
 **Original budget:** 8-10h across a full week (Mon-Sun)
 **Your budget:** 2 days × ~4.5h = 9h total — nothing dropped, the six short
 weekday sessions are compressed into two build-momentum days, Sunday's review
@@ -80,29 +87,30 @@ feeds Week 13-14 runtime hardening, and in Week 21 the *retrieval policy* row
 becomes a control-plane concern, not a RAG concern — note that distinction now.
 
 ## ⚠️ Source Status of Factual Claims
-Model names, service capabilities, and preview/GA status move quickly. Status
-as of **12 October 2026**:
+Model names, service capabilities, and preview/GA status move quickly. This is a
+historical source check as of **12 October 2026**:
 
 | Claim | Status |
 |---|---|
 | Cohere `embed-v5.0-pro` / `embed-v5.0-fast` — multimodal, 128k context, selectable dimensions 256-2048 | ✅ Verified against Cohere's embed model docs |
-| Azure AI Search — classic search GA; agentic retrieval GA *with some capabilities in preview* (reasoning-effort control, serverless pricing); region restrictions on agentic retrieval | ✅ Verified against Microsoft Learn |
-| Microsoft Foundry IQ — managed, permission-aware knowledge layer for agents, built on Azure AI Search | ✅ Verified that it exists and is built on Azure AI Search; ⚠️ its own preview/GA and regional status **not** independently confirmed |
+| Azure AI Search — classic search GA; agentic retrieval has capabilities in preview and region restrictions | ✅ Historical check; see the [November technology audit](../Learning-Plan/TECHNOLOGY_STATUS_AUDIT_2026-11-12.md) for current API versions |
+| Microsoft Foundry IQ — managed, permission-aware knowledge layer for agents, built on Azure AI Search | ✅ Verified; feature maturity is mixed (some GA, some preview), depending on the Search API version |
 | Prices for any model or service | ⬜ Not recorded here on purpose — copy from the provider's pricing page and date-stamp inline |
 
 Everything else in these notes is architecture reasoning, not a vendor claim,
 and does not expire.
 
+The October table is a dated snapshot, not a current guarantee. Recheck
+provider documentation before selecting a model or service.
+
 ## ✅ Week 8 Material Status
 The plan, the eight reference notes, and the typed capability template are
-**complete and ready to work through**. Nothing here is ticked as learned —
-the week itself starts 13 October 2026, and the Done-When boxes in
-[Document/WEEK8_2DAY_PLAN.md](Document/WEEK8_2DAY_PLAN.md) get ticked as you
-actually do the work.
+**prepared materials**, not completion evidence. Keep the plan's Done-When
+boxes unchecked until the work is completed and record the evidence in the
+acceptance checklist.
 
-**Start here:** [Document/WEEK8_2DAY_PLAN.md](Document/WEEK8_2DAY_PLAN.md) →
-Day 1, Block 1, which opens by reading
-[Document/retrieval-evaluation-guide.md](Document/retrieval-evaluation-guide.md).
+**Resume with:** [Document/WEEK8_2DAY_PLAN.md](Document/WEEK8_2DAY_PLAN.md)
+and the first unchecked item in the acceptance checklist.
 
 ## 🏆 Certification
 No dedicated certificate for this topic in the master roadmap. Optional

@@ -7,21 +7,23 @@
 
 ---
 
-## 📍 Current Status (as of 12 October 2026)
+## 📍 Current Status (reconciled from learner-provided progress; update date not recorded)
 
 | | |
 |---|---|
 | Phase 1 (Weeks 1-5) | ✅ Complete |
 | Week 6 | ✅ Complete — theory and notes |
 | Week 7 | ✅ Complete — `ContextEngine` built and verified |
-| **Week 8** | ⬜ **Not started — planned to begin 13 October 2026** (materials prepared) |
-| Week 9 | ⬜ Not started |
+| **Week 8** | 🟡 **In Progress — Completion Verification Pending** |
+| Week 9 | 🟡 Implementation baseline being prepared; learner acceptance not verified |
 | Weeks 10-24 | ⬜ Not started |
 
-> Week 8's notes and templates exist as **prepared material**, not as completed
-> learning. Nothing in Week 8 or later is ticked until the work is actually done,
-> and actual hours are recorded in
-> [AI_24W_MASTER_TRACKER.md](AI_24W_MASTER_TRACKER.md) as they happen.
+> Week 8 Block 1 concepts and knowledge check were covered. Independent
+> model/engine justification, Block 3, and retrieval acceptance evidence remain
+> unverified. Prepared Week 9 code and passing automated tests are not learner
+> completion evidence. Do not change actual hours or checkboxes without evidence;
+> record progress in [AI_24W_MASTER_TRACKER.md](AI_24W_MASTER_TRACKER.md) as it
+> happens. See the [Week 8 acceptance checklist](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 
 ---
 
@@ -680,7 +682,7 @@ That answer is a **retrieval policy** — and in Week 21 you'll see it is a cont
 | Tue | Compare keyword, dense, and hybrid on the same evaluation set + metadata filtering **+ authorization filtering from a trusted identity** | Search implementation | 1.5h |
 | Wed | Add a reranking step — and measure whether it earns its latency and cost | Reranker integration | 1h |
 | Thu | **Self-correction as a runtime loop:** if retrieval quality is low → reformulate → retry, bounded by attempts, latency, tokens and cost | Loop + bounded retry | 1h |
-| Sat | **Project:** agentic RAG on your work docs, **exposed as an MCP tool** with the declared contract | Full integration | 2-3h |
+| Sat | **Project:** agentic RAG on a privacy-approved work corpus (never committed), **exposed as an MCP tool** with the declared contract | Full integration | 2-3h |
 | Sun | Evaluate quality: Recall@K / nDCG / citation correctness / groundedness, plus measured latency, cost, and **authorization correctness** | Test data, scoring | 1h |
 
 #### 🧭 Thursday: Make Self-Correction a *Bounded* Loop
@@ -2142,7 +2144,7 @@ These are specs and conventions, not tutorials. They outlive frameworks, which i
 ### ✅ End of Month 2 (Week 9-10)  
 - [ ] Production RAG system working
 - [ ] Context engineering patterns mastered
-- [ ] Applied to real work documents
+- [ ] Applied to a privacy-approved corpus; no private data is committed
 - [ ] **Confidence:** "I can build intelligent retrieval systems"
 
 ### ✅ End of Month 3 (Week 14-15)

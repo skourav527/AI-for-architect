@@ -64,6 +64,7 @@ In every case, confirm the choice by measuring Recall@K before and after; a
 strategy that sounds better and measures worse is worse.
 
 ## Decision tree/map: 
+```mermaid
 
 flowchart TD
     A["Identify the document type"] --> B{"Does its structure carry meaning?"}
@@ -79,7 +80,7 @@ flowchart TD
     H --> I
     I --> J["Consider parent-child retrieval"]
     J --> K["Evaluate on the same labelled queries"]
-
+```
 ## Parameters That Matter More Than the Strategy Name
 
 - **Chunk size:** too small → each chunk loses surrounding context needed to
