@@ -51,6 +51,39 @@ Record all four numbers. "We added a reranker because best practice says so"
 is not a decision; "reranking moved nDCG@5 from 0.61 to 0.78 for +180 ms p95
 and +$X per 1k calls, measured on 2026-XX-XX" is.
 
+
+## Evaluation Protocol and Decision Record
+
+Before introducing a reranker, establish a baseline using the same evaluation dataset and retrieval configuration.
+
+### Evaluation dimensions
+
+| Dimension | Metric | Purpose |
+|---|---|---|
+| Candidate coverage | Recall@K | Measures whether relevant documents are retrieved |
+| Ranking quality | nDCG@K | Measures relevance ordering, accounting for graded relevance |
+| First relevant result | MRR@K | Measures how early the first relevant document appears |
+| Performance | p95 latency | Measures the impact on slower requests |
+| Economics | Cost per call | Measures incremental reranking expense |
+
+### Fair comparison requirements
+
+- Use the same queries, corpus, relevance labels and candidate-generation configuration.
+- Compare reranking against the first-pass baseline.
+- Record the candidate count supplied to the reranker.
+- Measure latency and cost under representative workloads.
+- Record evaluation dataset size and query categories.
+- Do not interpret synthetic evaluation results as production performance evidence.
+
+### Decision outcomes
+
+1. **Keep:** Ranking improvement is material and latency/cost remain within application budgets.
+2. **Remove:** Improvement is negligible or does not justify the additional operational cost.
+3. **Conditional:** Reranking provides value for a calibrated subset of uncertain queries.
+4. **Fix retrieval first:** Recall@K is inadequate; improve candidate generation before evaluating reranking further.
+
+The final decision must be documented with measured evidence, not assumptions or vendor benchmark claims.
+
 ### Where it typically helps
 - Corpora with many near-duplicate or topically similar chunks that a
   bi-encoder cannot separate.

@@ -161,6 +161,46 @@ Plus two behavioural rules:
 > evaluation data — see the score-semantics section of
 > [retrieval-evaluation-guide.md](retrieval-evaluation-guide.md).
 
+## Block 3 — Architecture Decision Review: Acceptance Notes
+
+### Enterprise scenario
+
+An enterprise knowledge assistant must search 50,000 operational procedures across multiple business units, enforce document-level authorization and provide source citations.
+
+### Architectural decisions
+
+| Decision | Selected approach | Rationale |
+|---|---|---|
+| Long context vs retrieval | RAG | Corpus size, document-level permissions, citations and growing content favour retrieval |
+| Managed vs custom | Managed permission-aware retrieval as production baseline candidate | Enterprise integrations, authorization capabilities and lower operational burden |
+| Retrieval ranking | Evaluate reranking when relevant candidates are retrieved but ranked poorly | Measure nDCG/MRR improvement against latency and cost |
+| Authorization | External policy authority with enforcement in the retrieval capability | The model and caller-supplied filters cannot grant access |
+
+### Evaluation criteria
+
+- Retrieval quality: Recall@K, nDCG@K and MRR.
+- Answer reliability: citation correctness and groundedness.
+- Performance: p95 latency.
+- Economics: total cost per call and operational cost.
+- Security: authorization correctness and zero unauthorized content exposure.
+- Freshness: document and ACL update/deletion propagation SLA.
+
+### Architectural principles
+
+1. Select architecture before selecting products.
+2. Evaluate managed and custom retrieval against the same representative workload.
+3. Separate trusted identity, policy ownership and enforcement.
+4. Treat authorization correctness as a release gate.
+5. Use measured evidence rather than assuming that more sophisticated retrieval is better.
+
+### Acceptance evidence
+
+- Architecture decision assessment: 4/4.
+- Independent implementation evidence: to be established in Week 9.
+- Final documentation and progress tracking: update after Block 4.
+
+**Status: Block 3 assessment passed.**
+
 ## Decision Checklist (use per use case)
 
 1. **Long context or retrieval?** Compare cost per call and attribution needs
