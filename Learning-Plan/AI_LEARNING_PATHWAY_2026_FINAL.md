@@ -14,17 +14,13 @@
 | Phase 1 (Weeks 1-5) | ✅ Complete |
 | Week 6 | ✅ Complete — theory and notes |
 | Week 7 | ✅ Complete — `ContextEngine` built and verified |
-| **Week 8 Day 1** | ✅ **Learning complete** — completed assessment and revision work reported |
-| **Week 8 Day 2** | ⬜ **Pending** |
-| **Week 8** | 🟡 **In Progress** |
-| Week 9 | 🟡 Implementation baseline being prepared; learner acceptance not verified |
+| **Week 8** | ✅ **Complete** — learner-reported on 2026-11-17 |
+| Week 9 | 🟡 Planned to start 2026-11-18; learner acceptance not verified |
 | Weeks 10-24 | ⬜ Not started |
 
-> Week 8 Day 1 learning is complete based on the completed assessment and
-> revision work reported by the learner. Day 2 is pending and Week 8 remains in
-> progress. No date, hours, or score was supplied; repository deliverable
-> synchronization is tracked separately from learner completion. Prepared
-> Week 9 code and automated tests are not learner completion evidence. See the
+> Week 8 completion was reported by the learner on 2026-11-17; the exact
+> completion date, hours, score, and assessment artifacts were not supplied.
+> Prepared Week 9 code and automated tests are not learner completion evidence. See the
 > [Week 8 acceptance checklist](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 
 ---
@@ -612,9 +608,9 @@ class ContextEngine:
 ### 📅 WEEK 8: Advanced RAG & Retrieval Systems — THEORY
 **Hours: 8-10 | Focus: Beyond basic RAG — production retrieval patterns**
 
-**Progress:** Day 1 learning complete based on the completed learner-reported
-assessment and revision work. Day 2 pending; Week 8 remains in progress. No
-hours, date, or score is inferred from this status.
+**Progress:** Week 8 complete per the learner's report received 2026-11-17.
+The exact completion date, hours, score, and assessment artifacts were not
+supplied.
 
 #### 📖 Study Plan
 
@@ -655,13 +651,13 @@ That answer is a **retrieval policy** — and in Week 21 you'll see it is a cont
 
 #### 📝 Notes to Create
 *(All of these live in `Week-8-ContextEngineering-RAG/Document/` — write them there, not here.)*
-- [ ] **Retrieval evaluation guide** — Recall@K, Precision@K, MRR, nDCG, citation correctness, groundedness, latency, cost, **authorization correctness**
-- [ ] RAG architecture decision tree (long-context vs retrieval → managed vs custom → evaluation-driven method selection → bounded adaptive retrieval)
-- [ ] Chunking strategies comparison (incl. structure-aware, parent-child retrieval, provenance, freshness, update/deletion)
-- [ ] Embedding models comparison (current and prior generation; date-stamp anything you look up)
-- [ ] Retrieval engine comparison (Chroma, FAISS, Qdrant, Pinecone, Azure AI Search; note Foundry IQ as a managed knowledge layer; separate **preview** from **GA**)
-- [ ] Reranking strategies guide — framed as an optional, measured trade-off
-- [ ] 🧭 **Retrieval capability contract** (identity / input / authorization / output+provenance / score semantics / policy / latency / cost / observability / typed failures)
+- [x] **Retrieval evaluation guide** — Recall@K, Precision@K, MRR, nDCG, citation correctness, groundedness, latency, cost, **authorization correctness**
+- [x] RAG architecture decision tree (long-context vs retrieval → managed vs custom → evaluation-driven method selection → bounded adaptive retrieval)
+- [x] Chunking strategies comparison (incl. structure-aware, parent-child retrieval, provenance, freshness, update/deletion)
+- [x] Embedding models comparison (current and prior generation; date-stamp anything you look up)
+- [x] Retrieval engine comparison (Chroma, FAISS, Qdrant, Pinecone, Azure AI Search; note Foundry IQ as a managed knowledge layer; separate **preview** from **GA**)
+- [x] Reranking strategies guide — framed as an optional, measured trade-off
+- [x] 🧭 **Retrieval capability contract** (identity / input / authorization / output+provenance / score semantics / policy / latency / cost / observability / typed failures)
 - [ ] *(Optional stretch)* DSPy overview note — what it is, when useful, vs manual prompting
 
 #### ✅ Week 8 Done When:
@@ -675,14 +671,17 @@ That answer is a **retrieval policy** — and in Week 21 you'll see it is a cont
 - [ ] 🔐 Can state where **authorization** is enforced, why filter placement is not the security control, and what "fail closed" means here
 - [ ] 🧭 Can explain what a **retrieval policy** is and who owns it
 
-> **Progress note:** the Week 8 Day 1 learning checkpoint is complete. These
-> overall Week 8 acceptance criteria remain unchecked until the remaining Day 2
-> work and the full-week acceptance decision are recorded.
+> **Progress note:** Week 8 is complete per the learner's report received
+> 2026-11-17. The optional DSPy stretch remains optional; the completion report
+> did not include hours, scores, or linked evidence artifacts.
 
 ---
 
 ### 📅 WEEK 9: Advanced RAG — PRACTICE
 **Hours: 8-10 | Focus: Build production RAG system**
+
+**Planned start:** November 18, 2026. Learner acceptance remains unverified
+until the practical work and its evidence are recorded.
 
 #### 🔨 Build Plan
 

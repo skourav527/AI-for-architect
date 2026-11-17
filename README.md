@@ -8,13 +8,13 @@
 
 ## Current Progress
 
-**Current position: Week 8 — In Progress (Day 1 learning complete; Day 2 pending).**
+**Current position: Week 9 — planned start November 18, 2026.**
 
 - **Weeks 1-5:** Foundation phase complete as of September 10, 2026.
 - **Certificates earned:** Anthropic Introduction to MCP and MCP Advanced Topics.
 - **Week 6:** Theory and notes complete, including context lifecycle and context/memory/state separation.
 - **Week 7:** Practice complete. `ContextEngine` and four reusable runtime primitives are implemented and verified.
-- **Week 8 Day 1:** Learning complete based on the learner-reported completed assessment and revision work. Day 2 is pending; Week 8 remains in progress. No date, hours, score, or assessment artifact was supplied. See the [Week 8 acceptance checklist](Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
+- **Week 8:** Complete based on the learner's report on November 17, 2026. The exact completion date, hours, score, and assessment artifacts were not supplied. See the [Week 8 acceptance checklist](Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 - **Week 9:** A practical baseline exists in [Week-9-RAG-Implementation](Week-9-RAG-Implementation/); learner acceptance is not verified. Its tests and synthetic smoke set are implementation evidence only, not learner completion or a representative benchmark.
 - **Weeks 10-24:** Planned; not started.
 
@@ -422,7 +422,7 @@ Have questions or want to collaborate? Feel free to:
 
 **📌 Note:** This is a learning repository. Code examples prioritize educational clarity over production optimization. For production use, additional error handling, testing, and security measures should be implemented.
 
-**🚧 Status:** Weeks 1-7 are complete. Week 8 Day 1 learning is complete; Day 2 is pending and Week 8 remains in progress. Week 9 implementation work is not learner-acceptance evidence. Future phases remain planned.
+**🚧 Status:** Weeks 1-8 are complete. Week 9 is planned to start November 18, 2026; its implementation baseline is not learner-acceptance evidence. Future phases remain planned.
 
 ---
 

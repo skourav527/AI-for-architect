@@ -1,7 +1,8 @@
 # Week 9 — Practical RAG Implementation
 
-**Status:** implementation is a learning baseline; learner acceptance is not
-verified. This does not mark Week 9 complete.
+**Status:** planned Week 9 start is November 18, 2026. This implementation is
+a learning baseline; learner acceptance is not verified and Week 9 is not
+complete.
 
 This provider-neutral Python project implements a local ingestion and retrieval
 baseline. It deliberately starts with BM25 and deterministic metrics; it does

@@ -1,10 +1,8 @@
 # Week 8: Advanced RAG & Retrieval Systems — 2-DAY FAST-TRACK PLAN
 
-**Progress status:** Day 1 learning complete based on the learner-reported
-completed assessment and revision work. Day 2 is pending; Week 8 remains in
-progress. No date, actual hours, score, or artifact link was supplied. The
-acceptance checklist records this status separately from repository deliverable
-synchronization.
+**Progress status:** Week 8 complete per the learner's report received
+2026-11-17. The exact completion date, actual hours, score, and artifact links
+were not supplied. See the acceptance checklist for the completion record.
 
 ## Sprint Goal
 Compress the original 6-day theory week (Mon-Sun, 8-10h) into **2 focused days
@@ -282,26 +280,26 @@ end to end. Fix anything that reads wrong or incomplete now, while it's fresh.
 Skim [templates/retrieval_capability.py](../templates/retrieval_capability.py)
 so Week 9 Monday starts by filling in a contract you already recognize.
 
-**Done Day 2 when (pending):**
-- [ ] Can state the measurements that justify (or remove) reranking
-- [ ] Can explain naive vs self-corrective vs adaptive vs routing retrieval
-- [ ] Can name the four bounds and the two failure kinds for retrieval loops
-- [ ] RAG architecture decision tree completed, including long-context and managed-vs-custom branches
-- [ ] Retrieval capability contract one-pager finalized (policy ownership answered)
-- [ ] Quick revision cheatsheet reviewed and annotated with weak spots
+**Day 2 completion checks (learner-reported complete):**
+- [x] Can state the measurements that justify (or remove) reranking
+- [x] Can explain naive vs self-corrective vs adaptive vs routing retrieval
+- [x] Can name the four bounds and the two failure kinds for retrieval loops
+- [x] RAG architecture decision tree completed, including long-context and managed-vs-custom branches
+- [x] Retrieval capability contract one-pager finalized (policy ownership answered)
+- [x] Quick revision cheatsheet reviewed and annotated with weak spots
 
 ---
 
 ## ✅ Week 8 Deliverables (Definition of Done)
-- [ ] Retrieval evaluation guide understood: Recall@K, Precision@K, MRR, nDCG, citation correctness, groundedness, latency, cost, authorization correctness
-- [ ] Chunking strategies comparison completed (incl. structure-aware, parent-child, provenance, freshness/update/deletion)
-- [ ] Embedding models comparison completed and date-stamped
-- [ ] Retrieval engine comparison completed (Chroma, FAISS, Qdrant, Pinecone, Azure AI Search; Foundry IQ noted; managed vs custom decided)
-- [ ] Reranking guide completed, framed as a measured optional trade-off
-- [ ] RAG architecture decision tree completed (long-context vs retrieval, managed vs custom, evaluation-driven method selection, bounded adaptive retrieval)
-- [ ] 🧭 Retrieval capability contract completed (identity, enforced authorization, provenance/version, score semantics, observability, typed failures)
+- [x] Retrieval evaluation guide understood: Recall@K, Precision@K, MRR, nDCG, citation correctness, groundedness, latency, cost, authorization correctness
+- [x] Chunking strategies comparison completed (incl. structure-aware, parent-child, provenance, freshness/update/deletion)
+- [x] Embedding models comparison completed and date-stamped
+- [x] Retrieval engine comparison completed (Chroma, FAISS, Qdrant, Pinecone, Azure AI Search; Foundry IQ noted; managed vs custom decided)
+- [x] Reranking guide completed, framed as a measured optional trade-off
+- [x] RAG architecture decision tree completed (long-context vs retrieval, managed vs custom, evaluation-driven method selection, bounded adaptive retrieval)
+- [x] 🧭 Retrieval capability contract completed (identity, enforced authorization, provenance/version, score semantics, observability, typed failures)
 - [ ] *(Optional stretch)* DSPy overview note
-- [ ] Quick revision cheatsheet completed
+- [x] Quick revision cheatsheet completed
 
 ## 🧘 Minimum Viable Plan (if a day gets shorter than 4.5h)
 Cut order if squeezed: (1) keep Day 1 Block 1's evaluation-frame reading —
@@ -311,12 +309,7 @@ without the metrics every other block becomes opinion, (2) keep Day 2 Block 2
 its first draft plus the capability contract are the Done-When bar, do not cut
 those.
 
-## Entering Week 9 — Readiness Gate
-You're ready to move on when you can, without opening any file: walk the RAG
-decision tree for a made-up use case (including whether retrieval beats long
-context and whether you'd buy or build), name which metric settles each
-choice, state the four bounds and two failure kinds for a retrieval loop,
-explain why there is no universal relevance threshold, say where authorization
-is enforced and who owns the retrieval policy — and read
-`templates/retrieval_capability.py` and say which field you'd fill in first on
-Monday.
+## Entering Week 9
+Week 8 completion was reported by the learner on 2026-11-17. Week 9 is planned
+to start on November 18, 2026. The optional DSPy stretch is not required for
+Week 8 completion.

@@ -7,14 +7,22 @@ not replace the detailed learning tracker or certify learner completion.
 
 - Preserve Weeks 1-7 as complete, based on the existing tracker and learner
   update; do not rewrite their evidence or actual hours.
-- Week 8 Day 1 learning is complete based on the learner-reported completed
-  assessment and revision work. Day 2 remains pending and Week 8 remains
-  **In Progress**. No date, actual hours, score, or assessment artifact was
-  supplied. Repository deliverable synchronization is separate from learner
-  completion.
+- Week 8 is complete per the learner's report received 2026-11-17. The exact
+  completion date, actual hours, score, and supporting artifacts were not
+  supplied. See the dated reconciliation entry below; the earlier November 12
+  status is retained as historical context.
 - Treat Week 9 implementation files, automated tests, and synthetic evaluation
   as repository implementation evidence only, not learner completion.
 - Leave Weeks 10-24 planned and incomplete.
+
+## 2026-11-17 — Week 8 completion reported
+
+- Updated the root README, pathway, master tracker, Week 8 plan, and acceptance
+  checklist to record Week 8 complete per the learner's report.
+- The exact completion date, actual hours, score, and evidence artifacts were
+  not supplied; none were inferred. The optional DSPy stretch remains optional.
+- Week 9 is planned to start November 18, 2026. Its learner acceptance remains
+  unverified; repository implementation and tests are not completion evidence.
 
 ## Curriculum invariants
 
@@ -48,9 +56,9 @@ not replace the detailed learning tracker or certify learner completion.
   coordination, durable workflows, and fleet operations. Phase 5 separates
   control-plane governance from runtime execution and requires measurable
   production-operation evidence.
-- Week 8 documentation records Day 1 learning complete, Day 2 pending, and
-  Week 8 in progress without inventing a date, hours, score, or assessment
-  artifact.
+- At that time, Week 8 documentation recorded Day 1 learning complete, Day 2
+  pending, and Week 8 in progress without inventing a date, hours, score, or
+  assessment artifact.
 - Updated the executable workflow and technology audit to describe blocking
   Python 3.11+ Week 9 lint/test/coverage/dependency/security gates and pinned
   third-party actions. Workflow execution results are reported separately;

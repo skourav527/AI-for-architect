@@ -134,10 +134,10 @@ and a metric. Useful with an eval set and chained calls; pointless without
 labelled data. Architecture decisions still come first.
 
 ## Readiness Check Before Week 9
-- [ ] Can name the four metric groups and what each one decides
-- [ ] Can walk the decision tree, including long-context and managed-vs-custom
-- [ ] Can justify an embedding model + engine + chunking strategy
-- [ ] Can state the four bounds and two failure kinds of a retrieval loop
-- [ ] Can explain why there is no universal relevance threshold
-- [ ] Can explain when reranking is worth keeping — and when to remove it
-- [ ] Can say where authorization is enforced and who owns the retrieval policy
+- [x] Can name the four metric groups and what each one decides
+- [x] Can walk the decision tree, including long-context and managed-vs-custom
+- [x] Can justify an embedding model + engine + chunking strategy
+- [x] Can state the four bounds and two failure kinds of a retrieval loop
+- [x] Can explain why there is no universal relevance threshold
+- [x] Can explain when reranking is worth keeping — and when to remove it
+- [x] Can say where authorization is enforced and who owns the retrieval policy

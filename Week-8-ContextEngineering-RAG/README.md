@@ -1,10 +1,9 @@
 # Week 8 — Advanced RAG & Retrieval Systems: THEORY (2-Day Fast-Track)
 
-**Progress status:** Day 1 learning complete based on the learner-reported
-completed assessment and revision work. Day 2 is pending; Week 8 remains in
-progress. No date, actual hours, score, or assessment artifact was supplied.
-The [acceptance checklist](Document/WEEK8_ACCEPTANCE_CHECKLIST.md) records
-learner completion separately from repository deliverable synchronization.
+**Progress status:** Week 8 complete per the learner's report received
+2026-11-17. The exact completion date, actual hours, score, and assessment
+artifacts were not supplied. The [acceptance checklist](Document/WEEK8_ACCEPTANCE_CHECKLIST.md)
+records this learner-reported status.
 
 **Original budget:** 8-10h across a full week (Mon-Sun)
 **Your budget:** 2 days × ~4.5h = 9h total — nothing dropped, the six short
@@ -103,13 +102,13 @@ The October table is a dated snapshot, not a current guarantee. Recheck
 provider documentation before selecting a model or service.
 
 ## ✅ Week 8 Material Status
-The plan, the eight reference notes, and the typed capability template are
-**prepared materials**, not completion evidence. Keep the plan's Done-When
-boxes unchecked until the work is completed and record the evidence in the
-acceptance checklist.
+Week 8 is complete per the learner's report. The plan, reference notes, and
+typed capability template are learning materials; their presence alone is not
+completion evidence. See the acceptance checklist for the learner-reported
+completion record.
 
-**Resume with:** [Document/WEEK8_2DAY_PLAN.md](Document/WEEK8_2DAY_PLAN.md)
-at Day 2 and its first pending item in the acceptance checklist.
+**Next:** Start Week 9 on November 18, 2026. See
+[Week-9-RAG-Implementation](../Week-9-RAG-Implementation/).
 
 ## 🏆 Certification
 No dedicated certificate for this topic in the master roadmap. Optional

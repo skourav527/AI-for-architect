@@ -7,25 +7,23 @@ Target End Date: Feb 2027
 - Weeks 1-5: complete
 - Week 6: complete
 - Week 7: complete
-- **Week 8 Day 1: Learning complete** — based on learner-reported completed assessment and revision work
-- **Week 8 Day 2: Pending; Week 8 remains In Progress**
-- **Week 9: implementation baseline exists in the repository; learner acceptance is not verified**
+- **Week 8: Complete** — learner-reported on November 17, 2026; exact completion date and supporting artifacts not supplied
+- **Week 9: Planned to start November 18, 2026; learner acceptance is not verified**
 - Weeks 10-24: not started
-- Current Week: **Week 8**
+- Current Week: **Week 8 complete; Week 9 starts November 18, 2026**
 
-Progress provenance: Day 1 completion reflects the learner-provided update
-that the assessment and revision work were completed. No date, score, hours, or
-assessment artifact was supplied. Repository deliverable synchronization is
-separate from learner completion. Repository code, prepared notes, and
-automated tests do not by themselves prove that the learner completed a
-learning task. Weeks 1-7 evidence and all actual-hour fields remain unchanged.
+Progress provenance: Week 8 completion reflects the learner's report received
+November 17, 2026. The exact completion date, score, hours, and assessment
+artifacts were not supplied. Repository code, prepared notes, and automated
+tests do not by themselves prove learner completion. Weeks 1-7 evidence and
+all actual-hour fields remain unchanged.
 
 Week 8 verification details are maintained in
 [WEEK8_ACCEPTANCE_CHECKLIST.md](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 
-> Actual hours stay blank until supplied. Day 1 learning is complete; Day 2 and
-> the overall Week 8 acceptance decision remain pending. Week 9 implementation
-> is not marked complete.
+> Actual hours stay blank until supplied. Week 8 is complete per the learner's
+> report. Week 9 is planned to start November 18; its implementation baseline
+> is not marked as learner completion.
 
 ## Today View (2-minute update)
 
@@ -488,61 +486,60 @@ End-of-Week Review
 
 ---
 
-## Week 8 (Theory) - Advanced RAG - DAY 1 LEARNING COMPLETE; DAY 2 PENDING [CURRENT WEEK]
+## Week 8 (Theory) - Advanced RAG - COMPLETE
 
 Planned Hours: 8-10 (run as a compressed 2-day, ~9h plan)
 Actual Hours: __
 
-Progress note: Day 1 learning is complete based on the learner-reported
-completed assessment and revision work. Day 2 is pending; Week 8 remains in
-progress. No date, score, or actual hours were supplied. Repository deliverable
-synchronization is separate from learner completion. See the [Week 8 acceptance
+Progress note: Week 8 completion was reported by the learner on 2026-11-17.
+The exact completion date, score, actual hours, and assessment artifacts were
+not supplied. See the [Week 8 acceptance
 checklist](../Week-8-ContextEngineering-RAG/Document/WEEK8_ACCEPTANCE_CHECKLIST.md).
 
 Theory Goal:
-- [ ] Retrieval evaluation frame: Recall@K, Precision@K, MRR, nDCG, citation
+- [x] Retrieval evaluation frame: Recall@K, Precision@K, MRR, nDCG, citation
       correctness, groundedness, latency, cost, authorization correctness
-- [ ] Chunking and embeddings strategy (incl. structure-aware, parent-child,
+- [x] Chunking and embeddings strategy (incl. structure-aware, parent-child,
       provenance, freshness, update/deletion)
-- [ ] Choosing keyword vs dense vs hybrid by measurement; reranking as an
+- [x] Choosing keyword vs dense vs hybrid by measurement; reranking as an
       optional measured trade-off
-- [ ] Adaptive/agentic retrieval bounded by attempts, latency, tokens, cost
-- [ ] NEW: Retrieval as a capability (contract + identity + authorization +
+- [x] Adaptive/agentic retrieval bounded by attempts, latency, tokens, cost
+- [x] NEW: Retrieval as a capability (contract + identity + authorization +
       policy + latency/cost budget + observability + typed failures)
 
 Practical Goal:
-- [ ] Prepare RAG architecture decision tree (long-context vs retrieval,
+- [x] Prepare RAG architecture decision tree (long-context vs retrieval,
       managed vs custom, then evaluation-driven method selection)
 
 Certificate Goal:
 - [ ] None this week
 
 Project Goal:
-- [ ] Retrieval strategy and architecture notes
-- [ ] NEW: Retrieval capability contract note
+- [x] Retrieval strategy and architecture notes
+- [x] NEW: Retrieval capability contract note
 
 Outcome Goal:
-- [ ] Design confidence for production retrieval, with a metric behind each choice
-- [ ] Can say where authorization is enforced and who owns retrieval policy
+- [x] Design confidence for production retrieval, with a metric behind each choice
+- [x] Can say where authorization is enforced and who owns retrieval policy
 
 Daily Plan (2-day compressed; original 6-day shape kept for reference)
 - [x] Day 1 Block 1: Evaluation frame + chunking | Actual: __
 - [x] Day 1 Block 2: Embeddings + engines + managed vs custom | Actual: __
 - [x] Day 1 Block 3: Method selection + filtering vs authorization + capability | Actual: __
-- [ ] Day 2 Block 1: Reranking as a measured trade-off | Actual: __
-- [ ] Day 2 Block 2: Bounded adaptive retrieval (DSPy optional stretch) | Actual: __
-- [ ] Day 2 Blocks 3-4: Decision tree + contract review + cheatsheet | Actual: __
+- [x] Day 2 Block 1: Reranking as a measured trade-off | Actual: __
+- [x] Day 2 Block 2: Bounded adaptive retrieval (DSPy optional stretch) | Actual: __
+- [x] Day 2 Blocks 3-4: Decision tree + contract review + cheatsheet | Actual: __
 
 End-of-Week Review
-- Completion percent: __
+- Completion percent: 100%
 - Biggest win: __
 - Blocker: __
-- Priority for next week: __
+- Priority for next week: Start Week 9 RAG implementation on November 18, 2026
 - Reward used: __
 
 ---
 
-## Week 9 (Practical) - Advanced RAG Build - LEARNER ACCEPTANCE NOT VERIFIED
+## Week 9 (Practical) - Advanced RAG Build - PLANNED START 2026-11-18; LEARNER ACCEPTANCE NOT VERIFIED
 
 Implementation starter code exists in the repository. This is not evidence that
 the learner completed the practical week. The Week 9 checklist and actual hours
