@@ -546,7 +546,8 @@ the learner completed the practical week. The Week 9 checklist and actual hours
 remain open until the learner's own implementation and acceptance evidence are
 recorded.
 
-Planned Hours: 8-10
+Planned Hours: 8-10 (run as a compressed 4-day plan, Wed 11-18 → Sat 11-21;
+see [WEEK9_4DAY_PLAN.md](../Week-9-RAG-Implementation/docs/WEEK9_4DAY_PLAN.md))
 Actual Hours: __
 
 Theory Goal:
@@ -574,13 +575,12 @@ Outcome Goal:
 - [ ] Latency and cost per call documented for a specified environment and provider
 - [ ] Authorization correctness verified against an adversarial query set
 
-Daily Plan
-- [ ] Mon: RAG ingestion baseline + start evaluation set | Actual: __
-- [ ] Tue: Compare keyword/dense/hybrid + metadata and entitlement filtering | Actual: __
-- [ ] Wed: Reranker integration + measure whether it stays | Actual: __
-- [ ] Thu: Bounded self-correction loop with recorded attempts | Actual: __
-- [ ] Sat: Privacy-approved corpus benchmark + expose as MCP tool | Actual: __
-- [ ] Sun: Evaluation notes and fixes | Actual: __
+Daily Plan (4-day compressed; Sunday 11-22 kept free)
+- [ ] Day 1 Wed 11-18 (1.5h): Baseline code tour + debug drills + eval set v1.1 with adversarial cases | Actual: __
+- [ ] Day 2 Thu 11-19 (1.5-2h): Local embedding adapter + BM25/dense/hybrid comparison + ADR-W9-03 | Actual: __
+- [ ] Day 3 Fri 11-20 (1.5-2h): Reranker keep/remove (ADR-W9-04) + calibrated thresholds | Actual: __
+- [ ] Day 4 Sat 11-21 (4h): Bounded loop v2 + MCP run + real-doc eval + answer eval + capability card | Actual: __
+- [ ] Revision notes filled in (3 files under docs/revision/) | Actual: __
 
 End-of-Week Review
 - Completion percent: __

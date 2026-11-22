@@ -4,6 +4,12 @@
 a learning baseline; learner acceptance is not verified and Week 9 is not
 complete.
 
+**Learning plan:** [docs/WEEK9_4DAY_PLAN.md](docs/WEEK9_4DAY_PLAN.md) (Wed
+2026-11-18 → Sat 2026-11-21). Revision notes:
+[retrieval & measurement](docs/revision/W9-REVISION-1-retrieval-pipeline-and-measurement.md),
+[bounded self-correction](docs/revision/W9-REVISION-2-bounded-self-correction.md),
+[authorization & MCP capability](docs/revision/W9-REVISION-3-authorization-and-mcp-capability.md).
+
 This provider-neutral Python project implements a local ingestion and retrieval
 baseline. It deliberately starts with BM25 and deterministic metrics; it does
 not claim measured dense/hybrid quality, reranking benefit, production readiness,
