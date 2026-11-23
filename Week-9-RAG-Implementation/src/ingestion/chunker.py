@@ -1,3 +1,8 @@
+## This component is responsible for splitting documents into chunks based on word count.
+## It ensures that each chunk has a deterministic ID and maintains provenance information.
+## It returns a list of Chunk objects, each representing a portion of the document.
+## It is used internally by the document ingestion pipeline to prepare documents for indexing.
+
 from __future__ import annotations
 
 import hashlib

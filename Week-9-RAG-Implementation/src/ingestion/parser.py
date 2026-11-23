@@ -1,3 +1,11 @@
+## This component is responsible for parsing Markdown documents into sections
+## based on headings. Each section contains a heading path and the corresponding text.
+## It returns a list of ParsedSection objects, each representing a section of the document.
+## It is used internally by the document ingestion pipeline to break down documents
+## into manageable sections.
+## Remember: The parser does not search anything. It only understands and
+## organizes document structure.
+
 from __future__ import annotations
 
 import re

@@ -1,3 +1,9 @@
+## This component is responsible for building chunks from documents.
+## It ensures that each document has a unique source_id and splits the document
+## into chunks based on the specified max_words and overlap_words.
+## It returns a list of Chunk objects, ready for indexing or further processing.
+## It is used internally by the document ingestion pipeline to prepare documents for indexing.
+
 from __future__ import annotations
 
 from collections.abc import Iterable

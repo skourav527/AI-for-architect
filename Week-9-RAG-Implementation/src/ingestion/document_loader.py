@@ -1,3 +1,7 @@
+## This component is responsible for loading Markdown and text documents from a
+## specified root directory, computing their metadata, and returning them as a
+## list of Document objects.
+
 from __future__ import annotations
 
 import hashlib

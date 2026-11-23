@@ -75,6 +75,28 @@ score   = Σ_t IDF(t) · TF part
 
 ✍️ q16 explanation (Day 1):
 
+Verified against the synthetic BM25 runner on 2026-11-23:
+
+- Query: "What control makes a retrieval loop bounded when it uses several tools?"
+- After `tokenize`: `control`, `makes`, `retrieval`, `loop`, `bounded`,
+  `uses`, `several`, `tools`.
+- The expected source, `platform/budgets.md`, says "maximum attempts,
+  wall-clock time, model tokens, tool calls, concurrency, and cost." It shares
+  **none** of those query tokens, so its score is zero and it is not returned.
+  This tokenizer does not stem words: `tools` does not match `tool`.
+- `security/access.md` matches `control` twice (heading and body) and scores
+  **1.730072**. `engineering/deployments.md` matches `uses` once and scores
+  **1.194202**. These are the only returned sources; `top_k=3` is a maximum,
+  not a requirement to return three.
+- Hypothesis, not a measured result: **dense retrieval will fix q16 because
+  semantic embeddings may connect "bounded retrieval loop" and "several tools"
+  with maximum attempts, tool calls, time, and cost budgets despite the lack
+  of exact-token overlap.** Test whether the expected source enters the top
+  three using a selected embedding model; do not assume the hypothesis holds.
+- The controller still returns `outcome="ok"`: some positive-scoring results
+  exist. This means retrieval succeeded operationally, not that those results
+  answer the question. The default runner has no query rewriter.
+
 ---
 
 ## 4. Dense retrieval (bi-encoder)
@@ -167,7 +189,13 @@ Code: [metrics.py](../../src/evaluation/metrics.py)
 
 **Traps to remember:**
 - **Precision ceiling:** with one relevant doc and K=3, the max Precision@3 is
-  0.33. The baseline's 0.315 is near the ceiling, not "bad".
+  1/3 = 0.333333. The verified baseline has 18 retrieval cases: 17 hits and
+  one miss (q16). Recall@3 = 17/18 = **0.944444**; mean Precision@3 =
+  `(17 * (1/3) + 0) / 18` = 17/54 = **0.314815**. The two authorization-only
+  cases are excluded from these averages. The denominator remains K=3 even
+  when fewer than three sources are returned. This is a fixed-K ceiling
+  effect, not by itself evidence of poor retrieval; it also does not prove
+  that every returned chunk is useful or that an answer would be grounded.
 - **Granularity:** the runner de-duplicates chunk results to `source_id`, so
   it evaluates at **document** level. A wrong chunk from the right doc still
   scores as a hit.

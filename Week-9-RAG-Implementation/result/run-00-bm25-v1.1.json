@@ -1,0 +1,333 @@
+{
+  "answer_metrics": {
+    "citation_correctness": null,
+    "groundedness": null,
+    "reason": "retrieval-only smoke; no answer generation is performed"
+  },
+  "authorization_correctness": {
+    "cases_passed": 32,
+    "cases_total": 32,
+    "passed": true
+  },
+  "case_count": 32,
+  "cases": [
+    {
+      "authorization_passed": true,
+      "case_id": "q01",
+      "category": "procedure",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "runbooks/recovery.md",
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q02",
+      "category": "procedure",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "runbooks/recovery.md",
+        "security/access.md",
+        "platform/budgets.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q03",
+      "category": "procedure",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "runbooks/recovery.md",
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q04",
+      "category": "exact-term",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "runbooks/recovery.md",
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q05",
+      "category": "security",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "security/access.md",
+        "runbooks/recovery.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q06",
+      "category": "security",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "security/access.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q07",
+      "category": "security",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "security/access.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q08",
+      "category": "authorization-sensitive",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "finance/payroll.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q09",
+      "category": "operations",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q10",
+      "category": "operations",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q11",
+      "category": "operations",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q12",
+      "category": "security",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "engineering/deployments.md",
+        "runbooks/recovery.md",
+        "security/access.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q13",
+      "category": "runtime",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "platform/budgets.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q14",
+      "category": "runtime",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "platform/budgets.md",
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q15",
+      "category": "runtime",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "platform/budgets.md",
+        "runbooks/recovery.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q16",
+      "category": "difficult",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "security/access.md",
+        "engineering/deployments.md",
+        "runbooks/recovery.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q17",
+      "category": "difficult",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "runbooks/recovery.md",
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q18",
+      "category": "difficult",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "security/access.md",
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q19",
+      "category": "authorization-sensitive",
+      "outcome": "no_matches",
+      "retrieved_source_ids": []
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q20",
+      "category": "authorization-sensitive",
+      "outcome": "no_matches",
+      "retrieved_source_ids": []
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q21",
+      "category": "paraphrase",
+      "outcome": "no_matches",
+      "retrieved_source_ids": []
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q22",
+      "category": "paraphrase",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "engineering/deployments.md",
+        "runbooks/recovery.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q23",
+      "category": "paraphrase",
+      "outcome": "no_matches",
+      "retrieved_source_ids": []
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q24",
+      "category": "paraphrase",
+      "outcome": "no_matches",
+      "retrieved_source_ids": []
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q25",
+      "category": "exact-identifier",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q26",
+      "category": "exact-identifier",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "runbooks/recovery.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q27",
+      "category": "multi-source",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "security/access.md",
+        "engineering/deployments.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q28",
+      "category": "multi-source",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "engineering/deployments.md",
+        "runbooks/recovery.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q29",
+      "category": "prompt-injection",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "security/access.md"
+      ]
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q30",
+      "category": "authorization-filter",
+      "outcome": "no_matches",
+      "retrieved_source_ids": []
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q31",
+      "category": "authorization-unavailable",
+      "outcome": "authorization_unavailable",
+      "retrieved_source_ids": []
+    },
+    {
+      "authorization_passed": true,
+      "case_id": "q32",
+      "category": "tenant-isolation",
+      "outcome": "ok",
+      "retrieved_source_ids": [
+        "security/access.md"
+      ]
+    }
+  ],
+  "classification": "synthetic smoke evaluation; not a learner benchmark",
+  "estimated_cost_usd_total": 0.0,
+  "latency_ms": {
+    "max": 0.1783999614417553,
+    "mean": 0.06061249951017089,
+    "p50": 0.05470000905916095,
+    "p95": 0.09029998909682035
+  },
+  "manifest": {
+    "chunking_strategy": "heading-aware recursive word-boundary",
+    "configuration_version": "1.0",
+    "corpus_version": "1.1",
+    "dataset_version": "1.1",
+    "embedding_model": null,
+    "indexing_strategy": "in-memory BM25",
+    "reranker": null,
+    "retrieval_strategy": "bm25",
+    "timestamp": "2026-11-23T11:14:33.060026+00:00",
+    "top_k": 3
+  },
+  "metrics": {
+    "mrr": 0.8333333333333334,
+    "ndcg_at_3": 0.8381825834656096,
+    "precision_at_3": 0.30864197530864196,
+    "recall_at_3": 0.8518518518518519
+  },
+  "retrieval_case_count": 27
+}
